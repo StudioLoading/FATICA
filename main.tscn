@@ -36,54 +36,59 @@ extents = Vector2( 150.281, 105.571 )
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 3 )
 
-[node name="bg" type="Sprite" parent="."]
-position = Vector2( 0, -137 )
+[node name="background" type="Node2D" parent="."]
+
+[node name="bg" type="Sprite" parent="background"]
+position = Vector2( 2.66974, -83.6064 )
 texture = ExtResource( 2 )
 centered = false
 
-[node name="suolo" type="StaticBody2D" parent="bg"]
+[node name="suolo" type="StaticBody2D" parent="background/bg"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bg/suolo"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background/bg/suolo"]
 shape = SubResource( 1 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="bg/suolo"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="background/bg/suolo"]
 position = Vector2( 12.7051, 16.4814 )
 shape = SubResource( 2 )
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="bg/suolo"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="background/bg/suolo"]
 position = Vector2( -278.633, 38.1637 )
 shape = SubResource( 3 )
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="bg/suolo"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="background/bg/suolo"]
 position = Vector2( -106, 0 )
 shape = SubResource( 4 )
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="bg/suolo"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="background/bg/suolo"]
 position = Vector2( -40, 0 )
 shape = SubResource( 5 )
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="bg/suolo"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="background/bg/suolo"]
 position = Vector2( -51, 26 )
 shape = SubResource( 6 )
 
-[node name="sabbiamobile" type="Sprite" parent="bg"]
+[node name="sabbiamobile" type="Sprite" parent="background/bg"]
 position = Vector2( 583.992, 723.178 )
 texture = ExtResource( 4 )
 
-[node name="Area2D" type="Area2D" parent="bg/sabbiamobile"]
+[node name="Area2D" type="Area2D" parent="background/bg/sabbiamobile"]
 position = Vector2( 0, 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bg/sabbiamobile/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background/bg/sabbiamobile/Area2D"]
 shape = SubResource( 7 )
+
+[node name="bufera" parent="background" instance=ExtResource( 5 )]
+position = Vector2( 4000, 0 )
 
 [node name="player" parent="." groups=[
 "camera_shaker",
 ] instance=ExtResource( 1 )]
 position = Vector2( 105.511, 250.492 )
 
-[node name="camera_movement" type="Area2D" parent="."]
+[node name="foreground" type="Node2D" parent="."]
 
-[node name="Node2D" parent="." instance=ExtResource( 5 )]
-position = Vector2( -130.167, -56.214 )
-[connection signal="body_entered" from="bg/sabbiamobile/Area2D" to="player" method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="bg/sabbiamobile/Area2D" to="player" method="_on_Area2D_body_exited"]
+[node name="bufera" parent="foreground" instance=ExtResource( 5 )]
+position = Vector2( 4000, 0 )
+[connection signal="body_entered" from="background/bg/sabbiamobile/Area2D" to="player" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="background/bg/sabbiamobile/Area2D" to="player" method="_on_Area2D_body_exited"]

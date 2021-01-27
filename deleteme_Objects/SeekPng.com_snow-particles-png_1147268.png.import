@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/SeekPng.com_snow-particles-png_1147268.png-08f772b7db739b332f6f542cab6d749c.stex"
+path="res://.import/SeekPng.com_snow-particles-png_1147268.png-9af92b32cd15f8389ca01da38c066d1f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Objects/SeekPng.com_snow-particles-png_1147268.png"
-dest_files=[ "res://.import/SeekPng.com_snow-particles-png_1147268.png-08f772b7db739b332f6f542cab6d749c.stex" ]
+source_file="res://deleteme_Objects/SeekPng.com_snow-particles-png_1147268.png"
+dest_files=[ "res://.import/SeekPng.com_snow-particles-png_1147268.png-9af92b32cd15f8389ca01da38c066d1f.stex" ]
 
 [params]
 
