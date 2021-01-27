@@ -9,7 +9,7 @@ export var shake : = false setget set_shake
 
 var enabled : = false
 
-export onready var initial_camera_offset = Vector2(0, -24)
+export onready var initial_camera_offset = Vector2(0, -48)
 
 
 func _ready() -> void:
@@ -42,9 +42,14 @@ func set_shake(value: bool) -> void:
 		$timer.start()
 
 
-
 func _on_player_camera_shake_requested():
 	if not enabled:
+		$timer.stop()
 		return
 	self.shake = true
+	pass # Replace with function body.
+
+
+func _on_player_camera_shake_stop():
+	self.shake = false
 	pass # Replace with function body.
