@@ -27,3 +27,4 @@ shape = SubResource( 1 )
 limit_left = 0
 drag_margin_bottom = 0.4
 [connection signal="camera_shake_requested" from="." to="Camera2D" method="_on_player_camera_shake_requested"]
+[connection signal="camera_shake_stop" from="." to="Camera2D" method="_on_player_camera_shake_stop"]
