@@ -8,6 +8,7 @@ export (int) var gravity_default = 1200
 
 var velocity = Vector2()
 var jumping = false
+var energy = 100
 
 enum STATES {WALKING, JUMPING, SABBIEMOBILI, RAFFICA}
 onready var state = STATES.WALKING
@@ -36,6 +37,7 @@ func get_input():
 
 func _physics_process(delta):
 	get_input()
+	get_node("../energyLabel").text = str(energy)
 	velocity.y += gravity * delta
 	if jumping and is_on_floor():
 		jumping = false
@@ -63,3 +65,10 @@ func _on_Area2D_body_exited(body):
 		gravity = gravity_default
 		jump_speed = jump_speed_default
 	pass # Replace with function body.
+
+
+func _on_Area2D_area_shape_entered(area_id, area, area_shape, self_shape):
+	if area.is_in_group('enemy'):
+		print('enemyenemyenemyenemy')
+		energy-= 11
+		

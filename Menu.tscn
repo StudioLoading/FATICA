@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Menu.gd" type="Script" id=1]
+[ext_resource path="res://asset/env/desert.png" type="Texture" id=2]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="desert" type="Sprite" parent="."]
+position = Vector2( 516.679, 285.001 )
+texture = ExtResource( 2 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Start Game" type="Button" parent="Control"]
+margin_left = 428.518
+margin_top = 252.232
+margin_right = 520.518
+margin_bottom = 272.232
+text = "START GAME"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Options" type="Button" parent="Control"]
+margin_left = 455.485
+margin_top = 296.665
+margin_right = 518.485
+margin_bottom = 316.665
+text = "Options"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits" type="Button" parent="Control"]
+margin_left = 458.482
+margin_top = 365.587
+margin_right = 515.482
+margin_bottom = 385.587
+text = "Credits"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Control/Start Game" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/Credits" to="." method="_on_Credits_pressed"]
