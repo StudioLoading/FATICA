@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://asset/env/desert.png" type="Texture" id=2]
 [ext_resource path="res://main.gd" type="Script" id=3]
 [ext_resource path="res://asset/env/sabbiamobile.png" type="Texture" id=4]
 [ext_resource path="res://snow.tscn" type="PackedScene" id=5]
+[ext_resource path="res://asset/audio/bg/desert.ogg" type="AudioStream" id=6]
 
 [sub_resource type="SegmentShape2D" id=1]
 a = Vector2( -3.0689, 647.383 )
@@ -90,5 +91,9 @@ position = Vector2( 105.511, 250.492 )
 
 [node name="bufera" parent="foreground" instance=ExtResource( 5 )]
 position = Vector2( 4000, 0 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
 [connection signal="body_entered" from="background/bg/sabbiamobile/Area2D" to="player" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="background/bg/sabbiamobile/Area2D" to="player" method="_on_Area2D_body_exited"]
