@@ -36,17 +36,21 @@ func _physics_process(delta):
 	if jumping and is_on_floor():
 		jumping = false
 	velocity = move_and_slide(velocity, Vector2(0, -1))
-
+	pass
 
 func _on_Area2D_body_entered(body):
-	state = STATES.SABBIEMOBILI
-	gravity = 2000
-	jump_speed = -300
+	if body.is_in_group('player'):
+		state = STATES.SABBIEMOBILI
+		print('Dentro la sabbia mobile')
+		gravity = 2000
+		jump_speed = -300
 	pass # Replace with function body.
 
 
 func _on_Area2D_body_exited(body):
-	state = STATES.WALKING
-	gravity = gravity_default
-	jump_speed = jump_speed_default
+	if body.is_in_group('player'):
+		state = STATES.WALKING
+		print('Fuori la sabbia mobile')
+		gravity = gravity_default
+		jump_speed = jump_speed_default
 	pass # Replace with function body.

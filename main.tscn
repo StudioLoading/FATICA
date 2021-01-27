@@ -1,34 +1,38 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://animations/doc.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://asset/env/desert.png" type="Texture" id=2]
 [ext_resource path="res://doc.gd" type="Script" id=3]
 [ext_resource path="res://asset/env/sabbiamobile.png" type="Texture" id=4]
 
+[sub_resource type="SegmentShape2D" id=1]
+a = Vector2( -3.0689, 647.383 )
+b = Vector2( 205.945, 579.21 )
+
 [sub_resource type="SegmentShape2D" id=2]
-a = Vector2( -2.30139, 631.864 )
-b = Vector2( 278.973, 560.129 )
+a = Vector2( 307.112, 561.226 )
+b = Vector2( 489.155, 633.899 )
 
 [sub_resource type="SegmentShape2D" id=3]
-a = Vector2( 307.112, 561.226 )
-b = Vector2( 539.374, 643.986 )
-
-[sub_resource type="SegmentShape2D" id=4]
 a = Vector2( 529.057, 744.054 )
 b = Vector2( 1162.44, 745.389 )
 
-[sub_resource type="SegmentShape2D" id=6]
-a = Vector2( 778.819, 632.646 )
+[sub_resource type="SegmentShape2D" id=4]
+a = Vector2( 798.146, 629.404 )
 b = Vector2( 937, 591.076 )
 
-[sub_resource type="SegmentShape2D" id=7]
+[sub_resource type="SegmentShape2D" id=5]
 a = Vector2( 871.509, 591.527 )
 b = Vector2( 1033.65, 636.963 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="SegmentShape2D" id=8]
+a = Vector2( 373.26, 552.659 )
+b = Vector2( 254.693, 553.5 )
+
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 150.281, 105.571 )
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=7]
 radius = 35.0416
 height = 63.8876
 
@@ -39,38 +43,45 @@ position = Vector2( 0, -137 )
 texture = ExtResource( 2 )
 centered = false
 
-[node name="StaticBody2D" type="StaticBody2D" parent="bg"]
+[node name="suolo" type="StaticBody2D" parent="bg"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bg/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bg/suolo"]
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bg/suolo"]
+position = Vector2( 12.7051, 16.4814 )
 shape = SubResource( 2 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="bg/StaticBody2D"]
-position = Vector2( -27, 0 )
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="bg/suolo"]
+position = Vector2( -278.633, 38.1637 )
 shape = SubResource( 3 )
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="bg/StaticBody2D"]
-position = Vector2( -282, 0 )
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="bg/suolo"]
+position = Vector2( -106, 0 )
 shape = SubResource( 4 )
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="bg/StaticBody2D"]
-position = Vector2( -106, 0 )
-shape = SubResource( 6 )
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="bg/StaticBody2D"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="bg/suolo"]
 position = Vector2( -40, 0 )
-shape = SubResource( 7 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="bg/suolo"]
+position = Vector2( -51, 26 )
+shape = SubResource( 8 )
 
 [node name="sabbiamobile" type="Sprite" parent="bg"]
 position = Vector2( 583.992, 723.178 )
 texture = ExtResource( 4 )
 
 [node name="Area2D" type="Area2D" parent="bg/sabbiamobile"]
+position = Vector2( 0, 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bg/sabbiamobile/Area2D"]
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
-[node name="doc" type="KinematicBody2D" parent="."]
-position = Vector2( 50.4978, 430.997 )
+[node name="doc" type="KinematicBody2D" parent="." groups=[
+"player",
+]]
+position = Vector2( 77.4066, 116.502 )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
@@ -81,6 +92,6 @@ frames = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="doc"]
 position = Vector2( 0, -32 )
-shape = SubResource( 1 )
+shape = SubResource( 7 )
 [connection signal="body_entered" from="bg/sabbiamobile/Area2D" to="doc" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="bg/sabbiamobile/Area2D" to="doc" method="_on_Area2D_body_exited"]
