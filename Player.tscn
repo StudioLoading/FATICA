@@ -5,7 +5,7 @@
 [ext_resource path="res://Camera2D.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 35.0416
+radius = 27.9235
 height = 5.68642
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -28,6 +28,7 @@ shape = SubResource( 1 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 3 )]
 limit_left = 0
+limit_bottom = 600
 drag_margin_bottom = 0.4
 
 [node name="Area2D" type="Area2D" parent="."]

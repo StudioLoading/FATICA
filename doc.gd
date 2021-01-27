@@ -37,10 +37,12 @@ func get_input():
 
 func _physics_process(delta):
 	get_input()
-	get_node("../energyLabel").text = str(energy)
+	get_node("../GUI/energyLabel").text = str(energy)
 	velocity.y += gravity * delta
 	if jumping and is_on_floor():
 		jumping = false
+	if state == STATES.SABBIEMOBILI:
+		energy -= 0.15
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	pass
 
@@ -49,9 +51,10 @@ func _on_Area2D_body_entered(body):
 		$Camera2D.enabled = true
 		state = STATES.SABBIEMOBILI
 		print('Dentro la sabbia mobile')
-		$Camera2D.drag_margin_bottom = 1
+		#$Camera2D.drag_margin_bottom = 1
 		emit_signal("camera_shake_requested")
-		gravity = 2000
+		#gravity = 2000
+		#gravity = 300
 		jump_speed = -300
 	pass # Replace with function body.
 
@@ -59,7 +62,7 @@ func _on_Area2D_body_entered(body):
 func _on_Area2D_body_exited(body):
 	if body.is_in_group('player'):
 		state = STATES.WALKING
-		$Camera2D.drag_margin_bottom = 0.4;
+		#$Camera2D.drag_margin_bottom = 0.4;
 		emit_signal("camera_shake_stop")
 		print('Fuori la sabbia mobile')
 		gravity = gravity_default
@@ -70,5 +73,5 @@ func _on_Area2D_body_exited(body):
 func _on_Area2D_area_shape_entered(area_id, area, area_shape, self_shape):
 	if area.is_in_group('enemy'):
 		print('enemyenemyenemyenemy')
-		energy-= 11
+#		energy-= 11
 		

@@ -15,6 +15,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$VacLabel.text = str($VacTimer.time_left)
+	$GUI/VacLabel.text = str($VacTimer.time_left)
 	
 	
