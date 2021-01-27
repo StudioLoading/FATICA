@@ -37,7 +37,7 @@ b = Vector2( 254.693, 553.5 )
 
 [sub_resource type="SegmentShape2D" id=10]
 a = Vector2( 980.218, 637.508 )
-b = Vector2( 7000, 637.508 )
+b = Vector2( 20000, 637.508 )
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 150.281, 105.571 )
