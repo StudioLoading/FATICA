@@ -12,6 +12,9 @@ var jumping = false
 enum STATES {WALKING, JUMPING, SABBIEMOBILI, RAFFICA}
 onready var state = STATES.WALKING
 
+signal camera_shake_requested
+
+
 func get_input():
 	velocity.x = 0
 	var right = Input.is_action_pressed('ui_right')
@@ -42,6 +45,8 @@ func _on_Area2D_body_entered(body):
 	if body.is_in_group('player'):
 		state = STATES.SABBIEMOBILI
 		print('Dentro la sabbia mobile')
+		$Camera2D.drag_margin_bottom = 1
+		#emit_signal("camera_shake_requested")
 		gravity = 2000
 		jump_speed = -300
 	pass # Replace with function body.
@@ -50,6 +55,7 @@ func _on_Area2D_body_entered(body):
 func _on_Area2D_body_exited(body):
 	if body.is_in_group('player'):
 		state = STATES.WALKING
+		$Camera2D.drag_margin_bottom = 0.4;
 		print('Fuori la sabbia mobile')
 		gravity = gravity_default
 		jump_speed = jump_speed_default
