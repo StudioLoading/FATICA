@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://animations/doc.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://asset/env/desert.png" type="Texture" id=2]
@@ -16,6 +16,14 @@ b = Vector2( 539.374, 643.986 )
 [sub_resource type="SegmentShape2D" id=4]
 a = Vector2( 529.057, 744.054 )
 b = Vector2( 1162.44, 745.389 )
+
+[sub_resource type="SegmentShape2D" id=6]
+a = Vector2( 778.819, 632.646 )
+b = Vector2( 937, 591.076 )
+
+[sub_resource type="SegmentShape2D" id=7]
+a = Vector2( 871.509, 591.527 )
+b = Vector2( 1033.65, 636.963 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 150.281, 105.571 )
@@ -43,6 +51,14 @@ shape = SubResource( 3 )
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="bg/StaticBody2D"]
 position = Vector2( -282, 0 )
 shape = SubResource( 4 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="bg/StaticBody2D"]
+position = Vector2( -106, 0 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="bg/StaticBody2D"]
+position = Vector2( -40, 0 )
+shape = SubResource( 7 )
 
 [node name="sabbiamobile" type="Sprite" parent="bg"]
 position = Vector2( 583.992, 723.178 )
