@@ -10,7 +10,7 @@ var velocity = Vector2()
 var jumping = false
 var energy = 100
 
-enum STATES {WALKING, JUMPING, SABBIEMOBILI, RAFFICA}
+enum STATES {WALKING, JUMPING, SABBIEMOBILI, RAFFICA, MORTO}
 onready var state = STATES.WALKING
 
 signal camera_shake_requested
@@ -36,6 +36,8 @@ func get_input():
 		velocity.x -= run_speed
 
 func _physics_process(delta):
+	if state == STATES.MORTO:
+		return
 	get_input()
 	get_node("../GUI/energyLabel").text = str(energy)
 	velocity.y += gravity * delta
@@ -45,6 +47,13 @@ func _physics_process(delta):
 		energy -= 0.15
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	pass
+
+func _process(delta):
+	if energy < 0 and state != STATES.MORTO:
+		state = STATES.MORTO
+		$timerGameOver.start()
+		energy = 0
+		
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group('player'):
@@ -75,3 +84,8 @@ func _on_Area2D_area_shape_entered(area_id, area, area_shape, self_shape):
 		print('enemyenemyenemyenemy')
 #		energy-= 11
 		
+
+
+func _on_timerGameOver_timeout():
+	get_tree().change_scene("res://GameOver.tscn")
+	pass # Replace with function body.
