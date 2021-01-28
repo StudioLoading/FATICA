@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=196 format=2]
+[gd_resource type="SpriteFrames" load_steps=238 format=2]
 
 [ext_resource path="res://asset/chars/Rei animazioni/Rei cammina/Walk_003.png" type="Texture" id=1]
 [ext_resource path="res://asset/chars/Rei animazioni/Rei cammina/Walk_002.png" type="Texture" id=2]
@@ -195,6 +195,48 @@
 [ext_resource path="res://asset/chars/Rei animazioni/Rei cammina e si protegge/Protect walk_039.png" type="Texture" id=193]
 [ext_resource path="res://asset/chars/Rei animazioni/Rei cammina e si protegge/Protect walk_040.png" type="Texture" id=194]
 [ext_resource path="res://asset/chars/Rei animazioni/Rei cammina e si protegge/Protect walk_041.png" type="Texture" id=195]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_013.png" type="Texture" id=196]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_031.png" type="Texture" id=197]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_006.png" type="Texture" id=198]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_015.png" type="Texture" id=199]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_035.png" type="Texture" id=200]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_000.png" type="Texture" id=201]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_012.png" type="Texture" id=202]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_007.png" type="Texture" id=203]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_001.png" type="Texture" id=204]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_030.png" type="Texture" id=205]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_011.png" type="Texture" id=206]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_041.png" type="Texture" id=207]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_010.png" type="Texture" id=208]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_039.png" type="Texture" id=209]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_028.png" type="Texture" id=210]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_018.png" type="Texture" id=211]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_024.png" type="Texture" id=212]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_026.png" type="Texture" id=213]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_003.png" type="Texture" id=214]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_033.png" type="Texture" id=215]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_040.png" type="Texture" id=216]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_017.png" type="Texture" id=217]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_036.png" type="Texture" id=218]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_034.png" type="Texture" id=219]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_004.png" type="Texture" id=220]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_029.png" type="Texture" id=221]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_038.png" type="Texture" id=222]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_021.png" type="Texture" id=223]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_005.png" type="Texture" id=224]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_014.png" type="Texture" id=225]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_037.png" type="Texture" id=226]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_009.png" type="Texture" id=227]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_032.png" type="Texture" id=228]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_022.png" type="Texture" id=229]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_016.png" type="Texture" id=230]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_023.png" type="Texture" id=231]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_025.png" type="Texture" id=232]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_002.png" type="Texture" id=233]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_008.png" type="Texture" id=234]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_019.png" type="Texture" id=235]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_027.png" type="Texture" id=236]
+[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina sulle sabbie mobili/Walk on quicksand_020.png" type="Texture" id=237]
 
 [resource]
 animations = [ {
@@ -203,9 +245,9 @@ animations = [ {
 "name": "walk",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 128 ), ExtResource( 127 ), ExtResource( 129 ), ExtResource( 130 ), ExtResource( 131 ), ExtResource( 132 ), ExtResource( 133 ), ExtResource( 134 ), ExtResource( 135 ), ExtResource( 136 ), ExtResource( 137 ), ExtResource( 138 ), ExtResource( 139 ), ExtResource( 140 ), ExtResource( 141 ) ],
-"loop": false,
-"name": "Jump",
+"frames": [ ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 92 ), ExtResource( 93 ), ExtResource( 94 ), ExtResource( 95 ), ExtResource( 96 ), ExtResource( 97 ), ExtResource( 98 ), ExtResource( 99 ), ExtResource( 100 ), ExtResource( 101 ), ExtResource( 102 ), ExtResource( 103 ), ExtResource( 104 ), ExtResource( 105 ), ExtResource( 106 ), ExtResource( 107 ), ExtResource( 108 ), ExtResource( 109 ), ExtResource( 110 ), ExtResource( 111 ), ExtResource( 112 ), ExtResource( 113 ), ExtResource( 114 ), ExtResource( 115 ), ExtResource( 116 ), ExtResource( 117 ), ExtResource( 118 ), ExtResource( 119 ), ExtResource( 120 ), ExtResource( 121 ), ExtResource( 122 ), ExtResource( 123 ), ExtResource( 124 ), ExtResource( 125 ), ExtResource( 126 ) ],
+"loop": true,
+"name": "Idle",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 143 ), ExtResource( 142 ), ExtResource( 144 ), ExtResource( 145 ), ExtResource( 146 ), ExtResource( 147 ), ExtResource( 148 ), ExtResource( 149 ), ExtResource( 150 ), ExtResource( 151 ), ExtResource( 152 ), ExtResource( 153 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ) ],
@@ -213,13 +255,18 @@ animations = [ {
 "name": "Run",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 92 ), ExtResource( 93 ), ExtResource( 94 ), ExtResource( 95 ), ExtResource( 96 ), ExtResource( 97 ), ExtResource( 98 ), ExtResource( 99 ), ExtResource( 100 ), ExtResource( 101 ), ExtResource( 102 ), ExtResource( 103 ), ExtResource( 104 ), ExtResource( 105 ), ExtResource( 106 ), ExtResource( 107 ), ExtResource( 108 ), ExtResource( 109 ), ExtResource( 110 ), ExtResource( 111 ), ExtResource( 112 ), ExtResource( 113 ), ExtResource( 114 ), ExtResource( 115 ), ExtResource( 116 ), ExtResource( 117 ), ExtResource( 118 ), ExtResource( 119 ), ExtResource( 120 ), ExtResource( 121 ), ExtResource( 122 ), ExtResource( 123 ), ExtResource( 124 ), ExtResource( 125 ), ExtResource( 126 ) ],
-"loop": true,
-"name": "Idle",
+"frames": [ ExtResource( 128 ), ExtResource( 127 ), ExtResource( 129 ), ExtResource( 130 ), ExtResource( 131 ), ExtResource( 132 ), ExtResource( 133 ), ExtResource( 134 ), ExtResource( 135 ), ExtResource( 136 ), ExtResource( 137 ), ExtResource( 138 ), ExtResource( 139 ), ExtResource( 140 ), ExtResource( 141 ) ],
+"loop": false,
+"name": "Jump",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 155 ), ExtResource( 154 ), ExtResource( 156 ), ExtResource( 157 ), ExtResource( 158 ), ExtResource( 159 ), ExtResource( 160 ), ExtResource( 161 ), ExtResource( 162 ), ExtResource( 163 ), ExtResource( 164 ), ExtResource( 165 ), ExtResource( 166 ), ExtResource( 167 ), ExtResource( 168 ), ExtResource( 169 ), ExtResource( 170 ), ExtResource( 171 ), ExtResource( 172 ), ExtResource( 173 ), ExtResource( 174 ), ExtResource( 175 ), ExtResource( 176 ), ExtResource( 177 ), ExtResource( 178 ), ExtResource( 179 ), ExtResource( 180 ), ExtResource( 181 ), ExtResource( 182 ), ExtResource( 183 ), ExtResource( 184 ), ExtResource( 185 ), ExtResource( 186 ), ExtResource( 187 ), ExtResource( 188 ), ExtResource( 189 ), ExtResource( 190 ), ExtResource( 191 ), ExtResource( 192 ), ExtResource( 193 ), ExtResource( 194 ), ExtResource( 195 ) ],
 "loop": true,
 "name": "Protectwalk",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 201 ), ExtResource( 204 ), ExtResource( 233 ), ExtResource( 214 ), ExtResource( 220 ), ExtResource( 224 ), ExtResource( 198 ), ExtResource( 203 ), ExtResource( 234 ), ExtResource( 227 ), ExtResource( 208 ), ExtResource( 206 ), ExtResource( 202 ), ExtResource( 196 ), ExtResource( 225 ), ExtResource( 199 ), ExtResource( 230 ), ExtResource( 217 ), ExtResource( 211 ), ExtResource( 235 ), ExtResource( 237 ), ExtResource( 223 ), ExtResource( 229 ), ExtResource( 231 ), ExtResource( 212 ), ExtResource( 232 ), ExtResource( 213 ), ExtResource( 236 ), ExtResource( 210 ), ExtResource( 221 ), ExtResource( 205 ), ExtResource( 197 ), ExtResource( 228 ), ExtResource( 215 ), ExtResource( 219 ), ExtResource( 200 ), ExtResource( 218 ), ExtResource( 226 ), ExtResource( 222 ), ExtResource( 209 ), ExtResource( 216 ), ExtResource( 207 ) ],
+"loop": true,
+"name": "sabbiemobili",
+"speed": 6.0
 } ]

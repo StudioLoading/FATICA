@@ -31,7 +31,7 @@ func get_input():
 	if jump and is_on_floor():
 		jumping = true
 		velocity.y = jump_speed
-	if jumping and !is_on_floor() and state != STATES.TEMPESTA:
+	elif jumping and !is_on_floor() and state != STATES.TEMPESTA and state != STATES.SABBIEMOBILI:
 		state = STATES.JUMPING
 	if jump and state == STATES.SABBIEMOBILI:
 		velocity.y = jump_speed
@@ -48,40 +48,29 @@ func _physics_process(delta):
 	
 	
 	if velocity.x != 0 and state != STATES.TEMPESTA:
-		$AnimatedSprite.flip_h = velocity.x < 0	
+		$AnimatedSprite.flip_h = velocity.x < 0
 	
 	velocity.y += gravity * delta
 	
-	if right or left and is_on_floor() and state != STATES.TEMPESTA:
-		$AnimatedSprite.play("Run")
+	if state != STATES.SABBIEMOBILI:
+		if (right or left) and is_on_floor() and state != STATES.TEMPESTA:
+			$AnimatedSprite.play("Run")
 		
-	elif right or left and is_on_floor() and state == STATES.TEMPESTA:
-		$AnimatedSprite.play("Protectwalk")
+		elif !left and !right and state != STATES.TEMPESTA and is_on_floor():
+			$AnimatedSprite.play("Idle")
 		
-	if right and state == STATES.TEMPESTA:
-		$AnimatedSprite.flip_h = false
-	if left and state == STATES.TEMPESTA:
-		$AnimatedSprite.flip_h =true
-	
-	if relative_velocity != Vector2.ZERO and state != STATES.TEMPESTA:
-		$AnimatedSprite.flip_h = velocity.x < 0
-	
+		if state == STATES.TEMPESTA and $AnimatedSprite.animation != 'ProtectWalk':
+			$AnimatedSprite.play("Protectwalk")
 
-	if !left and !right:
-		$AnimatedSprite.play("Idle")
-	
-	if !left and !right and state == STATES.TEMPESTA:
-		$AnimatedSprite.play("Protectwalk")
-	
-	
-		
 	if jumping and is_on_floor() and state == STATES.JUMPING :
 		$AnimatedSprite.play("Jump")
 		jumping = false
 		$AudioStreamPlayer.stream = fx_step
 		$AudioStreamPlayer.play()
+
 	if state == STATES.SABBIEMOBILI:
 		energy -= 0.15
+
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	
 	print('state',state)
@@ -95,13 +84,11 @@ func _process(delta):
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group('player'):
-		$Camera2D.enabled = true
+		#$Camera2D.enabled = true
 		state = STATES.SABBIEMOBILI
+		$AnimatedSprite.play('sabbiemobili')
 		print('Dentro la sabbia mobile')
-		#$Camera2D.drag_margin_bottom = 1
 		emit_signal("camera_shake_requested")
-		#gravity = 2000
-		#gravity = 300
 		jump_speed = -300
 	pass # Replace with function body.
 
@@ -109,7 +96,6 @@ func _on_Area2D_body_entered(body):
 func _on_Area2D_body_exited(body):
 	if body.is_in_group('player'):
 		state = STATES.WALKING
-		#$Camera2D.drag_margin_bottom = 0.4;
 		emit_signal("camera_shake_stop")
 		print('Fuori la sabbia mobile')
 		gravity = gravity_default

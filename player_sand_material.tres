@@ -1,20 +1,20 @@
 [gd_resource type="ParticlesMaterial" load_steps=5 format=2]
 
-[sub_resource type="Curve" id=3]
+[sub_resource type="Curve" id=1]
 min_value = -359.32
 _data = [ Vector2( 0.113924, 13.0909 ), 0.0, 0.0, 0, 0, Vector2( 0.348101, 229.091 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=4]
-curve = SubResource( 3 )
+[sub_resource type="CurveTexture" id=2]
+curve = SubResource( 1 )
 
-[sub_resource type="Curve" id=1]
+[sub_resource type="Curve" id=3]
 min_value = -200.0
 max_value = 200.0
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.322785, 87.2727 ), 0.0, 0.0, 0, 0, Vector2( 0.556962, -40 ), 0.0, 0.0, 0, 0, Vector2( 0.734177, 174.545 ), 0.0, 0.0, 0, 0, Vector2( 0.867089, -83.6364 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=2]
+[sub_resource type="CurveTexture" id=4]
 width = 1024
-curve = SubResource( 1 )
+curve = SubResource( 3 )
 
 [resource]
 emission_shape = 3
@@ -23,12 +23,12 @@ flag_disable_z = true
 direction = Vector3( 0.377, -0.249, 0 )
 initial_velocity = 3000.0
 initial_velocity_random = 1.0
-angular_velocity_curve = SubResource( 4 )
+angular_velocity_curve = SubResource( 2 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 radial_accel = -1.86
 tangential_accel = -100.0
-tangential_accel_curve = SubResource( 2 )
+tangential_accel_curve = SubResource( 4 )
 damping_random = 1.0
 angle = -2.9
 angle_random = 1.0

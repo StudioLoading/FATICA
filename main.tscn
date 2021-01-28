@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://asset/env/parallax/ground_sand.png" type="Texture" id=2]
@@ -12,35 +12,27 @@
 [ext_resource path="res://asset/Desert Parallax by Cryptogene/Desert_sig.png" type="Texture" id=10]
 
 [sub_resource type="SegmentShape2D" id=1]
-a = Vector2( -3.0689, 647.383 )
-b = Vector2( 205.945, 579.21 )
-
-[sub_resource type="SegmentShape2D" id=2]
-a = Vector2( 307.112, 561.226 )
-b = Vector2( 489.155, 633.899 )
+a = Vector2( -16.0657, 664.446 )
+b = Vector2( 386.083, 663.944 )
 
 [sub_resource type="SegmentShape2D" id=3]
-a = Vector2( 529.057, 744.054 )
-b = Vector2( 1162.44, 745.389 )
-
-[sub_resource type="SegmentShape2D" id=4]
-a = Vector2( 798.146, 629.404 )
-b = Vector2( 937, 591.076 )
-
-[sub_resource type="SegmentShape2D" id=5]
-a = Vector2( 871.509, 591.527 )
-b = Vector2( 1033.65, 636.963 )
-
-[sub_resource type="SegmentShape2D" id=6]
-a = Vector2( 371.713, 551.9 )
-b = Vector2( 254.693, 553.5 )
+a = Vector2( 743.304, 744.002 )
+b = Vector2( 1388.97, 742.278 )
 
 [sub_resource type="SegmentShape2D" id=7]
-a = Vector2( 980.218, 637.508 )
+a = Vector2( 829.527, 660.124 )
 b = Vector2( 20000, 637.508 )
 
+[sub_resource type="SegmentShape2D" id=11]
+a = Vector2( 462.941, 794.017 )
+b = Vector2( 338.892, 668.55 )
+
+[sub_resource type="SegmentShape2D" id=12]
+a = Vector2( 1095.08, 784.948 )
+b = Vector2( 1157.06, 659.667 )
+
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 150.281, 105.571 )
+extents = Vector2( 340.916, 86.7072 )
 
 [sub_resource type="DynamicFont" id=9]
 size = 30
@@ -96,45 +88,37 @@ position = Vector2( 622.06, 420.419 )
 texture = ExtResource( 2 )
 
 [node name="background" type="Node2D" parent="."]
-position = Vector2( 71.8374, 44.8984 )
+position = Vector2( 71.8374, -51.1016 )
 
 [node name="suolo" type="StaticBody2D" parent="background"]
-position = Vector2( 2.66974, -83.6064 )
+position = Vector2( 2.66974, 2.3936 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="background/suolo"]
 shape = SubResource( 1 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="background/suolo"]
-position = Vector2( 12.7051, 16.4814 )
-shape = SubResource( 2 )
-
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="background/suolo"]
-position = Vector2( -277.966, 38.8311 )
+position = Vector2( -277.966, 39.7749 )
 shape = SubResource( 3 )
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="background/suolo"]
-position = Vector2( -106, 0 )
-shape = SubResource( 4 )
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="background/suolo"]
-position = Vector2( -40, 0 )
-shape = SubResource( 5 )
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="background/suolo"]
-position = Vector2( -51, 26 )
-shape = SubResource( 6 )
-
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="background/suolo"]
+position = Vector2( 326, 0 )
 shape = SubResource( 7 )
 
 [node name="fondosabbia" type="CollisionPolygon2D" parent="background/suolo"]
-position = Vector2( 583.992, 723.178 )
+position = Vector2( 803.213, 945.404 )
+scale = Vector2( 2.41917, 0.751394 )
 build_mode = 1
 polygon = PoolVector2Array( -83.1449, -69.5194, -71.1313, 43.942, -42.4323, -28.1393, -13.0658, 43.942, 9.62646, -24.8022, 42.9974, 40.6049, 64.3549, -28.8068, 86.3798, 42.6072, 107.737, -91.5443, 109.74, 69.304, -115.181, 68.6365 )
 
-[node name="sabbiamobile" type="Sprite" parent="background"]
-position = Vector2( 586.662, 639.572 )
-texture = ExtResource( 4 )
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="background/suolo"]
+position = Vector2( 45.6983, -4.49493 )
+shape = SubResource( 11 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="background/suolo"]
+shape = SubResource( 12 )
+
+[node name="sabbiamobile" type="Node2D" parent="background"]
+position = Vector2( 587.662, 768.572 )
 
 [node name="Area2D" type="Area2D" parent="background/sabbiamobile" groups=[
 "enemy",
@@ -142,17 +126,38 @@ texture = ExtResource( 4 )
 position = Vector2( 0, 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="background/sabbiamobile/Area2D"]
+position = Vector2( 160.512, 4.48987 )
 shape = SubResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="background/sabbiamobile"]
+visible = false
+position = Vector2( 131, 0 )
+texture = ExtResource( 4 )
+
+[node name="Sprite3" type="Sprite" parent="background/sabbiamobile"]
+visible = false
+position = Vector2( -112, 0 )
+texture = ExtResource( 4 )
+
+[node name="Sprite2" type="Sprite" parent="background/sabbiamobile"]
+visible = false
+position = Vector2( 431, 0 )
+texture = ExtResource( 4 )
+
+[node name="bufera" parent="background" instance=ExtResource( 5 )]
+position = Vector2( 3676.54, -42.7148 )
 
 [node name="player" parent="." groups=[
 "camera_shaker",
 ] instance=ExtResource( 1 )]
-position = Vector2( 1270.87, 530.597 )
+position = Vector2( 342.53, 446.964 )
 run_speed = 300
 
-[node name="bufera" parent="." instance=ExtResource( 5 )]
-position = Vector2( 4262.16, 790.423 )
-rotation = -0.0715585
+[node name="foreground" type="Node2D" parent="."]
+position = Vector2( -2098.69, 0 )
+
+[node name="bufera" parent="foreground" instance=ExtResource( 5 )]
+position = Vector2( 5855, 0 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
