@@ -1,10 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://doc.gd" type="Script" id=1]
 [ext_resource path="res://animations/doc.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://Camera2D.tscn" type="PackedScene" id=3]
-[ext_resource path="res://asset/env/Sand_particles.png" type="Texture" id=4]
-[ext_resource path="res://player_sand_material.tres" type="Material" id=5]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 46.1711
@@ -41,6 +39,7 @@ shape = SubResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 2 )
 animation = "Idle"
+frame = 30
 speed_scale = 8.0
 playing = true
 
@@ -49,16 +48,6 @@ wait_time = 3.0
 one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-
-[node name="piedi" type="Node2D" parent="."]
-position = Vector2( 3, 62 )
-
-[node name="Particles2D" type="Particles2D" parent="piedi"]
-scale = Vector2( 0.02, 0.02 )
-amount = 20
-visibility_rect = Rect2( 0, -100, 200, 200 )
-process_material = ExtResource( 5 )
-texture = ExtResource( 4 )
 [connection signal="camera_shake_requested" from="." to="Camera2D" method="_on_player_camera_shake_requested"]
 [connection signal="camera_shake_stop" from="." to="Camera2D" method="_on_player_camera_shake_stop"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

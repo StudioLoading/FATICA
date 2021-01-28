@@ -13,8 +13,6 @@ width = 1024
 curve = SubResource( 1 )
 
 [sub_resource type="ParticlesMaterial" id=3]
-emission_shape = 2
-emission_box_extents = Vector3( 2000, 1, 1 )
 flag_disable_z = true
 direction = Vector3( 0, 1, 0 )
 spread = 60.0
@@ -37,6 +35,8 @@ extents = Vector2( 1177.89, 792.446 )
 [node name="Node2D" type="Node2D" groups=[
 "tempesta",
 ]]
+position = Vector2( 2.51989, 294.822 )
+rotation = 0.595157
 
 [node name="Particles2D" type="Particles2D" parent="."]
 position = Vector2( 582.083, -5.03973 )

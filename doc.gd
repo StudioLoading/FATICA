@@ -11,7 +11,7 @@ var relative_velocity = Vector2()
 var jumping = false
 var energy = 100
 
-enum STATES {WALKING, JUMPING, SABBIEMOBILI, RAFFICA, MORTO}
+enum STATES {WALKING, JUMPING, SABBIEMOBILI, RAFFICA, MORTO, TEMPESTA}
 onready var state = STATES.WALKING
 
 onready var fx_step = preload("res://asset/audio/fx/step.ogg")
@@ -31,7 +31,7 @@ func get_input():
 	if jump and is_on_floor():
 		jumping = true
 		velocity.y = jump_speed
-	if jumping and !is_on_floor():
+	if jumping and !is_on_floor() and state != STATES.TEMPESTA:
 		state = STATES.JUMPING
 	if jump and state == STATES.SABBIEMOBILI:
 		velocity.y = jump_speed
@@ -47,37 +47,51 @@ func _physics_process(delta):
 	get_node("../GUI/energyLabel").text = str(energy)
 	
 	
+	if velocity.x != 0 and state != STATES.TEMPESTA:
+		$AnimatedSprite.flip_h = velocity.x < 0	
+	
 	velocity.y += gravity * delta
 	
-	#if velocity.x != 0 and (
-	if right or left:
+	if right or left and is_on_floor() and state != STATES.TEMPESTA:
 		$AnimatedSprite.play("Run")
-	if right:
+		
+	elif right or left and is_on_floor() and state == STATES.TEMPESTA:
+		$AnimatedSprite.play("Protectwalk")
+		
+	if right and state == STATES.TEMPESTA:
 		$AnimatedSprite.flip_h = false
-	if left:
+	if left and state == STATES.TEMPESTA:
 		$AnimatedSprite.flip_h =true
-#		if relative_velocity == Vector2.ZERO or left:
-#			$AnimatedSprite.flip_h = velocity.x < 0
+	
+	if relative_velocity != Vector2.ZERO and state != STATES.TEMPESTA:
+		$AnimatedSprite.flip_h = velocity.x < 0
+	
 
 	if !left and !right:
 		$AnimatedSprite.play("Idle")
 	
+	if !left and !right and state == STATES.TEMPESTA:
+		$AnimatedSprite.play("Protectwalk")
+	
+	
+		
 	if jumping and is_on_floor() and state == STATES.JUMPING :
+		$AnimatedSprite.play("Jump")
 		jumping = false
-		state = STATES.WALKING
 		$AudioStreamPlayer.stream = fx_step
 		$AudioStreamPlayer.play()
 	if state == STATES.SABBIEMOBILI:
 		energy -= 0.15
 	velocity = move_and_slide(velocity, Vector2(0, -1))
-	pass
+	
+	print('state',state)
 
 func _process(delta):
 	if energy < 0 and state != STATES.MORTO:
 		state = STATES.MORTO
 		$timerGameOver.start()
 		energy = 0
-		
+	
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group('player'):
@@ -117,11 +131,14 @@ func _on_timerGameOver_timeout():
 
 func _on_Area2D_area_entered(area):
 	if area.is_in_group('a_tempesta'):
+		print('a_tempestaa_tempestaa_tempestaa_tempesta')
 		relative_velocity = Vector2(-150, 0)
-	pass # Replace with function body.
+		state = STATES.TEMPESTA
+	
 
 
 func _on_Area2D_area_exited(area):
 	if area.is_in_group('a_tempesta'):
 		relative_velocity = Vector2.ZERO
-	pass # Replace with function body.
+		state = STATES.WALKING
+	
