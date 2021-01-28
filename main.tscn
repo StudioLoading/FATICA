@@ -20,7 +20,7 @@ a = Vector2( 743.304, 744.002 )
 b = Vector2( 1388.97, 742.278 )
 
 [sub_resource type="SegmentShape2D" id=7]
-a = Vector2( 829.527, 660.124 )
+a = Vector2( 782.952, 664.938 )
 b = Vector2( 20000, 637.508 )
 
 [sub_resource type="SegmentShape2D" id=11]
@@ -28,8 +28,8 @@ a = Vector2( 462.941, 794.017 )
 b = Vector2( 338.892, 668.55 )
 
 [sub_resource type="SegmentShape2D" id=12]
-a = Vector2( 1095.08, 784.948 )
-b = Vector2( 1157.06, 659.667 )
+a = Vector2( 1110.97, 782.32 )
+b = Vector2( 1108.82, 665.36 )
 
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 340.916, 86.7072 )
@@ -117,33 +117,6 @@ shape = SubResource( 11 )
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="background/suolo"]
 shape = SubResource( 12 )
 
-[node name="sabbiamobile" type="Node2D" parent="background"]
-position = Vector2( 587.662, 768.572 )
-
-[node name="Area2D" type="Area2D" parent="background/sabbiamobile" groups=[
-"enemy",
-]]
-position = Vector2( 0, 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="background/sabbiamobile/Area2D"]
-position = Vector2( 160.512, 4.48987 )
-shape = SubResource( 8 )
-
-[node name="Sprite" type="Sprite" parent="background/sabbiamobile"]
-visible = false
-position = Vector2( 131, 0 )
-texture = ExtResource( 4 )
-
-[node name="Sprite3" type="Sprite" parent="background/sabbiamobile"]
-visible = false
-position = Vector2( -112, 0 )
-texture = ExtResource( 4 )
-
-[node name="Sprite2" type="Sprite" parent="background/sabbiamobile"]
-visible = false
-position = Vector2( 431, 0 )
-texture = ExtResource( 4 )
-
 [node name="bufera" parent="background" instance=ExtResource( 5 )]
 position = Vector2( 3676.54, -42.7148 )
 
@@ -158,6 +131,31 @@ position = Vector2( -2098.69, 0 )
 
 [node name="bufera" parent="foreground" instance=ExtResource( 5 )]
 position = Vector2( 5855, 0 )
+
+[node name="sabbiamobile" type="Node2D" parent="foreground"]
+visible = false
+position = Vector2( 2758.19, 717.47 )
+
+[node name="Area2D" type="Area2D" parent="foreground/sabbiamobile" groups=[
+"enemy",
+]]
+position = Vector2( 0, 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="foreground/sabbiamobile/Area2D"]
+position = Vector2( 160.512, 4.48987 )
+shape = SubResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="foreground/sabbiamobile"]
+position = Vector2( 131, 0 )
+texture = ExtResource( 4 )
+
+[node name="Sprite3" type="Sprite" parent="foreground/sabbiamobile"]
+position = Vector2( -112, 0 )
+texture = ExtResource( 4 )
+
+[node name="Sprite2" type="Sprite" parent="foreground/sabbiamobile"]
+position = Vector2( 431, 0 )
+texture = ExtResource( 4 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
@@ -194,5 +192,5 @@ text = "600"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="body_entered" from="background/sabbiamobile/Area2D" to="player" method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="background/sabbiamobile/Area2D" to="player" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="foreground/sabbiamobile/Area2D" to="player" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="foreground/sabbiamobile/Area2D" to="player" method="_on_Area2D_body_exited"]
