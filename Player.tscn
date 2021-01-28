@@ -24,7 +24,7 @@ __meta__ = {
 scale = Vector2( 0.2, 0.2 )
 frames = ExtResource( 2 )
 animation = "Idle"
-frame = 3
+frame = 2
 speed_scale = 8.0
 playing = true
 
@@ -49,5 +49,7 @@ wait_time = 3.0
 one_shot = true
 [connection signal="camera_shake_requested" from="." to="Camera2D" method="_on_player_camera_shake_requested"]
 [connection signal="camera_shake_stop" from="." to="Camera2D" method="_on_player_camera_shake_stop"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
 [connection signal="area_shape_entered" from="Area2D" to="." method="_on_Area2D_area_shape_entered"]
 [connection signal="timeout" from="timerGameOver" to="." method="_on_timerGameOver_timeout"]
