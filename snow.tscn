@@ -8,38 +8,39 @@ max_value = 200.0
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.322785, 87.2727 ), 0.0, 0.0, 0, 0, Vector2( 0.556962, -40 ), 0.0, 0.0, 0, 0, Vector2( 0.734177, 174.545 ), 0.0, 0.0, 0, 0, Vector2( 0.867089, -83.6364 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 
 [sub_resource type="CurveTexture" id=2]
+width = 1024
 curve = SubResource( 1 )
 
 [sub_resource type="ParticlesMaterial" id=3]
 emission_shape = 2
 emission_box_extents = Vector3( 2000, 1, 1 )
 flag_disable_z = true
-direction = Vector3( -1, 1, 0 )
+direction = Vector3( 0, 1, 0 )
 spread = 60.0
 flatness = 1.0
-gravity = Vector3( -500, 800, 0 )
-initial_velocity = 1600.0
+gravity = Vector3( 0, 300, 0 )
+initial_velocity = 3000.0
 initial_velocity_random = 1.0
-angular_velocity = 4.05
-angular_velocity_random = 1.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 tangential_accel_curve = SubResource( 2 )
-damping = 9.56
+damping = 3.58
 damping_random = 1.0
-angle = 36.1
 angle_random = 1.0
-scale = 0.02
-scale_random = 0.04
+scale = 0.01
+scale_random = 0.02
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" groups=[
+"tempesta",
+]]
 
 [node name="Particles2D" type="Particles2D" parent="."]
 position = Vector2( 582.083, -5.03973 )
-amount = 1600
+rotation = 1.5708
+amount = 30000
 lifetime = 4.7
-speed_scale = 0.3
+speed_scale = 1.86
 randomness = 1.0
-visibility_rect = Rect2( -2000, -100, 4000, 200 )
+visibility_rect = Rect2( -2000, -100, 4000, 1200 )
 process_material = SubResource( 3 )
 texture = ExtResource( 1 )

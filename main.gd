@@ -10,6 +10,8 @@ extends Node2D
 func _ready():
 	$player/Camera2D.enabled = true
 	$VacTimer.start()
+	for t in get_tree().get_nodes_in_group('tempesta'):
+		t.set_deferred('emitting', false)
 
 
 
