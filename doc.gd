@@ -17,6 +17,7 @@ onready var state = STATES.JUMPING
 
 onready var fx_step = preload("res://asset/audio/fx/step.ogg")
 onready var fx_grunt = preload("res://asset/audio/fx/grunt_woman2.ogg")
+onready var fx_heal = preload("res://asset/audio/fx/heal.ogg")
 
 signal camera_shake_requested
 signal camera_shake_stop
@@ -131,6 +132,8 @@ func _on_Area2D_area_entered(area):
 		$AudioStreamPlayer.stream = fx_grunt
 		$AudioStreamPlayer.play()
 	if area.is_in_group('oasi'):
+		$AudioStreamPlayer.stream = fx_heal
+		$AudioStreamPlayer.play()
 		healing = true
 	
 
@@ -144,5 +147,6 @@ func _on_Area2D_area_exited(area):
 		yield($AudioStreamPlayer, "finished")
 		$AudioStreamPlayer.play()
 	if area.is_in_group('oasi'):
+		$AudioStreamPlayer.stop()
 		healing = false
 	
