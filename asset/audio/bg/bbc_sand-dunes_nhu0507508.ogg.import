@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bbc_sand-dunes_nhu0507508.ogg-62dd78e4a6a992dddc74e2fcdaf41836.oggstr"
+
+[deps]
+
+source_file="res://asset/audio/bg/bbc_sand-dunes_nhu0507508.ogg"
+dest_files=[ "res://.import/bbc_sand-dunes_nhu0507508.ogg-62dd78e4a6a992dddc74e2fcdaf41836.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

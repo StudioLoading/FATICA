@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bbc_footsteps-_nhu1071754.ogg-d01553bb035d83098d408c5ffe873a99.oggstr"
+
+[deps]
+
+source_file="res://asset/audio/fx/bbc_footsteps-_nhu1071754.ogg"
+dest_files=[ "res://.import/bbc_footsteps-_nhu1071754.ogg-d01553bb035d83098d408c5ffe873a99.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
