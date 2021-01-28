@@ -5,22 +5,25 @@ export (int) var jump_speed = -400
 export (int) var jump_speed_default = -400
 export (int) var gravity = 1200
 export (int) var gravity_default = 1200
+export (int) var energy_max = 100
 
 var velocity = Vector2()
 var relative_velocity = Vector2()
-var jumping = false
-var energy = 100
+var jumping = true
+var energy = energy_max
 
 enum STATES {WALKING, JUMPING, SABBIEMOBILI, RAFFICA, MORTO, TEMPESTA}
-onready var state = STATES.WALKING
+onready var state = STATES.JUMPING
 
 onready var fx_step = preload("res://asset/audio/fx/step.ogg")
+onready var fx_grunt = preload("res://asset/audio/fx/grunt_woman2.ogg")
 
 signal camera_shake_requested
 signal camera_shake_stop
 
 var left
 var right
+var healing
 
 func get_input():
 	velocity.x = relative_velocity.x
@@ -73,7 +76,10 @@ func _physics_process(delta):
 
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	
-	print('state',state)
+	if healing and energy<energy_max:
+		energy += 0.1
+	
+	#print('state',state)
 
 func _process(delta):
 	if energy < 0 and state != STATES.MORTO:
@@ -100,6 +106,10 @@ func _on_Area2D_body_exited(body):
 		print('Fuori la sabbia mobile')
 		gravity = gravity_default
 		jump_speed = jump_speed_default
+		$AudioStreamPlayer.stream = fx_grunt
+		$AudioStreamPlayer.play()
+		yield($AudioStreamPlayer, "finished")
+		$AudioStreamPlayer.play()
 	pass # Replace with function body.
 
 
@@ -117,9 +127,13 @@ func _on_timerGameOver_timeout():
 
 func _on_Area2D_area_entered(area):
 	if area.is_in_group('a_tempesta'):
-		print('a_tempestaa_tempestaa_tempestaa_tempesta')
+		#print('a_tempestaa_tempestaa_tempestaa_tempesta')
 		relative_velocity = Vector2(-150, 0)
 		state = STATES.TEMPESTA
+		$AudioStreamPlayer.stream = fx_grunt
+		$AudioStreamPlayer.play()
+	if area.is_in_group('oasi'):
+		healing = true
 	
 
 
@@ -127,4 +141,10 @@ func _on_Area2D_area_exited(area):
 	if area.is_in_group('a_tempesta'):
 		relative_velocity = Vector2.ZERO
 		state = STATES.WALKING
+		$AudioStreamPlayer.stream = fx_grunt
+		$AudioStreamPlayer.play()
+		yield($AudioStreamPlayer, "finished")
+		$AudioStreamPlayer.play()
+	if area.is_in_group('oasi'):
+		healing = false
 	

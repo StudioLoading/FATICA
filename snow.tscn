@@ -4,7 +4,7 @@
 [ext_resource path="res://asset/audio/bg/tempesta.ogg" type="AudioStream" id=2]
 [ext_resource path="res://sand_material.tres" type="Material" id=3]
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1177.89, 792.446 )
 
 [node name="Node2D" type="Node2D" groups=[
@@ -29,7 +29,17 @@ position = Vector2( 0, 300 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Particles2D/Area2D"]
 position = Vector2( -2.573, 514.274 )
-shape = SubResource( 4 )
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="Particles2D/Area2D"]
+margin_left = -929.0
+margin_top = -309.0
+margin_right = 1175.0
+margin_bottom = 1264.0
+color = Color( 0, 0, 0, 0.286275 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 0, 300 )
