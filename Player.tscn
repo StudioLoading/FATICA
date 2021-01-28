@@ -5,7 +5,7 @@
 [ext_resource path="res://Camera2D.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 27.9235
+radius = 46.1711
 height = 5.68642
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -14,16 +14,23 @@ extents = Vector2( 16.5, 33 )
 [node name="player" type="KinematicBody2D" groups=[
 "player",
 ]]
+position = Vector2( -2.99663, 1.87289 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="a" type="AnimatedSprite" parent="."]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.2, 0.2 )
 frames = ExtResource( 2 )
+animation = "Idle"
+frame = 3
+speed_scale = 8.0
+playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -7 )
+position = Vector2( 1.12373, 1.24069 )
+scale = Vector2( 0.642, 1 )
 shape = SubResource( 1 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 3 )]

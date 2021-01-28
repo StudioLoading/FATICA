@@ -40,7 +40,17 @@ func _physics_process(delta):
 		return
 	get_input()
 	get_node("../GUI/energyLabel").text = str(energy)
+	
+	
 	velocity.y += gravity * delta
+	
+	if velocity.x != 0 :
+		$AnimatedSprite.play("Run")
+		$AnimatedSprite.flip_h = velocity.x < 0	
+		
+	if velocity.x == 0 :
+		$AnimatedSprite.play("Idle")
+	
 	if jumping and is_on_floor():
 		jumping = false
 	if state == STATES.SABBIEMOBILI:

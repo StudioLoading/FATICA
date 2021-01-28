@@ -7,9 +7,9 @@
 [ext_resource path="res://snow.tscn" type="PackedScene" id=5]
 [ext_resource path="res://asset/audio/bg/desert.ogg" type="AudioStream" id=6]
 [ext_resource path="res://asset/xolonium/Xolonium-Regular.ttf" type="DynamicFontData" id=7]
-[ext_resource path="res://asset/env/parallax/bluesky.png" type="Texture" id=8]
-[ext_resource path="res://asset/env/parallax/farground_sand.png" type="Texture" id=9]
-[ext_resource path="res://asset/env/parallax/foreground_sand.png" type="Texture" id=10]
+[ext_resource path="res://asset/Desert Parallax by Cryptogene/4 Layer4.png" type="Texture" id=8]
+[ext_resource path="res://asset/Desert Parallax by Cryptogene/6 Sun.png" type="Texture" id=9]
+[ext_resource path="res://asset/Desert Parallax by Cryptogene/Desert_sig.png" type="Texture" id=10]
 
 [sub_resource type="SegmentShape2D" id=1]
 a = Vector2( -3.0689, 647.383 )
@@ -35,18 +35,18 @@ b = Vector2( 1033.65, 636.963 )
 a = Vector2( 373.26, 552.659 )
 b = Vector2( 254.693, 553.5 )
 
-[sub_resource type="SegmentShape2D" id=10]
+[sub_resource type="SegmentShape2D" id=7]
 a = Vector2( 980.218, 637.508 )
 b = Vector2( 20000, 637.508 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 150.281, 105.571 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=9]
 size = 30
 font_data = ExtResource( 7 )
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=10]
 size = 30
 font_data = ExtResource( 7 )
 
@@ -63,27 +63,32 @@ motion_scale = Vector2( 0.2, 1 )
 motion_mirroring = Vector2( 1323, 0 )
 
 [node name="Sprite" type="Sprite" parent="bg_parallax/ParallaxBackground/sky"]
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 centered = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="bg_parallax/ParallaxBackground"]
+position = Vector2( 0, 184.084 )
 motion_scale = Vector2( 0.5, 1 )
 motion_mirroring = Vector2( 1516, 0 )
 
 [node name="Sprite" type="Sprite" parent="bg_parallax/ParallaxBackground/ParallaxLayer"]
-texture = ExtResource( 9 )
+position = Vector2( -17.9594, -262.656 )
+texture = ExtResource( 8 )
 centered = false
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="bg_parallax/ParallaxBackground"]
+position = Vector2( -92.0419, 431.025 )
 motion_scale = Vector2( 0.9, 1 )
 motion_offset = Vector2( 400, 0 )
 motion_mirroring = Vector2( 1340, 0 )
 
 [node name="Sprite" type="Sprite" parent="bg_parallax/ParallaxBackground/ParallaxLayer2"]
-texture = ExtResource( 10 )
-centered = false
+position = Vector2( 635.314, -168.369 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 9 )
 
 [node name="ground" type="ParallaxLayer" parent="bg_parallax/ParallaxBackground"]
+position = Vector2( 38.1637, 139.185 )
 motion_mirroring = Vector2( 1337, 0 )
 
 [node name="ground" type="Sprite" parent="bg_parallax/ParallaxBackground/ground"]
@@ -91,6 +96,7 @@ position = Vector2( 622.06, 420.419 )
 texture = ExtResource( 2 )
 
 [node name="background" type="Node2D" parent="."]
+position = Vector2( 71.8374, 44.8984 )
 
 [node name="suolo" type="StaticBody2D" parent="background"]
 position = Vector2( 2.66974, -83.6064 )
@@ -119,7 +125,7 @@ position = Vector2( -51, 26 )
 shape = SubResource( 6 )
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="background/suolo"]
-shape = SubResource( 10 )
+shape = SubResource( 7 )
 
 [node name="fondosabbia" type="CollisionPolygon2D" parent="background/suolo"]
 position = Vector2( 583.992, 723.178 )
@@ -136,7 +142,7 @@ texture = ExtResource( 4 )
 position = Vector2( 0, 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="background/sabbiamobile/Area2D"]
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="bufera" parent="background" instance=ExtResource( 5 )]
 position = Vector2( 6000, 0 )
@@ -144,7 +150,7 @@ position = Vector2( 6000, 0 )
 [node name="player" parent="." groups=[
 "camera_shaker",
 ] instance=ExtResource( 1 )]
-position = Vector2( 105.511, 250.492 )
+position = Vector2( 114.491, 499.678 )
 run_speed = 300
 
 [node name="foreground" type="Node2D" parent="."]
@@ -169,7 +175,7 @@ margin_left = 832.914
 margin_top = 38.2118
 margin_right = 895.914
 margin_bottom = 115.212
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "600
 "
@@ -183,7 +189,7 @@ margin_left = 26.9859
 margin_top = 31.7478
 margin_right = 89.9859
 margin_bottom = 68.7478
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 10 )
 text = "600"
 __meta__ = {
 "_edit_use_anchors_": false
