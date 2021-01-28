@@ -32,7 +32,7 @@ scale = 0.01
 scale_random = 0.02
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 1177.89, 782.247 )
+extents = Vector2( 1177.89, 792.446 )
 
 [node name="Node2D" type="Node2D" groups=[
 "tempesta",
@@ -55,7 +55,7 @@ texture = ExtResource( 1 )
 position = Vector2( 0, 300 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Particles2D/Area2D"]
-position = Vector2( 3.77737, 466.274 )
+position = Vector2( -2.573, 514.274 )
 shape = SubResource( 4 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
