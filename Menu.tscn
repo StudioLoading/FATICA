@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Menu.gd" type="Script" id=1]
 [ext_resource path="res://asset/env/desert.png" type="Texture" id=2]
+[ext_resource path="res://asset/xolonium/Xolonium-Bold.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 3 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -46,5 +50,19 @@ text = "Credits"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="controlli" type="Label" parent="Control"]
+margin_left = 52.3251
+margin_top = 266.382
+margin_right = 330.325
+margin_bottom = 355.382
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = "CONTROLS:
+
+LEFT ARROW      MOVE LEFT
+RIGHT ARROW    MOVE RIGHT
+SPACEBAR          JUMP"
 [connection signal="pressed" from="Control/Start Game" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Control/Credits" to="." method="_on_Credits_pressed"]

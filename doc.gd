@@ -108,8 +108,6 @@ func _on_Area2D_body_exited(body):
 		jump_speed = jump_speed_default
 		$AudioStreamPlayer.stream = fx_grunt
 		$AudioStreamPlayer.play()
-		yield($AudioStreamPlayer, "finished")
-		$AudioStreamPlayer.play()
 	pass # Replace with function body.
 
 

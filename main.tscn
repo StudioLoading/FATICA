@@ -16,13 +16,19 @@
 a = Vector2( -16.0657, 664.446 )
 b = Vector2( 386.083, 663.944 )
 
-[sub_resource type="SegmentShape2D" id=2]
-a = Vector2( 743.304, 744.002 )
-b = Vector2( 1388.97, 742.278 )
-
 [sub_resource type="SegmentShape2D" id=3]
 a = Vector2( 782.952, 665 )
 b = Vector2( 20000, 665 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 114.148, 891.03 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 372.422, 108.428 )
+
+[sub_resource type="SegmentShape2D" id=2]
+a = Vector2( 743.304, 744.002 )
+b = Vector2( 1388.97, 742.278 )
 
 [sub_resource type="SegmentShape2D" id=4]
 a = Vector2( 462.941, 794.017 )
@@ -31,12 +37,6 @@ b = Vector2( 338.892, 668.55 )
 [sub_resource type="SegmentShape2D" id=5]
 a = Vector2( 1069.12, 797.106 )
 b = Vector2( 1109.44, 664.441 )
-
-[sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 114.148, 891.03 )
-
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 340.916, 86.7072 )
 
 [sub_resource type="DynamicFont" id=7]
 size = 30
@@ -99,21 +99,9 @@ position = Vector2( 2.66974, -123.606 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="background/suolo"]
 shape = SubResource( 1 )
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="background/suolo"]
-position = Vector2( -277.966, 39.7749 )
-shape = SubResource( 2 )
-
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="background/suolo"]
 position = Vector2( 326, 0 )
 shape = SubResource( 3 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="background/suolo"]
-position = Vector2( 45.6983, -4.49493 )
-shape = SubResource( 4 )
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="background/suolo"]
-position = Vector2( 0.749146, 0 )
-shape = SubResource( 5 )
 
 [node name="bufera" parent="background" instance=ExtResource( 5 )]
 position = Vector2( 3670, 0 )
@@ -147,15 +135,6 @@ position = Vector2( 3670, 0 )
 [node name="sabbiamobile" type="Node2D" parent="foreground"]
 position = Vector2( 580.142, 643.579 )
 
-[node name="Area2D" type="Area2D" parent="foreground/sabbiamobile" groups=[
-"enemy",
-]]
-position = Vector2( 0, 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="foreground/sabbiamobile/Area2D"]
-position = Vector2( 160.512, 4.48987 )
-shape = SubResource( 6 )
-
 [node name="Sprite" type="Sprite" parent="foreground/sabbiamobile"]
 position = Vector2( 131, 0 )
 texture = ExtResource( 4 )
@@ -167,6 +146,29 @@ texture = ExtResource( 4 )
 [node name="Sprite2" type="Sprite" parent="foreground/sabbiamobile"]
 position = Vector2( 431, 0 )
 texture = ExtResource( 4 )
+
+[node name="Area2D" type="Area2D" parent="foreground/sabbiamobile" groups=[
+"enemy",
+]]
+position = Vector2( 0, 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="foreground/sabbiamobile/Area2D"]
+position = Vector2( 179.582, 2.37097 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="foreground/sabbiamobile"]
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="foreground/sabbiamobile/StaticBody2D"]
+position = Vector2( -855.438, -727.411 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="foreground/sabbiamobile/StaticBody2D"]
+position = Vector2( -531.774, -771.681 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="foreground/sabbiamobile/StaticBody2D"]
+position = Vector2( -576.723, -767.186 )
+shape = SubResource( 5 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
