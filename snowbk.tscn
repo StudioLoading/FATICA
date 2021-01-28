@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://asset/env/Sand_particles.png" type="Texture" id=1]
+[ext_resource path="res://sand_material.tres" type="Material" id=3]
+
+[node name="Node2D" type="Node2D" groups=[
+"tempesta",
+]]
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( 582.083, -5.03973 )
+rotation = 1.5708
+amount = 20000
+lifetime = 4.7
+speed_scale = 1.86
+randomness = 1.0
+visibility_rect = Rect2( -2000, -100, 4000, 1200 )
+process_material = ExtResource( 3 )
+texture = ExtResource( 1 )

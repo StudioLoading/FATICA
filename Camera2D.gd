@@ -9,7 +9,7 @@ export var shake : = false setget set_shake
 
 var enabled : = false
 
-export onready var initial_camera_offset = Vector2(0, -48)
+export onready var initial_camera_offset = Vector2(0, 0)
 
 
 func _ready() -> void:
@@ -51,5 +51,6 @@ func _on_player_camera_shake_requested():
 
 
 func _on_player_camera_shake_stop():
-	self.shake = false
+	self.set_shake(false)
+	
 	pass # Replace with function body.

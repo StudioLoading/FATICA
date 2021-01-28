@@ -12,12 +12,16 @@ var relative_velocity = Vector2()
 var jumping = true
 var energy = energy_max
 
-enum STATES {WALKING, JUMPING, SABBIEMOBILI, RAFFICA, MORTO, TEMPESTA}
+var idle_anim = ["Idle", "Speak"]
+var idle
+
+enum STATES {WALKING, JUMPING, SABBIEMOBILI, RAFFICA, MORTO, TEMPESTA, BANDITI, LOCKED}
 onready var state = STATES.JUMPING
 
 onready var fx_step = preload("res://asset/audio/fx/step.ogg")
 onready var fx_grunt = preload("res://asset/audio/fx/grunt_woman2.ogg")
 onready var fx_heal = preload("res://asset/audio/fx/heal.ogg")
+onready var fx_insults= preload("res://asset/audio/voci/insults.ogg")
 
 signal camera_shake_requested
 signal camera_shake_stop
@@ -32,16 +36,16 @@ func get_input():
 	left = Input.is_action_pressed('ui_left')
 	var jump = Input.is_action_just_pressed('ui_select')
 
-	if jump and is_on_floor():
+	if jump and is_on_floor() and state != STATES.LOCKED:
 		jumping = true
 		velocity.y = jump_speed
 	elif jumping and !is_on_floor() and state != STATES.TEMPESTA and state != STATES.SABBIEMOBILI:
 		state = STATES.JUMPING
-	if jump and state == STATES.SABBIEMOBILI:
+	if jump and state == STATES.SABBIEMOBILI :
 		velocity.y = jump_speed
-	if right:
+	if right and state != STATES.LOCKED:
 		velocity.x += run_speed
-	if left:
+	if left and state != STATES.LOCKED:
 		velocity.x -= run_speed
 
 func _physics_process(delta):
@@ -56,15 +60,28 @@ func _physics_process(delta):
 	
 	velocity.y += gravity * delta
 	
-	if state != STATES.SABBIEMOBILI:
+	if state == STATES.LOCKED :
+			print('state',state)
+			$AnimatedSprite.play("Walk")
+			velocity.x += 50
+
+	
+		
+			
+	
+	if state != STATES.SABBIEMOBILI and state != STATES.LOCKED:
 		if (right or left) and is_on_floor() and state != STATES.TEMPESTA:
 			$AnimatedSprite.play("Run")
 		
-		elif !left and !right and state != STATES.TEMPESTA and is_on_floor():
+		elif !left and !right and state != STATES.TEMPESTA and state != STATES.BANDITI and is_on_floor():
 			$AnimatedSprite.play("Idle")
+			#$AnimatedSprite.animation = idle_anim[randi() % idle_anim.size()]
+		
 		
 		if state == STATES.TEMPESTA and $AnimatedSprite.animation != 'ProtectWalk':
 			$AnimatedSprite.play("Protectwalk")
+		
+			
 
 	if jumping and is_on_floor() and state == STATES.JUMPING :
 		$AnimatedSprite.play("Jump")
@@ -80,7 +97,7 @@ func _physics_process(delta):
 	if healing and energy<energy_max:
 		energy += 0.1
 	
-	#print('state',state)
+	
 
 func _process(delta):
 	if energy < 0 and state != STATES.MORTO:
@@ -97,7 +114,7 @@ func _on_Area2D_body_entered(body):
 		print('Dentro la sabbia mobile')
 		emit_signal("camera_shake_requested")
 		jump_speed = -300
-	pass # Replace with function body.
+	
 
 
 func _on_Area2D_body_exited(body):
@@ -135,6 +152,20 @@ func _on_Area2D_area_entered(area):
 		$AudioStreamPlayer.stream = fx_heal
 		$AudioStreamPlayer.play()
 		healing = true
+	if area.is_in_group('banditcontract'):
+		#$Camera2D.enabled = true
+		state = STATES.LOCKED
+		$AnimatedSprite.play("Walk")
+		print('banditcontract')
+	if area.is_in_group('ParlaBanditi'):
+		#$Camera2D.enabled = true
+		state = STATES.BANDITI
+		print('state',state)
+		$AnimatedSprite.play("Wearmask")
+		velocity.x += 0
+		$AudioStreamPlayer.stream = fx_insults
+		$AudioStreamPlayer.play()
+		
 	
 
 
@@ -149,4 +180,7 @@ func _on_Area2D_area_exited(area):
 	if area.is_in_group('oasi'):
 		$AudioStreamPlayer.stop()
 		healing = false
+	if area.is_in_group('banditcontract'):
+		state = STATES.WALKING
+		relative_velocity = Vector2.ZERO
 	
