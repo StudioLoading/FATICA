@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tiles.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://asset/Desert Parallax by Cryptogene/4 Layer4.png" type="Texture" id=8]
 [ext_resource path="res://asset/Desert Parallax by Cryptogene/6 Sun.png" type="Texture" id=9]
 [ext_resource path="res://asset/Desert Parallax by Cryptogene/Desert_sig.png" type="Texture" id=10]
+[ext_resource path="res://asset/Tiles/Tilespng.png" type="Texture" id=11]
 [ext_resource path="res://Banditi.tscn" type="PackedScene" id=12]
 [ext_resource path="res://water/sabbiemobili/sabbiemobili.tscn" type="PackedScene" id=13]
 [ext_resource path="res://snowbk.tscn" type="PackedScene" id=14]
@@ -27,14 +28,14 @@ a = Vector2( -16.0657, 664.446 )
 b = Vector2( 386.083, 663.944 )
 
 [sub_resource type="SegmentShape2D" id=4]
-a = Vector2( 782.952, 665 )
+a = Vector2( 831.299, 665.854 )
 b = Vector2( 20000, 665 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 278.215, 187.971 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 372.422, 108.428 )
+extents = Vector2( 538.71, 90.7171 )
 
 [sub_resource type="SegmentShape2D" id=7]
 a = Vector2( 743.304, 744.002 )
@@ -46,7 +47,7 @@ b = Vector2( 338.892, 668.55 )
 
 [sub_resource type="SegmentShape2D" id=9]
 a = Vector2( 1069.12, 797.106 )
-b = Vector2( 1098.08, 666.82 )
+b = Vector2( 1146.61, 668.035 )
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 304.414, 138.138 )
@@ -153,13 +154,18 @@ position = Vector2( 6000, 0 )
 position = Vector2( 4191.12, 687.417 )
 shape = SubResource( 5 )
 
+[node name="WaterSineAndTexture2" parent="oasi" instance=ExtResource( 4 )]
+modulate = Color( 1, 1, 1, 0.705882 )
+position = Vector2( 3916.99, 465.301 )
+texture = ExtResource( 11 )
+
 [node name="buferabk" parent="." instance=ExtResource( 14 )]
 position = Vector2( 19303.4, 713.717 )
 
 [node name="player" parent="." groups=[
 "camera_shaker",
 ] instance=ExtResource( 1 )]
-position = Vector2( 193.766, 566.816 )
+position = Vector2( 12404.5, 366.804 )
 run_speed = 300
 
 [node name="bufera" parent="." instance=ExtResource( 5 )]
@@ -171,10 +177,6 @@ scale = Vector2( 13.234, 2.539 )
 
 [node name="duna1" parent="." instance=ExtResource( 15 )]
 position = Vector2( 7040.29, 384.122 )
-
-[node name="WaterSineAndTexture2" parent="." instance=ExtResource( 4 )]
-modulate = Color( 1, 1, 1, 0.705882 )
-position = Vector2( 9916.99, 465.301 )
 
 [node name="Tiles" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1, 0 )
@@ -211,61 +213,33 @@ shape = SubResource( 8 )
 position = Vector2( -578.137, -768.6 )
 shape = SubResource( 9 )
 
-[node name="foreground2" type="Node2D" parent="."]
-position = Vector2( 13313.6, -117.04 )
+[node name="sabbiamobile2" type="Node2D" parent="foreground"]
+position = Vector2( 14000, 444 )
+scale = Vector2( 2.36, 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="sabbiamobile" type="Node2D" parent="foreground2"]
-position = Vector2( 586.142, 739.579 )
-
-[node name="Area2D" type="Area2D" parent="foreground2/sabbiamobile" groups=[
+[node name="Area2D" type="Area2D" parent="foreground/sabbiamobile2" groups=[
 "enemy",
 ]]
 position = Vector2( 0, 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="foreground2/sabbiamobile/Area2D"]
-position = Vector2( 179.582, 2.37097 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="foreground/sabbiamobile2/Area2D"]
+position = Vector2( 175.087, 57.8083 )
 shape = SubResource( 6 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="foreground2/sabbiamobile"]
+[node name="StaticBody2D" type="StaticBody2D" parent="foreground/sabbiamobile2"]
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="foreground2/sabbiamobile/StaticBody2D"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="foreground/sabbiamobile2/StaticBody2D"]
 position = Vector2( -855.438, -727.411 )
 shape = SubResource( 7 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="foreground2/sabbiamobile/StaticBody2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="foreground/sabbiamobile2/StaticBody2D"]
 position = Vector2( -531.774, -771.681 )
 shape = SubResource( 8 )
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="foreground2/sabbiamobile/StaticBody2D"]
-position = Vector2( -578.137, -768.6 )
-shape = SubResource( 9 )
-
-[node name="foreground3" type="Node2D" parent="."]
-position = Vector2( 14061.1, -117.04 )
-
-[node name="sabbiamobile" type="Node2D" parent="foreground3"]
-position = Vector2( 586.142, 739.579 )
-
-[node name="Area2D" type="Area2D" parent="foreground3/sabbiamobile" groups=[
-"enemy",
-]]
-position = Vector2( 0, 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="foreground3/sabbiamobile/Area2D"]
-position = Vector2( 179.582, 2.37097 )
-shape = SubResource( 6 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="foreground3/sabbiamobile"]
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="foreground3/sabbiamobile/StaticBody2D"]
-position = Vector2( -855.438, -727.411 )
-shape = SubResource( 7 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="foreground3/sabbiamobile/StaticBody2D"]
-position = Vector2( -531.774, -771.681 )
-shape = SubResource( 8 )
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="foreground3/sabbiamobile/StaticBody2D"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="foreground/sabbiamobile2/StaticBody2D"]
 position = Vector2( -578.137, -768.6 )
 shape = SubResource( 9 )
 
@@ -340,7 +314,5 @@ scale = Vector2( 6.002, 2.539 )
 [connection signal="bubble" from="player" to="ContrattazioneBanditi/Node2DBanditi/Banditi" method="_on_player_bubble"]
 [connection signal="body_entered" from="foreground/sabbiamobile/Area2D" to="player" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="foreground/sabbiamobile/Area2D" to="player" method="_on_Area2D_body_exited"]
-[connection signal="body_entered" from="foreground2/sabbiamobile/Area2D" to="player" method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="foreground2/sabbiamobile/Area2D" to="player" method="_on_Area2D_body_exited"]
-[connection signal="body_entered" from="foreground3/sabbiamobile/Area2D" to="player" method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="foreground3/sabbiamobile/Area2D" to="player" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="foreground/sabbiamobile2/Area2D" to="player" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="foreground/sabbiamobile2/Area2D" to="player" method="_on_Area2D_body_exited"]
