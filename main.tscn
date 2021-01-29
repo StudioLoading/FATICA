@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tiles.tscn" type="PackedScene" id=2]
@@ -7,59 +7,58 @@
 [ext_resource path="res://snow.tscn" type="PackedScene" id=5]
 [ext_resource path="res://asset/audio/bg/desert.ogg" type="AudioStream" id=6]
 [ext_resource path="res://asset/xolonium/Xolonium-Regular.ttf" type="DynamicFontData" id=7]
-[ext_resource path="res://asset/Desert Parallax by Cryptogene/4 Layer4.png" type="Texture" id=8]
-[ext_resource path="res://asset/Desert Parallax by Cryptogene/6 Sun.png" type="Texture" id=9]
-[ext_resource path="res://asset/Desert Parallax by Cryptogene/Desert_sig.png" type="Texture" id=10]
+[ext_resource path="res://asset/Background e assets/Cielo sfumatura.png" type="Texture" id=8]
+[ext_resource path="res://asset/Background e assets/desktop.png" type="Texture" id=9]
+[ext_resource path="res://asset/Background e assets/Sole glow.png" type="Texture" id=10]
 [ext_resource path="res://asset/Tiles/Tilespng.png" type="Texture" id=11]
 [ext_resource path="res://Banditi.tscn" type="PackedScene" id=12]
 [ext_resource path="res://water/sabbiemobili/sabbiemobili.tscn" type="PackedScene" id=13]
 [ext_resource path="res://snowbk.tscn" type="PackedScene" id=14]
 [ext_resource path="res://duna1.tscn" type="PackedScene" id=15]
+[ext_resource path="res://asset/Background e assets/background-1.png" type="Texture" id=16]
+[ext_resource path="res://asset/Background e assets/background-2.png" type="Texture" id=17]
+[ext_resource path="res://asset/Background e assets/stelle loop.png" type="Texture" id=18]
+[ext_resource path="res://asset/Background e assets/Erbaccia.png" type="Texture" id=19]
+[ext_resource path="res://asset/Background e assets/Palm.png" type="Texture" id=20]
+[ext_resource path="res://asset/Background e assets/Cactus.png" type="Texture" id=21]
 
-[sub_resource type="Gradient" id=1]
-colors = PoolColorArray( 0.45098, 0.266667, 0.352941, 1, 0.65098, 0.356863, 0.380392, 1 )
-
-[sub_resource type="GradientTexture" id=2]
-gradient = SubResource( 1 )
-width = 1920
-
-[sub_resource type="SegmentShape2D" id=3]
+[sub_resource type="SegmentShape2D" id=1]
 a = Vector2( -16.0657, 664.446 )
 b = Vector2( 386.083, 663.944 )
 
-[sub_resource type="SegmentShape2D" id=4]
+[sub_resource type="SegmentShape2D" id=2]
 a = Vector2( 831.299, 665.854 )
 b = Vector2( 20000, 665 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 278.215, 187.971 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 538.71, 90.7171 )
 
-[sub_resource type="SegmentShape2D" id=7]
+[sub_resource type="SegmentShape2D" id=5]
 a = Vector2( 743.304, 744.002 )
 b = Vector2( 1388.97, 742.278 )
 
-[sub_resource type="SegmentShape2D" id=8]
+[sub_resource type="SegmentShape2D" id=6]
 a = Vector2( 462.941, 794.017 )
 b = Vector2( 338.892, 668.55 )
 
-[sub_resource type="SegmentShape2D" id=9]
+[sub_resource type="SegmentShape2D" id=7]
 a = Vector2( 1069.12, 797.106 )
 b = Vector2( 1146.61, 668.035 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 304.414, 138.138 )
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 51.9464, 122.071 )
 
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="DynamicFont" id=10]
 size = 30
 font_data = ExtResource( 7 )
 
-[sub_resource type="DynamicFont" id=13]
+[sub_resource type="DynamicFont" id=11]
 size = 30
 font_data = ExtResource( 7 )
 
@@ -72,39 +71,84 @@ script = ExtResource( 3 )
 [node name="ParallaxBackground" type="ParallaxBackground" parent="bg_parallax"]
 
 [node name="sky" type="ParallaxLayer" parent="bg_parallax/ParallaxBackground"]
-motion_scale = Vector2( 0.2, 1 )
-motion_mirroring = Vector2( 1920, 0 )
+motion_scale = Vector2( -0.28, 1 )
+motion_mirroring = Vector2( 1024, 0 )
 
 [node name="Sprite2" type="Sprite" parent="bg_parallax/ParallaxBackground/sky"]
+position = Vector2( 1.76172, 389.684 )
 rotation = -1.5708
-scale = Vector2( 0.439019, 1928.02 )
-texture = SubResource( 2 )
+scale = Vector2( 0.454, 1927.91 )
+texture = ExtResource( 9 )
 centered = false
 
-[node name="Sprite" type="Sprite" parent="bg_parallax/ParallaxBackground/sky"]
-texture = ExtResource( 10 )
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="bg_parallax/ParallaxBackground"]
+motion_mirroring = Vector2( 1024, 0 )
+
+[node name="Sprite3" type="Sprite" parent="bg_parallax/ParallaxBackground/ParallaxLayer5"]
+position = Vector2( 511.465, 308.033 )
+texture = ExtResource( 8 )
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="bg_parallax/ParallaxBackground"]
+motion_scale = Vector2( 0.083, 1 )
+motion_mirroring = Vector2( 1024, 0 )
+
+[node name="Sprite" type="Sprite" parent="bg_parallax/ParallaxBackground/ParallaxLayer4"]
+position = Vector2( 1, 0 )
+texture = ExtResource( 18 )
 centered = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="bg_parallax/ParallaxBackground"]
 position = Vector2( 0, 184.084 )
-motion_scale = Vector2( 0.5, 1 )
-motion_mirroring = Vector2( 1516, 0 )
+motion_scale = Vector2( 0.123, 1 )
+motion_mirroring = Vector2( 1022, 0 )
 
 [node name="Sprite" type="Sprite" parent="bg_parallax/ParallaxBackground/ParallaxLayer"]
-position = Vector2( -17.9594, -262.656 )
-texture = ExtResource( 8 )
+position = Vector2( 4.443, -229.318 )
+texture = ExtResource( 17 )
 centered = false
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="bg_parallax/ParallaxBackground"]
 position = Vector2( -92.0419, 431.025 )
-motion_scale = Vector2( 0.9, 1 )
-motion_offset = Vector2( 400, 0 )
-motion_mirroring = Vector2( 1340, 0 )
+motion_scale = Vector2( 1.043, 1 )
+motion_mirroring = Vector2( 1024, 0 )
 
 [node name="Sprite" type="Sprite" parent="bg_parallax/ParallaxBackground/ParallaxLayer2"]
-position = Vector2( 635.314, -168.369 )
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 9 )
+position = Vector2( 601.613, -122.756 )
+texture = ExtResource( 16 )
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Erbaccia" type="Sprite" parent="Node2D"]
+position = Vector2( 4997.93, 332.415 )
+texture = ExtResource( 19 )
+
+[node name="Palm" type="Sprite" parent="Node2D"]
+position = Vector2( 5011.86, 301.897 )
+texture = ExtResource( 20 )
+
+[node name="Palm2" type="Sprite" parent="Node2D"]
+position = Vector2( 9723.27, 257.45 )
+texture = ExtResource( 20 )
+
+[node name="Cactus" type="Sprite" parent="Node2D"]
+position = Vector2( 10409, 378.093 )
+texture = ExtResource( 21 )
+
+[node name="Cactus2" type="Sprite" parent="Node2D"]
+position = Vector2( 6230.99, 524.134 )
+texture = ExtResource( 21 )
+
+[node name="Cactus3" type="Sprite" parent="Node2D"]
+position = Vector2( 6510.37, 562.231 )
+texture = ExtResource( 21 )
+
+[node name="Erbaccia2" type="Sprite" parent="Node2D"]
+position = Vector2( 8294.61, 581.28 )
+texture = ExtResource( 19 )
+
+[node name="Erbaccia3" type="Sprite" parent="Node2D"]
+position = Vector2( 8694.63, 581.28 )
+texture = ExtResource( 19 )
 
 [node name="background" type="Node2D" parent="."]
 position = Vector2( 19, 36 )
@@ -113,11 +157,11 @@ position = Vector2( 19, 36 )
 position = Vector2( -0.334198, -62.1258 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="background/suolo"]
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="background/suolo"]
 position = Vector2( 303.347, -6.10352e-05 )
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="background/suolo"]
 position = Vector2( 2561.56, 642.058 )
@@ -152,7 +196,7 @@ position = Vector2( 6000, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="oasi/Area2D"]
 position = Vector2( 4191.12, 687.417 )
-shape = SubResource( 5 )
+shape = SubResource( 3 )
 
 [node name="WaterSineAndTexture2" parent="oasi" instance=ExtResource( 4 )]
 modulate = Color( 1, 1, 1, 0.705882 )
@@ -165,7 +209,7 @@ position = Vector2( 19303.4, 713.717 )
 [node name="player" parent="." groups=[
 "camera_shaker",
 ] instance=ExtResource( 1 )]
-position = Vector2( 12404.5, 366.804 )
+position = Vector2( 202.992, 573.789 )
 run_speed = 300
 
 [node name="bufera" parent="." instance=ExtResource( 5 )]
@@ -197,21 +241,21 @@ position = Vector2( 0, 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="foreground/sabbiamobile/Area2D"]
 position = Vector2( 175.087, 57.8083 )
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="foreground/sabbiamobile"]
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="foreground/sabbiamobile/StaticBody2D"]
 position = Vector2( -855.438, -727.411 )
-shape = SubResource( 7 )
+shape = SubResource( 5 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="foreground/sabbiamobile/StaticBody2D"]
 position = Vector2( -531.774, -771.681 )
-shape = SubResource( 8 )
+shape = SubResource( 6 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="foreground/sabbiamobile/StaticBody2D"]
 position = Vector2( -578.137, -768.6 )
-shape = SubResource( 9 )
+shape = SubResource( 7 )
 
 [node name="sabbiamobile2" type="Node2D" parent="foreground"]
 position = Vector2( 14000, 444 )
@@ -227,21 +271,21 @@ position = Vector2( 0, 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="foreground/sabbiamobile2/Area2D"]
 position = Vector2( 175.087, 57.8083 )
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="foreground/sabbiamobile2"]
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="foreground/sabbiamobile2/StaticBody2D"]
 position = Vector2( -855.438, -727.411 )
-shape = SubResource( 7 )
+shape = SubResource( 5 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="foreground/sabbiamobile2/StaticBody2D"]
 position = Vector2( -531.774, -771.681 )
-shape = SubResource( 8 )
+shape = SubResource( 6 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="foreground/sabbiamobile2/StaticBody2D"]
 position = Vector2( -578.137, -768.6 )
-shape = SubResource( 9 )
+shape = SubResource( 7 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
@@ -262,7 +306,7 @@ position = Vector2( 1661.29, 379.141 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ContrattazioneBanditi/Area2DIncontraBanditi"]
 position = Vector2( 78.1151, 7.55951 )
-shape = SubResource( 10 )
+shape = SubResource( 8 )
 
 [node name="Area2DAParlaBanditi" type="Area2D" parent="ContrattazioneBanditi" groups=[
 "ParlaBanditi",
@@ -271,7 +315,7 @@ position = Vector2( 1708.38, 412.777 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ContrattazioneBanditi/Area2DAParlaBanditi"]
 position = Vector2( -20.1815, -42.0448 )
-shape = SubResource( 11 )
+shape = SubResource( 9 )
 
 [node name="Node2DBanditi" type="Node2D" parent="ContrattazioneBanditi"]
 position = Vector2( 1958.09, 352.592 )
@@ -287,7 +331,7 @@ margin_left = 832.914
 margin_top = 38.2118
 margin_right = 895.914
 margin_bottom = 115.212
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "600
 "
@@ -301,8 +345,18 @@ margin_left = 26.9859
 margin_top = 31.7478
 margin_right = 89.9859
 margin_bottom = 68.7478
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 11 )
 text = "600"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="GUI"]
+margin_left = 615.183
+margin_top = -49.4975
+margin_right = 871.183
+margin_bottom = 206.503
+texture = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

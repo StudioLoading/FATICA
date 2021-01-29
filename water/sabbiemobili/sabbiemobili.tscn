@@ -6,4 +6,5 @@
 
 [node name="WaterSineAndTexture" instance=ExtResource( 2 )]
 material = ExtResource( 1 )
+position = Vector2( 1, 0 )
 texture = ExtResource( 3 )
