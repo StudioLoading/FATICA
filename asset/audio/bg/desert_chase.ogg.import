@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/desert_chase.ogg-31b7558ece05ca475e1164bb17014650.oggstr"
+
+[deps]
+
+source_file="res://asset/audio/bg/desert_chase.ogg"
+dest_files=[ "res://.import/desert_chase.ogg-31b7558ece05ca475e1164bb17014650.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

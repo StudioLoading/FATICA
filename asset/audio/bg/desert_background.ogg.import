@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/desert_background.ogg-a6c45351c4221a9c17aa3fc6fa6f11f5.oggstr"
+
+[deps]
+
+source_file="res://asset/audio/bg/desert_background.ogg"
+dest_files=[ "res://.import/desert_background.ogg-a6c45351c4221a9c17aa3fc6fa6f11f5.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
