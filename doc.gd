@@ -71,8 +71,8 @@ func _physics_process(delta):
 	if state == STATES.BANDITI:	
 		print('state','STATES.BANDITI')	
 		if ($AnimatedSprite.get_frame() == 28):
-			$AudioStreamPlayer.stream = fx_insults
-			$AudioStreamPlayer.play()
+			$afx_grunt.stream = fx_insults
+			$afx_grunt.play()
 			emit_signal("bubble")
 			$Timer.start()
 	else:
@@ -97,8 +97,8 @@ func _physics_process(delta):
 	if jumping and is_on_floor() and state == STATES.JUMPING :
 		$AnimatedSprite.play("Jump")
 		jumping = false
-		$AudioStreamPlayer.stream = fx_step
-		$AudioStreamPlayer.play()
+		$afx_step.stream = fx_step
+		$afx_step.play()
 
 	if state == STATES.SABBIEMOBILI:
 		energy -= 0.15
@@ -135,8 +135,8 @@ func _on_Area2D_body_exited(body):
 		print('Fuori la sabbia mobile')
 		gravity = gravity_default
 		jump_speed = jump_speed_default
-		$AudioStreamPlayer.stream = fx_grunt
-		$AudioStreamPlayer.play()
+		$afx_grunt.stream = fx_grunt
+		$afx_grunt.play()
 	pass # Replace with function body.
 
 
@@ -157,11 +157,11 @@ func _on_Area2D_area_entered(area):
 		#print('a_tempestaa_tempestaa_tempestaa_tempesta')
 		relative_velocity = Vector2(-150, 0)
 		state = STATES.TEMPESTA
-		$AudioStreamPlayer.stream = fx_grunt
-		$AudioStreamPlayer.play()
+		$afx_grunt.stream = fx_grunt
+		$afx_grunt.play()
 	if area.is_in_group('oasi'):
-		$AudioStreamPlayer.stream = fx_heal
-		$AudioStreamPlayer.play()
+		$afx_grunt.stream = fx_heal
+		$afx_grunt.play()
 		healing = true
 	if area.is_in_group('banditcontract'):
 		#$Camera2D.enabled = true
@@ -181,14 +181,15 @@ func _on_Area2D_area_exited(area):
 	if area.is_in_group('a_tempesta'):
 		relative_velocity = Vector2.ZERO
 		state = STATES.WALKING
-		$AudioStreamPlayer.stream = fx_grunt
-		$AudioStreamPlayer.play()
-		yield($AudioStreamPlayer, "finished")
-		$AudioStreamPlayer.play()
+		$afx_grunt.stream = fx_grunt
+		$afx_grunt.play()
+		yield($afx_grunt, "finished")
+		$afx_grunt.play()
 	if area.is_in_group('oasi'):
-		$AudioStreamPlayer.stop()
+		$afx_grunt.stop()
 		healing = false
 	if area.is_in_group('banditcontract'):
+		$afx_grunt.stop()
 		state = STATES.WALKING
 		relative_velocity = Vector2.ZERO
 	

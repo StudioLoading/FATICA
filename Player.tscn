@@ -41,7 +41,7 @@ shape = SubResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 2 )
 animation = "Idle"
-frame = 44
+frame = 55
 speed_scale = 8.0
 playing = true
 
@@ -49,7 +49,9 @@ playing = true
 wait_time = 3.0
 one_shot = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="afx_grunt" type="AudioStreamPlayer" parent="."]
+
+[node name="afx_step" type="AudioStreamPlayer" parent="."]
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0

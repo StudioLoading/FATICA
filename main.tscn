@@ -5,7 +5,7 @@
 [ext_resource path="res://main.gd" type="Script" id=3]
 [ext_resource path="res://water/04.sine_and_texture/WaterSineAndTexture.tscn" type="PackedScene" id=4]
 [ext_resource path="res://snow.tscn" type="PackedScene" id=5]
-[ext_resource path="res://asset/audio/bg/desert.ogg" type="AudioStream" id=6]
+[ext_resource path="res://asset/audio/bg/desert_background.ogg" type="AudioStream" id=6]
 [ext_resource path="res://asset/xolonium/Xolonium-Regular.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://asset/Desert Parallax by Cryptogene/4 Layer4.png" type="Texture" id=8]
 [ext_resource path="res://asset/Desert Parallax by Cryptogene/6 Sun.png" type="Texture" id=9]
@@ -112,26 +112,27 @@ position = Vector2( 19, 36 )
 position = Vector2( -0.334198, -62.1258 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="background/suolo"]
+position = Vector2( 0, 10 )
 shape = SubResource( 3 )
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="background/suolo"]
-position = Vector2( 303.347, -6.10352e-05 )
+position = Vector2( 303.347, 9.99994 )
 shape = SubResource( 4 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="background/suolo"]
-position = Vector2( 2561.56, 642.058 )
+position = Vector2( 2561.56, 652.058 )
 polygon = PoolVector2Array( -271.687, 18.2817, -14.2998, -234.863, 50.7539, -284.36, 100.251, -295.674, 153.992, -285.774, 223.288, -247.59, 491.989, 23.9385 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="background/suolo"]
-position = Vector2( 5117.21, 667.462 )
+position = Vector2( 5117.21, 678.462 )
 polygon = PoolVector2Array( -508.204, -6.77991, -424.072, -70.276, -389.149, -133.772, -362.163, -219.492, -293.905, -259.177, 423.601, -254.414, 461.698, -235.366, 493.446, -148.059, 525.194, -75.0382, 612.501, -0.430298 )
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="background/suolo"]
-position = Vector2( 7544.41, 714.375 )
+position = Vector2( 7544.41, 725.375 )
 polygon = PoolVector2Array( -390.595, -49.6749, -265.863, -174.407, 244.405, -175.667, 375.437, -49.6749 )
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="background/suolo"]
-position = Vector2( 10184.9, 746.716 )
+position = Vector2( 10184.9, 756.716 )
 polygon = PoolVector2Array( -850.888, -86.623, -772.888, -138.623, -696.888, -246.623, -584.888, -350.623, -510.888, -392.623, -446.888, -394.623, -390.888, -370.623, -350.888, -342.623, -292.888, -252.623, -226.888, -208.623, -178.888, -136.623, -96.8877, -74.623, 49.1123, -74.623, 127.112, -128.623, 165.112, -196.623, 195.112, -238.623, 439.112, -482.623, 517.112, -522.623, 563.112, -524.623, 631.112, -506.623, 809.112, -332.623, 827.112, -284.623, 877.112, -234.623, 931.112, -208.623, 961.112, -160.623, 1005.11, -112.623, 1053.11, -80.623, 1027.11, -60.623, -822.888, -54.623 )
 
 [node name="oasi" type="Node2D" parent="."]
@@ -151,7 +152,7 @@ position = Vector2( 13134.5, 713.717 )
 [node name="player" parent="." groups=[
 "camera_shaker",
 ] instance=ExtResource( 1 )]
-position = Vector2( 9003.14, 566.645 )
+position = Vector2( 196, 258.645 )
 run_speed = 300
 
 [node name="bufera" parent="." instance=ExtResource( 5 )]
@@ -162,7 +163,7 @@ position = Vector2( 7040.29, 384.122 )
 
 [node name="WaterSineAndTexture2" parent="." instance=ExtResource( 4 )]
 modulate = Color( 1, 1, 1, 0.705882 )
-position = Vector2( 9916.99, 465.301 )
+position = Vector2( 9916.99, 469.301 )
 
 [node name="Tiles" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1, 0 )
@@ -174,7 +175,7 @@ tile_data = PoolIntArray( 65619, 6, 0, 65620, 12, 0, 131092, 6, 0, 131093, 12, 0
 [node name="foreground" type="Node2D" parent="."]
 
 [node name="sabbiamobile" type="Node2D" parent="foreground"]
-position = Vector2( 586.142, 739.579 )
+position = Vector2( 578.142, 757.579 )
 
 [node name="Area2D" type="Area2D" parent="foreground/sabbiamobile" groups=[
 "enemy",
@@ -201,7 +202,7 @@ shape = SubResource( 9 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
-volume_db = -30.021
+volume_db = -11.186
 autoplay = true
 
 [node name="VacTimer" type="Timer" parent="."]
@@ -264,7 +265,7 @@ __meta__ = {
 }
 
 [node name="WaterSineAndTexture" parent="." instance=ExtResource( 13 )]
-position = Vector2( 381.876, 597.546 )
+position = Vector2( 381.876, 607.546 )
 scale = Vector2( 6.017, 2.539 )
 [connection signal="bubble" from="player" to="player" method="_on_player_bubble"]
 [connection signal="bubble" from="player" to="ContrattazioneBanditi/Node2DBanditi/Banditi" method="_on_player_bubble"]

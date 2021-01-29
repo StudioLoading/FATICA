@@ -17,9 +17,13 @@ _global_script_class_icons={
 
 config/name="FATICA"
 run/main_scene="res://Credits.tscn"
+run/disable_stdout=true
+run/disable_stderr=true
 boot_splash/image="res://asset/ggj21.png"
+boot_splash/fullsize=false
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://asset/ggj21.png"
+config/windows_native_icon="res://asset/WINICO.ico"
 
 [display]
 
