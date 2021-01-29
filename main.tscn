@@ -165,7 +165,7 @@ position = Vector2( 13134.5, 713.717 )
 [node name="player" parent="." groups=[
 "camera_shaker",
 ] instance=ExtResource( 1 )]
-position = Vector2( 6799.33, 566.552 )
+position = Vector2( 208.232, 207.364 )
 run_speed = 300
 
 [node name="bufera" parent="." instance=ExtResource( 5 )]
@@ -274,7 +274,7 @@ text = "600"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="bubble" from="player" to="player" method="_on_player_bubble"]
 [connection signal="bubble" from="player" to="ContrattazioneBanditi/Node2DBanditi/Banditi" method="_on_player_bubble"]
+[connection signal="bubble" from="player" to="player" method="_on_player_bubble"]
 [connection signal="body_entered" from="foreground/sabbiamobile/Area2D" to="player" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="foreground/sabbiamobile/Area2D" to="player" method="_on_Area2D_body_exited"]
