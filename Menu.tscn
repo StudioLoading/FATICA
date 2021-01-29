@@ -1,21 +1,8 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Menu.gd" type="Script" id=1]
-[ext_resource path="res://asset/Desert Parallax by Cryptogene/8 Stars2.png" type="Texture" id=2]
+[ext_resource path="res://asset/env/desert.png" type="Texture" id=2]
 [ext_resource path="res://asset/xolonium/Xolonium-Bold.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://asset/audio/bg/titlemenu.ogg" type="AudioStream" id=4]
-[ext_resource path="res://asset/Desert Parallax by Cryptogene/8 Stars.png" type="Texture" id=5]
-[ext_resource path="res://asset/Desert Parallax by Cryptogene/9 Background.png" type="Texture" id=6]
-[ext_resource path="res://asset/Desert Parallax by Cryptogene/7 Clouds2.png" type="Texture" id=7]
-[ext_resource path="res://asset/xolonium/Xolonium-Regular.ttf" type="DynamicFontData" id=8]
-[ext_resource path="res://asset/chars/Rei animazioni/Rei cammina/Walk_000.png" type="Texture" id=9]
-[ext_resource path="res://asset/xolonium/Xolonium-Regular.otf" type="DynamicFontData" id=10]
-
-[sub_resource type="DynamicFont" id=2]
-font_data = ExtResource( 8 )
-
-[sub_resource type="DynamicFont" id=3]
-font_data = ExtResource( 10 )
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 3 )
@@ -23,69 +10,52 @@ font_data = ExtResource( 3 )
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="Sprite3" type="Sprite" parent="."]
-texture = ExtResource( 6 )
-centered = false
-
 [node name="desert" type="Sprite" parent="."]
-scale = Vector2( 0.538692, 0.572291 )
+position = Vector2( 516.679, 285.001 )
 texture = ExtResource( 2 )
-centered = false
 
-[node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 5 )
-centered = false
-
-[node name="Sprite2" type="Sprite" parent="."]
-texture = ExtResource( 7 )
-centered = false
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 4 )
-autoplay = true
-
-[node name="CenterContainer" type="CenterContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 369.549
-margin_top = 146.041
-margin_right = 632.549
-margin_bottom = 428.041
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
 __meta__ = {
-"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Control" type="VBoxContainer" parent="CenterContainer"]
-margin_right = 263.0
-margin_bottom = 338.0
-custom_constants/separation = 32
-alignment = 1
-
-[node name="Start Game" type="Button" parent="CenterContainer/Control"]
-margin_right = 263.0
-margin_bottom = 136.0
-custom_fonts/font = SubResource( 2 )
+[node name="Start Game" type="Button" parent="Control"]
+margin_left = 428.518
+margin_top = 252.232
+margin_right = 520.518
+margin_bottom = 272.232
 text = "START GAME"
-icon = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Credits" type="Button" parent="CenterContainer/Control"]
-margin_top = 168.0
-margin_right = 263.0
-margin_bottom = 194.0
-custom_fonts/font = SubResource( 3 )
-text = "CREDITS"
+[node name="Options" type="Button" parent="Control"]
+margin_left = 455.485
+margin_top = 296.665
+margin_right = 518.485
+margin_bottom = 316.665
+text = "Options"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="controlli" type="Label" parent="CenterContainer/Control"]
-margin_top = 226.0
-margin_right = 263.0
-margin_bottom = 338.0
+[node name="Credits" type="Button" parent="Control"]
+margin_left = 458.482
+margin_top = 365.587
+margin_right = 515.482
+margin_bottom = 385.587
+text = "Credits"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="controlli" type="Label" parent="Control"]
+margin_left = 52.3251
+margin_top = 266.382
+margin_right = 330.325
+margin_bottom = 355.382
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
@@ -94,8 +64,5 @@ text = "CONTROLS:
 LEFT ARROW      MOVE LEFT
 RIGHT ARROW    MOVE RIGHT
 SPACEBAR          JUMP"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-[connection signal="pressed" from="CenterContainer/Control/Start Game" to="." method="_on_Button_pressed"]
-[connection signal="pressed" from="CenterContainer/Control/Credits" to="." method="_on_Credits_pressed"]
+[connection signal="pressed" from="Control/Start Game" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/Credits" to="." method="_on_Credits_pressed"]
