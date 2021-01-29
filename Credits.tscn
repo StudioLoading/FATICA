@@ -1,10 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://asset/xolonium/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://asset/Desert Parallax by Cryptogene/5 Mountains.png" type="Texture" id=2]
+[ext_resource path="res://asset/Background e assets/esempio background.png" type="Texture" id=2]
 [ext_resource path="res://Credits.gd" type="Script" id=3]
-[ext_resource path="res://asset/Desert Parallax by Cryptogene/3 Layer3.png" type="Texture" id=4]
-[ext_resource path="res://asset/Desert Parallax by Cryptogene/Desert_sig.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
@@ -15,15 +13,7 @@ modulate = Color( 0.792157, 0.760784, 0.760784, 0.54902 )
 script = ExtResource( 3 )
 
 [node name="Sprite2" type="Sprite" parent="."]
-texture = ExtResource( 5 )
-centered = false
-
-[node name="desert" type="Sprite" parent="."]
 texture = ExtResource( 2 )
-centered = false
-
-[node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 4 )
 centered = false
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
