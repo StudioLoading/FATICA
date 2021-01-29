@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://asset/xolonium/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://asset/env/desert.png" type="Texture" id=2]
+[ext_resource path="res://asset/Desert Parallax by Cryptogene/5 Mountains.png" type="Texture" id=2]
 [ext_resource path="res://Credits.gd" type="Script" id=3]
+[ext_resource path="res://asset/Desert Parallax by Cryptogene/3 Layer3.png" type="Texture" id=4]
+[ext_resource path="res://asset/Desert Parallax by Cryptogene/Desert_sig.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
@@ -12,132 +14,175 @@ font_data = ExtResource( 1 )
 modulate = Color( 0.792157, 0.760784, 0.760784, 0.54902 )
 script = ExtResource( 3 )
 
+[node name="Sprite2" type="Sprite" parent="."]
+texture = ExtResource( 5 )
+centered = false
+
 [node name="desert" type="Sprite" parent="."]
-position = Vector2( 529.447, 270.786 )
 texture = ExtResource( 2 )
+centered = false
 
-[node name="Control" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1031.0
+margin_bottom = 598.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Control"]
-modulate = Color( 0, 0, 0, 1 )
-margin_left = 522.734
-margin_top = 139.887
-margin_right = 612.734
-margin_bottom = 212.887
-custom_fonts/font = SubResource( 1 )
-text = "TC"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="GridContainer" type="GridContainer" parent="CenterContainer"]
+margin_left = 44.0
+margin_top = 70.0
+margin_right = 987.0
+margin_bottom = 528.0
+columns = 2
 
-[node name="Label9" type="Label" parent="Control"]
+[node name="Label5" type="Label" parent="CenterContainer/GridContainer"]
 modulate = Color( 0, 0, 0, 1 )
-margin_left = 640.202
-margin_top = 41.4682
-margin_right = 730.202
-margin_bottom = 114.468
+margin_right = 548.0
+margin_bottom = 73.0
 custom_fonts/font = SubResource( 1 )
-text = "TC"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label5" type="Label" parent="Control"]
-modulate = Color( 0, 0, 0, 1 )
-margin_left = 121.122
-margin_top = 36.7059
-margin_right = 627.122
-margin_bottom = 109.706
-custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Game Designer "
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label6" type="Label" parent="Control"]
+[node name="Label" type="Label" parent="CenterContainer/GridContainer"]
 modulate = Color( 0, 0, 0, 1 )
-margin_left = 119.535
-margin_top = 139.887
-margin_right = 625.535
-margin_bottom = 212.887
+margin_left = 552.0
+margin_right = 943.0
+margin_bottom = 73.0
+custom_fonts/font = SubResource( 1 )
+text = "TC"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="CenterContainer/GridContainer"]
+modulate = Color( 0, 0, 0, 1 )
+margin_top = 77.0
+margin_right = 548.0
+margin_bottom = 150.0
 custom_fonts/font = SubResource( 1 )
 text = "Programmer"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label7" type="Label" parent="Control"]
+[node name="Label2" type="Label" parent="CenterContainer/GridContainer"]
 modulate = Color( 0, 0, 0, 1 )
-margin_left = 116.36
-margin_top = 235.131
-margin_right = 664.36
-margin_bottom = 308.131
-custom_fonts/font = SubResource( 1 )
-text = "Graphic Designer"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label8" type="Label" parent="Control"]
-modulate = Color( 0, 0, 0, 1 )
-margin_left = 92.5489
-margin_top = 347.836
-margin_right = 640.549
-margin_bottom = 420.836
-custom_fonts/font = SubResource( 1 )
-text = "Sound Designer"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label2" type="Label" parent="Control"]
-modulate = Color( 0, 0, 0, 1 )
-margin_left = 652.431
-margin_top = 138.032
-margin_right = 743.431
-margin_bottom = 211.032
+margin_left = 552.0
+margin_top = 77.0
+margin_right = 943.0
+margin_bottom = 150.0
 custom_fonts/font = SubResource( 1 )
 text = "FB"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label3" type="Label" parent="Control"]
+[node name="Label7" type="Label" parent="CenterContainer/GridContainer"]
 modulate = Color( 0, 0, 0, 1 )
-margin_left = 742.693
-margin_top = 235.042
-margin_right = 833.693
-margin_bottom = 308.042
+margin_top = 154.0
+margin_right = 548.0
+margin_bottom = 227.0
+custom_fonts/font = SubResource( 1 )
+text = "Graphic Designer"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="CenterContainer/GridContainer"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 552.0
+margin_top = 154.0
+margin_right = 943.0
+margin_bottom = 227.0
 custom_fonts/font = SubResource( 1 )
 text = "RE"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label4" type="Label" parent="Control"]
+[node name="Label8" type="Label" parent="CenterContainer/GridContainer"]
 modulate = Color( 0, 0, 0, 1 )
-margin_left = 733.63
-margin_top = 348.104
-margin_right = 829.63
-margin_bottom = 421.104
+margin_top = 231.0
+margin_right = 548.0
+margin_bottom = 304.0
+custom_fonts/font = SubResource( 1 )
+text = "Sound Designer"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="CenterContainer/GridContainer"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 552.0
+margin_top = 231.0
+margin_right = 943.0
+margin_bottom = 304.0
 custom_fonts/font = SubResource( 1 )
 text = "VB"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Menu" type="Button" parent="Control"]
-margin_left = 502.856
-margin_top = 566.764
-margin_right = 550.856
-margin_bottom = 586.764
-text = "Menu"
+[node name="Label9" type="Label" parent="CenterContainer/GridContainer"]
+modulate = Color( 0, 0, 0, 1 )
+margin_top = 308.0
+margin_right = 548.0
+margin_bottom = 381.0
+custom_fonts/font = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="Control/Menu" to="." method="_on_Menu_pressed"]
+
+[node name="Label10" type="Label" parent="CenterContainer/GridContainer"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 552.0
+margin_top = 308.0
+margin_right = 943.0
+margin_bottom = 381.0
+custom_fonts/font = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label11" type="Label" parent="CenterContainer/GridContainer"]
+modulate = Color( 0, 0, 0, 1 )
+margin_top = 385.0
+margin_right = 548.0
+margin_bottom = 458.0
+custom_fonts/font = SubResource( 1 )
+text = "PRESS "
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label12" type="Label" parent="CenterContainer/GridContainer"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 552.0
+margin_top = 385.0
+margin_right = 943.0
+margin_bottom = 458.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = " SPACEBAR"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
