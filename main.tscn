@@ -3,15 +3,15 @@
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tiles.tscn" type="PackedScene" id=2]
 [ext_resource path="res://main.gd" type="Script" id=3]
-[ext_resource path="res://asset/env/sabbiamobile.png" type="Texture" id=4]
+[ext_resource path="res://water/04.sine_and_texture/WaterSineAndTexture.tscn" type="PackedScene" id=4]
 [ext_resource path="res://snow.tscn" type="PackedScene" id=5]
 [ext_resource path="res://asset/audio/bg/desert.ogg" type="AudioStream" id=6]
 [ext_resource path="res://asset/xolonium/Xolonium-Regular.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://asset/Desert Parallax by Cryptogene/4 Layer4.png" type="Texture" id=8]
 [ext_resource path="res://asset/Desert Parallax by Cryptogene/6 Sun.png" type="Texture" id=9]
 [ext_resource path="res://asset/Desert Parallax by Cryptogene/Desert_sig.png" type="Texture" id=10]
-[ext_resource path="res://asset/env/Sand_particles.png" type="Texture" id=11]
 [ext_resource path="res://Banditi.tscn" type="PackedScene" id=12]
+[ext_resource path="res://water/sabbiemobili/sabbiemobili.tscn" type="PackedScene" id=13]
 [ext_resource path="res://snowbk.tscn" type="PackedScene" id=14]
 [ext_resource path="res://duna1.tscn" type="PackedScene" id=15]
 
@@ -31,7 +31,7 @@ a = Vector2( 782.952, 665 )
 b = Vector2( 20000, 665 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 114.148, 891.03 )
+extents = Vector2( 278.215, 187.971 )
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 372.422, 108.428 )
@@ -134,29 +134,15 @@ polygon = PoolVector2Array( -390.595, -49.6749, -265.863, -174.407, 244.405, -17
 position = Vector2( 10184.9, 746.716 )
 polygon = PoolVector2Array( -850.888, -86.623, -772.888, -138.623, -696.888, -246.623, -584.888, -350.623, -510.888, -392.623, -446.888, -394.623, -390.888, -370.623, -350.888, -342.623, -292.888, -252.623, -226.888, -208.623, -178.888, -136.623, -96.8877, -74.623, 49.1123, -74.623, 127.112, -128.623, 165.112, -196.623, 195.112, -238.623, 439.112, -482.623, 517.112, -522.623, 563.112, -524.623, 631.112, -506.623, 809.112, -332.623, 827.112, -284.623, 877.112, -234.623, 931.112, -208.623, 961.112, -160.623, 1005.11, -112.623, 1053.11, -80.623, 1027.11, -60.623, -822.888, -54.623 )
 
-[node name="duna1" parent="." instance=ExtResource( 15 )]
-position = Vector2( 7040.29, 384.122 )
-
-[node name="Tiles" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1, 0 )
-cell_size = Vector2( 128, 128 )
-cell_quadrant_size = 128
-cell_custom_transform = Transform2D( 128, 0, 0, 128, 0, 0 )
-tile_data = PoolIntArray( 65619, 6, 0, 65620, 12, 0, 131092, 6, 0, 131093, 12, 0, 131147, 6, 0, 131148, 12, 0, 131154, 3, 0, 131155, 2, 0, 131156, 2, 0, 131157, 11, 0, 196627, 3, 0, 196628, 2, 0, 196629, 2, 0, 196630, 11, 0, 196645, 9, 0, 196646, 2, 0, 196647, 2, 0, 196648, 2, 0, 196649, 2, 0, 196650, 2, 0, 196651, 16, 0, 196682, 3, 0, 196683, 2, 0, 196684, 2, 0, 196685, 13, 0, 196689, 3, 0, 196690, 15, 0, 196691, 4, 0, 196692, 4, 0, 196693, 14, 0, 196694, 13, 0, 262162, 3, 0, 262163, 15, 0, 262164, 4, 0, 262165, 4, 0, 262166, 14, 0, 262167, 11, 0, 262180, 8, 0, 262181, 1, 0, 262182, 4, 0, 262183, 4, 0, 262184, 4, 0, 262185, 4, 0, 262186, 4, 0, 262187, 14, 0, 262188, 13, 0, 262217, 8, 0, 262218, 1, 0, 262219, 4, 0, 262220, 4, 0, 262221, 14, 0, 262222, 13, 0, 262224, 8, 0, 262225, 1, 0, 262226, 4, 0, 262227, 4, 0, 262228, 4, 0, 262229, 4, 0, 262230, 14, 0, 262231, 13, 0, 327680, 2, 0, 327681, 2, 0, 327682, 2, 0, 327683, 2, 0, 327684, 2, 0, 327685, 2, 0, 327686, 2, 0, 327687, 2, 0, 327688, 2, 0, 327689, 2, 0, 327690, 2, 0, 327691, 2, 0, 327692, 2, 0, 327693, 2, 0, 327694, 2, 0, 327695, 2, 0, 327696, 2, 0, 327697, 2, 0, 327698, 1, 0, 327699, 4, 0, 327700, 4, 0, 327701, 4, 0, 327702, 4, 0, 327703, 14, 0, 327704, 2, 0, 327705, 2, 0, 327706, 2, 0, 327707, 2, 0, 327708, 2, 0, 327709, 2, 0, 327710, 2, 0, 327711, 2, 0, 327712, 2, 0, 327713, 2, 0, 327714, 2, 0, 327715, 2, 0, 327716, 15, 0, 327717, 4, 0, 327718, 4, 0, 327719, 4, 0, 327720, 4, 0, 327721, 4, 0, 327722, 4, 0, 327723, 4, 0, 327724, 14, 0, 327725, 2, 0, 327726, 2, 0, 327727, 2, 0, 327728, 2, 0, 327729, 2, 0, 327730, 2, 0, 327731, 2, 0, 327732, 2, 0, 327733, 2, 0, 327734, 2, 0, 327743, 2, 0, 327744, 2, 0, 327745, 2, 0, 327746, 2, 0, 327747, 2, 0, 327748, 2, 0, 327749, 2, 0, 327750, 2, 0, 327751, 2, 0, 327752, 2, 0, 327753, 1, 0, 327754, 4, 0, 327755, 4, 0, 327756, 4, 0, 327757, 4, 0, 327758, 14, 0, 327759, 2, 0, 327760, 1, 0, 327761, 4, 0, 327762, 4, 0, 327763, 4, 0, 327764, 4, 0, 327765, 4, 0, 327766, 4, 0, 327767, 14, 0, 327768, 2, 0, 327769, 2, 0, 327770, 2, 0, 327771, 2, 0, 327772, 2, 0, 327773, 2, 0, 327774, 2, 0, 327775, 2, 0, 327776, 2, 0, 327777, 2, 0, 327778, 2, 0, 327779, 2, 0, 327780, 2, 0, 327781, 2, 0, 327782, 2, 0, 327783, 2, 0, 327784, 2, 0, 327785, 2, 0, 327786, 2, 0, 327787, 2, 0, 327788, 2, 0, 327789, 2, 0, 327790, 2, 0, 327791, 2, 0, 327792, 2, 0, 327793, 2, 0, 327794, 2, 0, 327795, 2, 0, 327796, 2, 0, 327797, 2, 0, 327798, 2, 0, 327799, 2, 0, 327800, 2, 0, 327801, 2, 0, 327802, 2, 0 )
-
 [node name="oasi" type="Node2D" parent="."]
 position = Vector2( 6000, 0 )
-
-[node name="Sprite" type="Sprite" parent="oasi"]
-position = Vector2( 13.2695, 470.902 )
-texture = ExtResource( 11 )
 
 [node name="Area2D" type="Area2D" parent="oasi" groups=[
 "oasi",
 ]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="oasi/Area2D"]
-position = Vector2( 0, 600 )
+position = Vector2( 4191.12, 687.417 )
 shape = SubResource( 5 )
 
 [node name="buferabk" parent="." instance=ExtResource( 14 )]
@@ -165,28 +151,30 @@ position = Vector2( 13134.5, 713.717 )
 [node name="player" parent="." groups=[
 "camera_shaker",
 ] instance=ExtResource( 1 )]
-position = Vector2( 208.232, 207.364 )
+position = Vector2( 9003.14, 566.645 )
 run_speed = 300
 
 [node name="bufera" parent="." instance=ExtResource( 5 )]
 position = Vector2( 13136, 723.905 )
 
+[node name="duna1" parent="." instance=ExtResource( 15 )]
+position = Vector2( 7040.29, 384.122 )
+
+[node name="WaterSineAndTexture2" parent="." instance=ExtResource( 4 )]
+modulate = Color( 1, 1, 1, 0.705882 )
+position = Vector2( 9916.99, 465.301 )
+
+[node name="Tiles" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1, 0 )
+cell_size = Vector2( 128, 128 )
+cell_quadrant_size = 128
+cell_custom_transform = Transform2D( 128, 0, 0, 128, 0, 0 )
+tile_data = PoolIntArray( 65619, 6, 0, 65620, 12, 0, 131092, 6, 0, 131093, 12, 0, 131147, 6, 0, 131148, 12, 0, 131154, 3, 0, 131155, 2, 0, 131156, 2, 0, 131157, 11, 0, 196627, 3, 0, 196628, 2, 0, 196629, 2, 0, 196630, 11, 0, 196645, 9, 0, 196646, 2, 0, 196647, 2, 0, 196648, 2, 0, 196649, 2, 0, 196650, 2, 0, 196651, 16, 0, 196682, 3, 0, 196683, 2, 0, 196684, 2, 0, 196685, 13, 0, 196689, 3, 0, 196690, 15, 0, 196691, 4, 0, 196692, 4, 0, 196693, 14, 0, 196694, 13, 0, 262162, 3, 0, 262163, 15, 0, 262164, 4, 0, 262165, 4, 0, 262166, 14, 0, 262167, 11, 0, 262180, 8, 0, 262181, 1, 0, 262182, 4, 0, 262183, 4, 0, 262184, 4, 0, 262185, 4, 0, 262186, 4, 0, 262187, 14, 0, 262188, 13, 0, 262217, 8, 0, 262218, 1, 0, 262219, 4, 0, 262220, 4, 0, 262221, 14, 0, 262222, 13, 0, 262224, 8, 0, 262225, 1, 0, 262226, 4, 0, 262227, 4, 0, 262228, 4, 0, 262229, 4, 0, 262230, 14, 0, 262231, 13, 0, 327680, 2, 0, 327681, 2, 0, 327682, 2, 0, 327689, 2, 0, 327690, 2, 0, 327691, 2, 0, 327692, 2, 0, 327693, 2, 0, 327694, 2, 0, 327695, 2, 0, 327696, 2, 0, 327697, 2, 0, 327698, 1, 0, 327699, 4, 0, 327700, 4, 0, 327701, 4, 0, 327702, 4, 0, 327703, 14, 0, 327704, 2, 0, 327705, 2, 0, 327706, 2, 0, 327707, 2, 0, 327708, 2, 0, 327709, 2, 0, 327710, 2, 0, 327711, 2, 0, 327712, 2, 0, 327713, 2, 0, 327714, 2, 0, 327715, 2, 0, 327716, 15, 0, 327717, 4, 0, 327718, 4, 0, 327719, 4, 0, 327720, 4, 0, 327721, 4, 0, 327722, 4, 0, 327723, 4, 0, 327724, 14, 0, 327725, 2, 0, 327726, 2, 0, 327727, 2, 0, 327728, 2, 0, 327729, 2, 0, 327730, 2, 0, 327731, 2, 0, 327732, 2, 0, 327733, 2, 0, 327734, 2, 0, 327743, 2, 0, 327744, 2, 0, 327745, 2, 0, 327746, 2, 0, 327747, 2, 0, 327748, 2, 0, 327749, 2, 0, 327750, 2, 0, 327751, 2, 0, 327752, 2, 0, 327753, 1, 0, 327754, 4, 0, 327755, 4, 0, 327756, 4, 0, 327757, 4, 0, 327758, 14, 0, 327759, 2, 0, 327760, 1, 0, 327761, 4, 0, 327762, 4, 0, 327763, 4, 0, 327764, 4, 0, 327765, 4, 0, 327766, 4, 0, 327767, 14, 0, 327768, 2, 0, 327769, 2, 0, 327770, 2, 0, 327771, 2, 0, 327772, 2, 0, 327773, 2, 0, 327774, 2, 0, 327775, 2, 0, 327776, 2, 0, 327777, 2, 0, 327778, 2, 0, 327779, 2, 0, 327780, 2, 0, 327781, 2, 0, 327782, 2, 0, 327783, 2, 0, 327784, 2, 0, 327785, 2, 0, 327786, 2, 0, 327787, 2, 0, 327788, 2, 0, 327789, 2, 0, 327790, 2, 0, 327791, 2, 0, 327792, 2, 0, 327793, 2, 0, 327794, 2, 0, 327795, 2, 0, 327796, 2, 0, 327797, 2, 0, 327798, 2, 0, 327799, 2, 0, 327800, 2, 0, 327801, 2, 0, 327802, 2, 0 )
+
 [node name="foreground" type="Node2D" parent="."]
 
 [node name="sabbiamobile" type="Node2D" parent="foreground"]
 position = Vector2( 586.142, 739.579 )
-
-[node name="Sprite" type="Sprite" parent="foreground/sabbiamobile"]
-position = Vector2( 131, 0 )
-texture = ExtResource( 4 )
-
-[node name="Sprite3" type="Sprite" parent="foreground/sabbiamobile"]
-position = Vector2( -112, 0 )
-texture = ExtResource( 4 )
-
-[node name="Sprite2" type="Sprite" parent="foreground/sabbiamobile"]
-position = Vector2( 431, 0 )
-texture = ExtResource( 4 )
 
 [node name="Area2D" type="Area2D" parent="foreground/sabbiamobile" groups=[
 "enemy",
@@ -274,7 +262,11 @@ text = "600"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="bubble" from="player" to="ContrattazioneBanditi/Node2DBanditi/Banditi" method="_on_player_bubble"]
+
+[node name="WaterSineAndTexture" parent="." instance=ExtResource( 13 )]
+position = Vector2( 381.876, 597.546 )
+scale = Vector2( 6.017, 2.539 )
 [connection signal="bubble" from="player" to="player" method="_on_player_bubble"]
+[connection signal="bubble" from="player" to="ContrattazioneBanditi/Node2DBanditi/Banditi" method="_on_player_bubble"]
 [connection signal="body_entered" from="foreground/sabbiamobile/Area2D" to="player" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="foreground/sabbiamobile/Area2D" to="player" method="_on_Area2D_body_exited"]
