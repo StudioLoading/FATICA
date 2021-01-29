@@ -46,7 +46,7 @@ b = Vector2( 338.892, 668.55 )
 
 [sub_resource type="SegmentShape2D" id=9]
 a = Vector2( 1069.12, 797.106 )
-b = Vector2( 1195.49, 666.551 )
+b = Vector2( 1098.08, 666.82 )
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 304.414, 138.138 )
@@ -159,7 +159,7 @@ position = Vector2( 19303.4, 713.717 )
 [node name="player" parent="." groups=[
 "camera_shaker",
 ] instance=ExtResource( 1 )]
-position = Vector2( 11729.2, 537.151 )
+position = Vector2( 193.766, 566.816 )
 run_speed = 300
 
 [node name="bufera" parent="." instance=ExtResource( 5 )]
@@ -194,7 +194,7 @@ position = Vector2( 586.142, 739.579 )
 position = Vector2( 0, 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="foreground/sabbiamobile/Area2D"]
-position = Vector2( 179.582, 2.37097 )
+position = Vector2( 175.087, 57.8083 )
 shape = SubResource( 6 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="foreground/sabbiamobile"]
