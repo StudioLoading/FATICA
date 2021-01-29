@@ -14,6 +14,7 @@ var energy = energy_max
 
 var idle_anim = ["Idle", "Speak"]
 var idle
+signal bubble
 
 enum STATES {WALKING, JUMPING, SABBIEMOBILI, RAFFICA, MORTO, TEMPESTA, BANDITI, LOCKED}
 onready var state = STATES.JUMPING
@@ -64,8 +65,18 @@ func _physics_process(delta):
 			print('state',state)
 			$AnimatedSprite.play("Walk")
 			velocity.x += 50
+			
 
-	
+		
+	if state == STATES.BANDITI:	
+		print('state','STATES.BANDITI')	
+		if ($AnimatedSprite.get_frame() == 28):
+			$AudioStreamPlayer.stream = fx_insults
+			$AudioStreamPlayer.play()
+			emit_signal("bubble")
+			$Timer.start()
+	else:
+		get_node("Sprite").visible = false	
 		
 			
 	
@@ -163,12 +174,9 @@ func _on_Area2D_area_entered(area):
 		print('state',state)
 		$AnimatedSprite.play("Wearmask")
 		velocity.x += 0
-		$AudioStreamPlayer.stream = fx_insults
-		$AudioStreamPlayer.play()
+		
 		
 	
-
-
 func _on_Area2D_area_exited(area):
 	if area.is_in_group('a_tempesta'):
 		relative_velocity = Vector2.ZERO
@@ -183,4 +191,9 @@ func _on_Area2D_area_exited(area):
 	if area.is_in_group('banditcontract'):
 		state = STATES.WALKING
 		relative_velocity = Vector2.ZERO
+	
+	
+func _on_Timer_timeout():
+	$AnimatedSprite.play("Speak")
+	get_node("Sprite").visible = true
 	

@@ -1,14 +1,20 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://doc.gd" type="Script" id=1]
 [ext_resource path="res://animations/doc.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://Camera2D.tscn" type="PackedScene" id=3]
+[ext_resource path="res://asset/yellow-tinge/rect-tag-above.png" type="Texture" id=4]
+[ext_resource path="res://asset/xolonium/Xolonium-Regular.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 22.259
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 16.5, 33 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+font_data = ExtResource( 5 )
 
 [node name="player" type="KinematicBody2D" groups=[
 "player",
@@ -35,7 +41,7 @@ shape = SubResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 2 )
 animation = "Idle"
-frame = 37
+frame = 40
 speed_scale = 8.0
 playing = true
 
@@ -44,9 +50,34 @@ wait_time = 3.0
 one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+position = Vector2( 11.0124, -95.1073 )
+scale = Vector2( 0.182411, 0.215184 )
+texture = ExtResource( 4 )
+flip_h = true
+
+[node name="Label" type="Label" parent="Sprite"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = -236.037
+margin_top = -92.7968
+margin_right = 239.963
+margin_bottom = 57.2032
+custom_fonts/font = SubResource( 3 )
+text = "Il Mondo deve trovare
+ nuovamente la liberta"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="camera_shake_requested" from="." to="Camera2D" method="_on_player_camera_shake_requested"]
 [connection signal="camera_shake_stop" from="." to="Camera2D" method="_on_player_camera_shake_stop"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
 [connection signal="area_shape_entered" from="Area2D" to="." method="_on_Area2D_area_shape_entered"]
 [connection signal="timeout" from="timerGameOver" to="." method="_on_timerGameOver_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tiles.tscn" type="PackedScene" id=2]
@@ -11,8 +11,7 @@
 [ext_resource path="res://asset/Desert Parallax by Cryptogene/6 Sun.png" type="Texture" id=9]
 [ext_resource path="res://asset/Desert Parallax by Cryptogene/Desert_sig.png" type="Texture" id=10]
 [ext_resource path="res://asset/env/Sand_particles.png" type="Texture" id=11]
-[ext_resource path="res://asset/pngegg.png" type="Texture" id=12]
-[ext_resource path="res://asset/pngegnvbg.png" type="Texture" id=13]
+[ext_resource path="res://Banditi.tscn" type="PackedScene" id=12]
 [ext_resource path="res://snowbk.tscn" type="PackedScene" id=14]
 [ext_resource path="res://duna1.tscn" type="PackedScene" id=15]
 
@@ -148,16 +147,16 @@ position = Vector2( 0, 600 )
 shape = SubResource( 3 )
 
 [node name="buferabk" parent="." instance=ExtResource( 14 )]
-position = Vector2( 14973.7, 713.717 )
+position = Vector2( 13134.5, 713.717 )
 
 [node name="player" parent="." groups=[
 "camera_shaker",
 ] instance=ExtResource( 1 )]
-position = Vector2( 179.698, 571.679 )
+position = Vector2( 6799.33, 566.552 )
 run_speed = 300
 
 [node name="bufera" parent="." instance=ExtResource( 5 )]
-position = Vector2( 14975.2, 723.905 )
+position = Vector2( 13136, 723.905 )
 
 [node name="foreground" type="Node2D" parent="."]
 
@@ -208,41 +207,33 @@ autoplay = true
 wait_time = 600.0
 autostart = true
 
-[node name="ContrattazioneBanditi2" type="Node2D" parent="."]
+[node name="ContrattazioneBanditi" type="Node2D" parent="."]
 position = Vector2( 5886.75, 82.5645 )
 
-[node name="Area2DIncontraBanditi" type="Area2D" parent="ContrattazioneBanditi2" groups=[
+[node name="Area2DIncontraBanditi" type="Area2D" parent="ContrattazioneBanditi" groups=[
 "banditcontract",
 ]]
 position = Vector2( 1661.29, 379.141 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ContrattazioneBanditi2/Area2DIncontraBanditi"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ContrattazioneBanditi/Area2DIncontraBanditi"]
 position = Vector2( 78.1151, 7.55951 )
 shape = SubResource( 8 )
 
-[node name="Area2DAParlaBanditi" type="Area2D" parent="ContrattazioneBanditi2" groups=[
+[node name="Area2DAParlaBanditi" type="Area2D" parent="ContrattazioneBanditi" groups=[
 "ParlaBanditi",
 ]]
 position = Vector2( 1708.38, 412.777 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ContrattazioneBanditi2/Area2DAParlaBanditi"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ContrattazioneBanditi/Area2DAParlaBanditi"]
 position = Vector2( -20.1815, -42.0448 )
 shape = SubResource( 9 )
 
-[node name="Node2D" type="Node2D" parent="ContrattazioneBanditi2"]
+[node name="Node2DBanditi" type="Node2D" parent="ContrattazioneBanditi"]
 position = Vector2( 1958.09, 352.592 )
 
-[node name="Sprite" type="Sprite" parent="ContrattazioneBanditi2/Node2D"]
-position = Vector2( -132.862, 31.9541 )
-scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 12 )
-flip_h = true
-
-[node name="Sprite2" type="Sprite" parent="ContrattazioneBanditi2/Node2D"]
-position = Vector2( -142.659, 19.0879 )
-scale = Vector2( 0.12, 0.12 )
-texture = ExtResource( 13 )
-flip_h = true
+[node name="Banditi" parent="ContrattazioneBanditi/Node2DBanditi" instance=ExtResource( 12 )]
+position = Vector2( -134.615, 26.5447 )
+scale = Vector2( 0.2, 0.2 )
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
@@ -270,5 +261,7 @@ text = "600"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="bubble" from="player" to="player" method="_on_player_bubble"]
+[connection signal="bubble" from="player" to="ContrattazioneBanditi/Node2DBanditi/Banditi" method="_on_player_bubble"]
 [connection signal="body_entered" from="foreground/sabbiamobile/Area2D" to="player" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="foreground/sabbiamobile/Area2D" to="player" method="_on_Area2D_body_exited"]
