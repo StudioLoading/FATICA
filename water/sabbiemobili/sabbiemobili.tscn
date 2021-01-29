@@ -4,6 +4,6 @@
 [ext_resource path="res://water/Water.tscn" type="PackedScene" id=2]
 [ext_resource path="res://asset/Tiles/Tileset-deser1t.png" type="Texture" id=3]
 
-[node name="WaterSineAndTexture" instance=ExtResource( 2 )]
+[node name="sabbiemobili" instance=ExtResource( 2 )]
 material = ExtResource( 1 )
 texture = ExtResource( 3 )
