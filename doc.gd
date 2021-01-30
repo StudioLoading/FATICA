@@ -113,8 +113,11 @@ func _physics_process(delta):
 func _process(delta):
 	if energy < 0 and state != STATES.MORTO:
 		state = STATES.MORTO
-		$timerGameOver.start()
 		energy = 0
+		$AnimatedSprite.play('Die')
+		yield($AnimatedSprite, 'animation_finished')
+		$timerGameOver.start()
+		
 	
 
 func _on_Area2D_body_entered(body):

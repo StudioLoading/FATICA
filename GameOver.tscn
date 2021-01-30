@@ -39,16 +39,12 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="Control"]
-margin_left = 270.0
-margin_top = 170.0
-margin_right = 763.0
-margin_bottom = 442.0
+margin_left = 435.0
+margin_top = 280.0
+margin_right = 598.0
+margin_bottom = 332.0
 custom_fonts/font = SubResource( 1 )
-text = "LA FINE DEL MONDO
- È ARRIVATA.
-
-
-COLPA TUA."
+text = "RETRY"
 align = 1
 valign = 1
 __meta__ = {

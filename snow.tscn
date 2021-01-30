@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://asset/env/Sand_particles.png" type="Texture" id=1]
 [ext_resource path="res://asset/audio/bg/tempesta.ogg" type="AudioStream" id=2]
@@ -12,6 +12,13 @@ colors = PoolColorArray( 0, 0, 0, 0.286275, 1, 1, 1, 0 )
 
 [sub_resource type="GradientTexture" id=3]
 gradient = SubResource( 2 )
+width = 800
+
+[sub_resource type="Gradient" id=4]
+colors = PoolColorArray( 0, 0, 0, 0.286275, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=5]
+gradient = SubResource( 4 )
 width = 800
 
 [node name="Node2D" type="Node2D" groups=[
@@ -56,6 +63,18 @@ margin_right = 1600.03
 margin_bottom = 3395.19
 rect_rotation = 90.0
 texture = SubResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Particles2D/Area2D"]
+margin_left = -929.0
+margin_top = -304.0
+margin_right = -297.0
+margin_bottom = 1822.0
+rect_rotation = -90.0
+texture = SubResource( 5 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
