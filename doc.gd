@@ -142,8 +142,10 @@ func _on_Area2D_body_exited(body):
 
 func _on_Area2D_area_shape_entered(area_id, area, area_shape, self_shape):
 	if area.is_in_group('enemy'):
-		print('enemyenemyenemyenemy')
-#		energy-= 11
+		print('ENEMY collidin')
+		$afx_grunt.stream = fx_grunt
+		$afx_grunt.play()
+		energy -= 10
 		
 
 

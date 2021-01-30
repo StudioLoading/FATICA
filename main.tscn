@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tiles.tscn" type="PackedScene" id=2]
@@ -25,6 +25,8 @@
 [ext_resource path="res://asset/potion_7_empty.png" type="Texture" id=23]
 [ext_resource path="res://asset/extralife1.png" type="Texture" id=24]
 [ext_resource path="res://Condor.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Cactus.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Erbaccia.tscn" type="PackedScene" id=27]
 
 [sub_resource type="SegmentShape2D" id=1]
 a = Vector2( -16.0657, 664.446 )
@@ -68,7 +70,7 @@ font_data = ExtResource( 7 )
 
 [sub_resource type="Curve2D" id=12]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 7948.39, 38.7714, 0, 0, 0, 0, 24810.8, 78.2257, 0, 0, 0, 0, 24818.8, 430.226, 0, 0, 0, 0, 7957.95, 407.521, 0, 0, 0, 0, 7948.39, 38.7714 )
+"points": PoolVector2Array( 0, 0, 0, 0, 7948.39, 38.7714, 0, 0, 0, 0, 24810.8, 78.2257, 0, 0, 0, 0, 24818.8, 430.226, 0, 0, 0, 0, 16355.2, 506.574, 0, 0, 0, 0, 7957.95, 407.521, 0, 0, 0, 0, 7948.39, 38.7714 )
 }
 
 [node name="Node2D" type="Node2D"]
@@ -109,6 +111,10 @@ texture = ExtResource( 8 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Sprite" type="Sprite" parent="bg_parallax/ParallaxBackground"]
+position = Vector2( 741.624, 101.708 )
+texture = ExtResource( 10 )
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="bg_parallax/ParallaxBackground"]
 motion_scale = Vector2( 0.083, 1 )
@@ -191,93 +197,79 @@ texture = ExtResource( 20 )
 position = Vector2( 7532.23, 384.87 )
 texture = ExtResource( 20 )
 
-[node name="Cactus4" type="Sprite" parent="bgdecor"]
-position = Vector2( 22854.9, 461.456 )
-scale = Vector2( 1, 1.38902 )
-texture = ExtResource( 21 )
-flip_h = true
+[node name="Cactus4" parent="bgdecor" instance=ExtResource( 26 )]
 
-[node name="Cactus6" type="Sprite" parent="bgdecor"]
-position = Vector2( 25429.3, 529.414 )
-scale = Vector2( 1, 1.38902 )
-texture = ExtResource( 21 )
+[node name="Cactus6" parent="bgdecor" instance=ExtResource( 26 )]
+position = Vector2( 26703.6, 119.351 )
 
-[node name="Cactus8" type="Sprite" parent="bgdecor"]
-position = Vector2( 26673.8, 92.1483 )
-scale = Vector2( 1, 1.38902 )
-texture = ExtResource( 21 )
+[node name="Cactus8" parent="bgdecor" instance=ExtResource( 26 )]
+position = Vector2( 25532.2, 465.778 )
 
-[node name="Cactus7" type="Sprite" parent="bgdecor"]
-position = Vector2( 25546.8, 461.456 )
-scale = Vector2( 1, 1.38902 )
-texture = ExtResource( 21 )
-flip_h = true
+[node name="Cactus12" parent="bgdecor" instance=ExtResource( 26 )]
+position = Vector2( 21196.8, 471.535 )
 
-[node name="Cactus" type="Sprite" parent="bgdecor"]
-position = Vector2( 9340.54, 534.776 )
-texture = ExtResource( 21 )
+[node name="Cactus13" parent="bgdecor" instance=ExtResource( 26 )]
+position = Vector2( 20657.6, 542.091 )
 
-[node name="Cactus5" type="Sprite" parent="bgdecor"]
-position = Vector2( 11371, 546.272 )
-texture = ExtResource( 21 )
-flip_h = true
+[node name="Cactus14" parent="bgdecor" instance=ExtResource( 26 )]
+position = Vector2( 9340, 542.091 )
 
-[node name="Cactus2" type="Sprite" parent="bgdecor"]
-position = Vector2( 6230.99, 524.134 )
-texture = ExtResource( 21 )
+[node name="Cactus15" parent="bgdecor" instance=ExtResource( 26 )]
+position = Vector2( 11378.8, 509.744 )
 
-[node name="Cactus10" type="Sprite" parent="bgdecor"]
-position = Vector2( 3271.04, 568.861 )
-texture = ExtResource( 21 )
+[node name="Cactus17" parent="bgdecor" instance=ExtResource( 26 )]
+position = Vector2( 3281.33, 599.642 )
 
-[node name="Cactus11" type="Sprite" parent="bgdecor"]
-position = Vector2( 2294.61, 526.098 )
-texture = ExtResource( 21 )
+[node name="Cactus18" parent="bgdecor" instance=ExtResource( 26 )]
+position = Vector2( 2299.17, 552.552 )
 
-[node name="Erbaccia3" type="Sprite" parent="bgdecor"]
-position = Vector2( 22903, 577.113 )
-texture = ExtResource( 19 )
+[node name="Cactus19" parent="bgdecor" instance=ExtResource( 26 )]
+position = Vector2( 21212, 552.552 )
 
-[node name="Cactus9" type="Sprite" parent="bgdecor"]
-position = Vector2( 21212.9, 467.714 )
-scale = Vector2( 1.022, 1.327 )
-texture = ExtResource( 21 )
-flip_h = true
+[node name="Cactus20" parent="bgdecor" instance=ExtResource( 26 )]
+position = Vector2( 6297.41, 552.552 )
 
-[node name="Cactus3" type="Sprite" parent="bgdecor"]
-position = Vector2( 6396.01, 558.867 )
-texture = ExtResource( 21 )
-flip_h = true
+[node name="Cactus21" parent="bgdecor" instance=ExtResource( 26 )]
+position = Vector2( 6073.41, 468.552 )
 
-[node name="Erbaccia2" type="Sprite" parent="bgdecor"]
-position = Vector2( 8294.61, 581.28 )
-texture = ExtResource( 19 )
+[node name="Erbaccia3" parent="bgdecor" instance=ExtResource( 27 )]
 
-[node name="Erbaccia8" type="Sprite" parent="bgdecor"]
-position = Vector2( 3248.96, 587.319 )
-texture = ExtResource( 19 )
+[node name="Erbaccia15" parent="bgdecor" instance=ExtResource( 27 )]
+position = Vector2( 8294, 577.113 )
 
-[node name="Erbaccia14" type="Sprite" parent="bgdecor"]
-position = Vector2( 1187.32, 595.106 )
-scale = Vector2( 0.585938, 0.726563 )
-texture = ExtResource( 19 )
+[node name="Erbaccia16" parent="bgdecor" instance=ExtResource( 27 )]
+position = Vector2( 3248, 577.113 )
 
-[node name="Erbaccia10" type="Sprite" parent="bgdecor"]
-position = Vector2( 6871.91, 575.138 )
-texture = ExtResource( 19 )
+[node name="Erbaccia17" parent="bgdecor" instance=ExtResource( 27 )]
+position = Vector2( 1187, 577.113 )
 
-[node name="Erbaccia12" type="Sprite" parent="bgdecor"]
-position = Vector2( 6871.91, 575.138 )
-texture = ExtResource( 19 )
+[node name="Erbaccia18" parent="bgdecor" instance=ExtResource( 27 )]
+position = Vector2( 6871, 577.113 )
+
+[node name="Erbaccia20" parent="bgdecor" instance=ExtResource( 27 )]
+position = Vector2( 23677, 577.113 )
+
+[node name="Erbaccia21" parent="bgdecor" instance=ExtResource( 27 )]
+position = Vector2( 24633, 577.113 )
+
+[node name="Erbaccia22" parent="bgdecor" instance=ExtResource( 27 )]
+position = Vector2( 17550, 577.113 )
+
+[node name="Erbaccia23" parent="bgdecor" instance=ExtResource( 27 )]
+position = Vector2( 21160, 577.113 )
+
+[node name="Erbaccia24" parent="bgdecor" instance=ExtResource( 27 )]
+position = Vector2( 18271, 577.113 )
+
+[node name="Erbaccia25" parent="bgdecor" instance=ExtResource( 27 )]
+position = Vector2( 26146, 577.113 )
+
+[node name="Erbaccia26" parent="bgdecor" instance=ExtResource( 27 )]
+position = Vector2( 26728, 577.113 )
 
 [node name="Palm3" type="Sprite" parent="bgdecor"]
 position = Vector2( 23626.2, 511.608 )
 texture = ExtResource( 20 )
-
-[node name="Erbaccia11" type="Sprite" parent="bgdecor"]
-position = Vector2( 17550.4, 604.773 )
-scale = Vector2( 0.56691, 0.625423 )
-texture = ExtResource( 19 )
 
 [node name="Palm4" type="Sprite" parent="bgdecor"]
 position = Vector2( 16490, 515.688 )
@@ -298,31 +290,6 @@ texture = ExtResource( 20 )
 [node name="Palm12" type="Sprite" parent="bgdecor"]
 position = Vector2( 18770.4, 511.648 )
 texture = ExtResource( 20 )
-
-[node name="Erbaccia4" type="Sprite" parent="bgdecor"]
-position = Vector2( 23677, 578.526 )
-texture = ExtResource( 19 )
-
-[node name="Erbaccia5" type="Sprite" parent="bgdecor"]
-position = Vector2( 24633.7, 578.139 )
-texture = ExtResource( 19 )
-
-[node name="Erbaccia9" type="Sprite" parent="bgdecor"]
-position = Vector2( 21160.9, 583.447 )
-texture = ExtResource( 19 )
-
-[node name="Erbaccia13" type="Sprite" parent="bgdecor"]
-position = Vector2( 18271.7, 604.661 )
-scale = Vector2( 0.56691, 0.625423 )
-texture = ExtResource( 19 )
-
-[node name="Erbaccia6" type="Sprite" parent="bgdecor"]
-position = Vector2( 26146.9, 76.1636 )
-texture = ExtResource( 19 )
-
-[node name="Erbaccia7" type="Sprite" parent="bgdecor"]
-position = Vector2( 26728.8, 193.798 )
-texture = ExtResource( 19 )
 
 [node name="background" type="Node2D" parent="."]
 position = Vector2( 19, 36 )
@@ -386,7 +353,7 @@ position = Vector2( 27578.1, 713.717 )
 [node name="player" parent="." groups=[
 "camera_shaker",
 ] instance=ExtResource( 1 )]
-position = Vector2( 8175.1, 558.358 )
+position = Vector2( 8190.2, 354.481 )
 run_speed = 300
 
 [node name="bufera" parent="." instance=ExtResource( 5 )]
@@ -504,10 +471,6 @@ cell_quadrant_size = 128
 cell_custom_transform = Transform2D( 128, 0, 0, 128, 0, 0 )
 tile_data = PoolIntArray( -65362, 6, 0, -65361, 12, 0, 121, 9, 0, 122, 16, 0, 173, 3, 0, 174, 2, 0, 175, 2, 0, 176, 13, 0, 65619, 6, 0, 65620, 12, 0, 65639, 6, 0, 65640, 12, 0, 65656, 3, 0, 65657, 1, 0, 65658, 14, 0, 65659, 13, 0, 65691, 6, 0, 65692, 12, 0, 65708, 3, 0, 65709, 1, 0, 65710, 4, 0, 65711, 4, 0, 65712, 14, 0, 65713, 11, 0, 65738, 8, 0, 65739, 2, 0, 65740, 2, 0, 65741, 2, 0, 65742, 2, 0, 65743, 13, 0, 65746, 6, 0, 65747, 12, 0, 131092, 6, 0, 131093, 12, 0, 131147, 6, 0, 131148, 12, 0, 131154, 3, 0, 131155, 2, 0, 131156, 2, 0, 131157, 11, 0, 131174, 8, 0, 131175, 2, 0, 131176, 2, 0, 131177, 13, 0, 131191, 3, 0, 131192, 1, 0, 131193, 4, 0, 131194, 4, 0, 131195, 14, 0, 131196, 13, 0, 131226, 8, 0, 131227, 2, 0, 131228, 2, 0, 131229, 13, 0, 131243, 3, 0, 131244, 1, 0, 131245, 4, 0, 131246, 4, 0, 131247, 4, 0, 131248, 4, 0, 131249, 14, 0, 131268, 3, 0, 131269, 2, 0, 131273, 3, 0, 131274, 1, 0, 131275, 4, 0, 131276, 4, 0, 131277, 4, 0, 131278, 4, 0, 131279, 14, 0, 131280, 2, 0, 131281, 2, 0, 131282, 2, 0, 131283, 2, 0, 131284, 11, 0, 196627, 3, 0, 196628, 2, 0, 196629, 2, 0, 196630, 11, 0, 196645, 9, 0, 196646, 2, 0, 196647, 2, 0, 196648, 2, 0, 196649, 2, 0, 196650, 2, 0, 196651, 16, 0, 196682, 3, 0, 196683, 2, 0, 196684, 2, 0, 196685, 13, 0, 196689, 3, 0, 196690, 15, 0, 196691, 4, 0, 196692, 4, 0, 196693, 14, 0, 196694, 13, 0, 196709, 8, 0, 196710, 1, 0, 196711, 4, 0, 196712, 4, 0, 196713, 14, 0, 196714, 11, 0, 196726, 3, 0, 196727, 1, 0, 196728, 4, 0, 196729, 4, 0, 196730, 4, 0, 196731, 4, 0, 196732, 14, 0, 196733, 11, 0, 196761, 8, 0, 196762, 1, 0, 196763, 4, 0, 196764, 4, 0, 196765, 14, 0, 196766, 11, 0, 196778, 3, 0, 196779, 1, 0, 196780, 4, 0, 196781, 4, 0, 196782, 4, 0, 196783, 4, 0, 196784, 4, 0, 196785, 4, 0, 196803, 3, 0, 196804, 1, 0, 196805, 4, 0, 196808, 3, 0, 196809, 1, 0, 196810, 4, 0, 196811, 4, 0, 196812, 4, 0, 196813, 4, 0, 196814, 4, 0, 196815, 4, 0, 196816, 4, 0, 196817, 4, 0, 196818, 4, 0, 196819, 4, 0, 196820, 14, 0, 196821, 11, 0, 262162, 3, 0, 262163, 15, 0, 262164, 4, 0, 262165, 4, 0, 262166, 14, 0, 262167, 11, 0, 262180, 8, 0, 262181, 1, 0, 262182, 4, 0, 262183, 4, 0, 262184, 4, 0, 262185, 4, 0, 262186, 4, 0, 262187, 14, 0, 262188, 13, 0, 262217, 8, 0, 262218, 1, 0, 262219, 4, 0, 262220, 4, 0, 262221, 14, 0, 262222, 13, 0, 262224, 8, 0, 262225, 1, 0, 262226, 4, 0, 262227, 4, 0, 262228, 4, 0, 262229, 4, 0, 262230, 14, 0, 262231, 13, 0, 262244, 3, 0, 262245, 1, 0, 262246, 4, 0, 262247, 4, 0, 262248, 4, 0, 262249, 4, 0, 262250, 14, 0, 262251, 11, 0, 262261, 8, 0, 262262, 1, 0, 262263, 4, 0, 262264, 4, 0, 262265, 4, 0, 262266, 4, 0, 262267, 4, 0, 262268, 4, 0, 262269, 14, 0, 262270, 11, 0, 262296, 8, 0, 262297, 1, 0, 262298, 4, 0, 262299, 4, 0, 262300, 4, 0, 262301, 4, 0, 262302, 14, 0, 262303, 11, 0, 262313, 3, 0, 262314, 1, 0, 262315, 4, 0, 262316, 4, 0, 262317, 4, 0, 262318, 4, 0, 262319, 4, 0, 262320, 4, 0, 262321, 4, 0, 262323, 3, 0, 262324, 11, 0, 262338, 3, 0, 262339, 1, 0, 262340, 4, 0, 262341, 4, 0, 262343, 3, 0, 262344, 1, 0, 262345, 4, 0, 262346, 4, 0, 262347, 4, 0, 262348, 4, 0, 262349, 4, 0, 262350, 4, 0, 262351, 4, 0, 262352, 4, 0, 262353, 4, 0, 262354, 4, 0, 262355, 4, 0, 262356, 4, 0, 262357, 14, 0, 262358, 11, 0, 327680, 2, 0, 327681, 2, 0, 327682, 2, 0, 327683, 2, 0, 327684, 2, 0, 327685, 2, 0, 327686, 2, 0, 327687, 2, 0, 327688, 2, 0, 327689, 16, 0, 327696, 9, 0, 327697, 2, 0, 327698, 1, 0, 327699, 4, 0, 327700, 4, 0, 327701, 4, 0, 327702, 4, 0, 327703, 14, 0, 327704, 2, 0, 327705, 2, 0, 327706, 2, 0, 327707, 2, 0, 327708, 2, 0, 327709, 2, 0, 327710, 2, 0, 327711, 2, 0, 327712, 2, 0, 327713, 2, 0, 327714, 2, 0, 327715, 2, 0, 327716, 15, 0, 327717, 4, 0, 327718, 4, 0, 327719, 4, 0, 327720, 4, 0, 327721, 4, 0, 327722, 4, 0, 327723, 4, 0, 327724, 14, 0, 327725, 2, 0, 327726, 2, 0, 327727, 2, 0, 327728, 2, 0, 327729, 2, 0, 327730, 2, 0, 327731, 2, 0, 327732, 2, 0, 327733, 2, 0, 327734, 2, 0, 327743, 2, 0, 327744, 2, 0, 327745, 2, 0, 327746, 2, 0, 327747, 2, 0, 327748, 2, 0, 327749, 2, 0, 327750, 2, 0, 327751, 2, 0, 327752, 2, 0, 327753, 1, 0, 327754, 4, 0, 327755, 4, 0, 327756, 4, 0, 327757, 4, 0, 327758, 14, 0, 327759, 2, 0, 327760, 1, 0, 327761, 4, 0, 327762, 4, 0, 327763, 4, 0, 327764, 4, 0, 327765, 4, 0, 327766, 4, 0, 327767, 14, 0, 327768, 2, 0, 327769, 2, 0, 327770, 2, 0, 327771, 2, 0, 327772, 2, 0, 327773, 2, 0, 327774, 2, 0, 327775, 2, 0, 327776, 2, 0, 327777, 2, 0, 327778, 2, 0, 327779, 2, 0, 327780, 1, 0, 327781, 4, 0, 327782, 4, 0, 327783, 4, 0, 327784, 4, 0, 327785, 4, 0, 327786, 4, 0, 327787, 14, 0, 327788, 2, 0, 327789, 2, 0, 327790, 2, 0, 327791, 2, 0, 327792, 2, 0, 327793, 2, 0, 327794, 2, 0, 327795, 2, 0, 327796, 2, 0, 327797, 1, 0, 327798, 4, 0, 327799, 4, 0, 327800, 4, 0, 327801, 4, 0, 327802, 4, 0, 327803, 4, 0, 327804, 4, 0, 327805, 4, 0, 327806, 14, 0, 327807, 2, 0, 327808, 2, 0, 327809, 2, 0, 327810, 2, 0, 327811, 2, 0, 327812, 2, 0, 327813, 2, 0, 327814, 2, 0, 327815, 2, 0, 327816, 2, 0, 327817, 2, 0, 327818, 2, 0, 327819, 2, 0, 327820, 2, 0, 327821, 2, 0, 327822, 2, 0, 327823, 2, 0, 327824, 2, 0, 327825, 2, 0, 327826, 2, 0, 327827, 2, 0, 327828, 2, 0, 327829, 2, 0, 327830, 2, 0, 327831, 2, 0, 327832, 1, 0, 327833, 4, 0, 327834, 4, 0, 327835, 4, 0, 327836, 4, 0, 327837, 4, 0, 327838, 4, 0, 327839, 14, 0, 327840, 2, 0, 327841, 2, 0, 327842, 2, 0, 327843, 2, 0, 327844, 2, 0, 327845, 2, 0, 327846, 2, 0, 327847, 2, 0, 327848, 2, 0, 327849, 1, 0, 327850, 4, 0, 327851, 4, 0, 327852, 4, 0, 327853, 4, 0, 327854, 4, 0, 327855, 4, 0, 327856, 4, 0, 327857, 4, 0, 327858, 2, 0, 327859, 1, 0, 327860, 14, 0, 327861, 2, 0, 327862, 2, 0, 327863, 2, 0, 327864, 2, 0, 327865, 2, 0, 327866, 2, 0, 327867, 2, 0, 327868, 2, 0, 327869, 2, 0, 327870, 2, 0, 327871, 2, 0, 327872, 2, 0, 327873, 2, 0, 327874, 1, 0, 327875, 4, 0, 327876, 4, 0, 327877, 4, 0, 327878, 2, 0, 327879, 1, 0, 327880, 4, 0, 327881, 4, 0, 327882, 4, 0, 327883, 4, 0, 327884, 4, 0, 327885, 4, 0, 327886, 4, 0, 327887, 4, 0, 327888, 4, 0, 327889, 4, 0, 327890, 4, 0, 327891, 4, 0, 327892, 4, 0, 327893, 4, 0, 327894, 14, 0, 327895, 2, 0, 327896, 2, 0, 327897, 2, 0, 327898, 2, 0, 327899, 2, 0, 327900, 2, 0, 327901, 2, 0, 327902, 2, 0, 327903, 2, 0, 327904, 2, 0, 327905, 2, 0, 327906, 2, 0, 327907, 2, 0, 327908, 2, 0, 327909, 2, 0, 327910, 2, 0, 327911, 2, 0, 327912, 2, 0, 327913, 2, 0, 327914, 2, 0, 327915, 2, 0 )
 
-[node name="Erbaccia3" type="Sprite" parent="."]
-position = Vector2( 8694.63, 581.28 )
-texture = ExtResource( 19 )
-
 [node name="foreground" type="Node2D" parent="."]
 
 [node name="sabbiamobile" type="Node2D" parent="foreground"]
@@ -611,9 +574,9 @@ texture = ExtResource( 22 )
 [node name="GUI" type="CanvasLayer" parent="."]
 
 [node name="VacLabel" type="Label" parent="GUI"]
-margin_left = 936.297
+margin_left = 905.297
 margin_top = 35.2152
-margin_right = 999.297
+margin_right = 968.297
 margin_bottom = 112.215
 custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -636,6 +599,7 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="GUI"]
+visible = false
 margin_left = 615.183
 margin_top = -49.4975
 margin_right = 871.183
@@ -646,9 +610,9 @@ __meta__ = {
 }
 
 [node name="TextureRect2" type="TextureRect" parent="GUI"]
-margin_left = 889.878
+margin_left = 858.878
 margin_top = 20.983
-margin_right = 928.878
+margin_right = 897.878
 margin_bottom = 84.983
 rect_scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 23 )
@@ -668,6 +632,8 @@ __meta__ = {
 }
 
 [node name="CondorPath" type="Path2D" parent="."]
+position = Vector2( -61.0981, -83.7766 )
+scale = Vector2( 1.00246, 0.297848 )
 curve = SubResource( 12 )
 
 [node name="CondorSpawnLocation" type="PathFollow2D" parent="CondorPath"]
