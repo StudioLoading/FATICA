@@ -11,5 +11,5 @@ dest_files=[ "res://.import/helicopter_nhu0506808.ogg-e0ebcf9b21e61aadf08f01921b
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

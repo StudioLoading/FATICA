@@ -12,4 +12,4 @@ dest_files=[ "res://.import/desert_chase.ogg-31b7558ece05ca475e1164bb17014650.og
 [params]
 
 loop=true
-loop_offset=0
+loop_offset=3.2

@@ -27,6 +27,7 @@ onready var fx_insults= preload("res://asset/audio/voci/insults.ogg")
 signal camera_shake_requested
 signal camera_shake_stop
 signal start_chase
+signal end_game
 
 var left
 var right
@@ -53,6 +54,10 @@ func get_input():
 func _physics_process(delta):
 	if state == STATES.MORTO:
 		return
+	
+	if state == STATES.END:
+		return
+		
 	get_input()
 	
 	
@@ -116,6 +121,8 @@ func _physics_process(delta):
 	
 
 func _process(delta):
+	if state == STATES.END:
+		return	
 	if energy < 0 and state != STATES.MORTO:
 		state = STATES.MORTO
 		energy = 0
@@ -170,8 +177,8 @@ func _on_Area2D_area_entered(area):
 		$afx_grunt.stream = fx_grunt
 		$afx_grunt.play()
 	if area.is_in_group('oasi'):
-		$afx_grunt.stream = fx_heal
-		$afx_grunt.play()
+		$afx_oasi.stream = fx_heal
+		$afx_oasi.play()
 		healing = true
 	if area.is_in_group('nuoto'):
 		print('nuoto')
@@ -197,6 +204,7 @@ func _on_Area2D_area_entered(area):
 		$AnimatedSprite.play("Wearmask")
 		velocity.x += 0
 		get_node("Sprite2").visible = true
+		$timer_end.start()
 		
 		
 		
@@ -224,10 +232,14 @@ func _on_Area2D_area_exited(area):
 	if area.is_in_group('nuoto'):
 		state = STATES.WALKING
 		
-		
-	
+
 	
 func _on_Timer_timeout():
 	$AnimatedSprite.play("Speak")
 	get_node("Sprite").visible = true
 	
+
+
+func _on_timer_end_timeout():
+	emit_signal('end_game')
+	pass # Replace with function body.

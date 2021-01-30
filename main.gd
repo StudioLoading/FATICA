@@ -5,6 +5,7 @@ extends Node2D
 # var a = 2
 export (PackedScene) var Condor
 
+onready var bg_chase = preload("res://asset/audio/bg/desert_chase.ogg")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -68,4 +69,14 @@ func _on_player_start_chase():
 	$ContrattazioneBanditi/Node2DBanditi/cammello/AnimatedSprite.flip_h = true
 	$ContrattazioneBanditi/Node2DBanditi/cammello.move()
 	$ContrattazioneBanditi/Node2DBanditi/cammello/AnimatedSprite.play('walk')
+	$AudioStreamPlayer.stop()
+	$AudioStreamPlayer.stream = bg_chase
+	$AudioStreamPlayer.play()
+	pass # Replace with function body.
+
+
+func _on_player_end_game():
+	$afx_elicopter.play()
+	yield($afx_elicopter, 'finished')
+	get_tree().change_scene("res://Outro.tscn")
 	pass # Replace with function body.
