@@ -797,6 +797,7 @@ position = Vector2( 35009.4, -41.5305 )
 shape = SubResource( 16 )
 [connection signal="bubble" from="player" to="player" method="_on_player_bubble"]
 [connection signal="end_game" from="player" to="." method="_on_player_end_game"]
+[connection signal="fumosalto" from="player" to="." method="_on_player_fumosalto"]
 [connection signal="start_chase" from="player" to="." method="_on_player_start_chase"]
 [connection signal="body_entered" from="foreground/sabbiamobile/Area2D" to="player" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="foreground/sabbiamobile/Area2D" to="player" method="_on_Area2D_body_exited"]

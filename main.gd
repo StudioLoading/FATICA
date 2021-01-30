@@ -86,3 +86,18 @@ func _on_player_end_game():
 func _on_VacTimer_timeout():
 	$player.energy = 0
 	pass # Replace with function body.
+
+
+func _on_player_fumosalto():
+	var fs = preload("res://fumo_salto.tscn")
+	var instance = fs.instance()
+	instance.frame = 0
+	instance.position = $player.position
+	instance.position.y -= 70
+	instance.position.x -= 60
+	add_child(instance)
+	#instance.play('default')
+	yield(instance, "animation_finished")
+	instance.queue_free()
+	print('elimino fumosalto instance!')
+	pass # Replace with function body.

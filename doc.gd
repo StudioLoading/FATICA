@@ -28,6 +28,7 @@ signal camera_shake_requested
 signal camera_shake_stop
 signal start_chase
 signal end_game
+signal fumosalto
 
 var left
 var right
@@ -98,15 +99,12 @@ func _physics_process(delta):
 		if state == STATES.TEMPESTA and $AnimatedSprite.animation != 'ProtectWalk':
 			$AnimatedSprite.play("Protectwalk")
 	
-	
-		
-			
-		
-			
+
 
 	if jumping and is_on_floor() and state == STATES.JUMPING and state != STATES.NUOTO:
 		$AnimatedSprite.play("Jump")
 		jumping = false
+		emit_signal('fumosalto')
 		$afx_step.stream = fx_step
 		$afx_step.play()
 
@@ -207,10 +205,7 @@ func _on_Area2D_area_entered(area):
 		get_node("Sprite2").visible = true
 		$timer_end.start()
 		
-		
-		
-		
-		
+
 	
 func _on_Area2D_area_exited(area):
 	if area.is_in_group('a_tempesta'):
@@ -234,7 +229,7 @@ func _on_Area2D_area_exited(area):
 		state = STATES.WALKING
 		
 
-	
+
 func _on_Timer_timeout():
 	$AnimatedSprite.play("Speak")
 	get_node("Sprite").visible = true
