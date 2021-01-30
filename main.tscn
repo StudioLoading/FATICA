@@ -42,58 +42,58 @@ b = Vector2( 29889.5, 664.37 )
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 161.024, 731.609 )
 
-[sub_resource type="RectangleShape2D" id=18]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 1720.86, 131.138 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 399.972, 149.394 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 51.9464, 122.071 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 278.215, 187.971 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 1576.51, 324.348 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 538.71, 90.7171 )
 
-[sub_resource type="SegmentShape2D" id=9]
+[sub_resource type="SegmentShape2D" id=10]
 a = Vector2( 719.98, 746.446 )
 b = Vector2( 1349.98, 746.446 )
 
-[sub_resource type="SegmentShape2D" id=10]
+[sub_resource type="SegmentShape2D" id=11]
 a = Vector2( 397.316, 789.716 )
 b = Vector2( 260.348, 645.335 )
 
-[sub_resource type="SegmentShape2D" id=11]
+[sub_resource type="SegmentShape2D" id=12]
 a = Vector2( 1069.12, 797.106 )
 b = Vector2( 1183.68, 643.635 )
-
-[sub_resource type="DynamicFont" id=12]
-size = 30
-font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=13]
 size = 30
 font_data = ExtResource( 7 )
 
-[sub_resource type="Curve2D" id=14]
+[sub_resource type="DynamicFont" id=14]
+size = 30
+font_data = ExtResource( 7 )
+
+[sub_resource type="Curve2D" id=15]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 8019.29, -281.541, 0, 0, 0, 0, 13270.8, -233.973, 0, 0, 0, 0, 13275.6, 41.9228, 0, 0, 0, 0, 8005.02, 32.4093, 0, 0, 0, 0, 8019.29, -281.541 )
 }
 
-[sub_resource type="Curve2D" id=15]
+[sub_resource type="Curve2D" id=16]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 15768.9, -328.405, 0, 0, 0, 0, 24990.5, -353.832, 0, 0, 0, 0, 24990.5, 44.5257, 0, 0, 0, 0, 15764, 5.34435, 0, 0, 0, 0, 15768.9, -328.405 )
 }
 
-[sub_resource type="RectangleShape2D" id=16]
+[sub_resource type="RectangleShape2D" id=17]
 extents = Vector2( 253.777, 246.94 )
 
-[sub_resource type="RectangleShape2D" id=17]
+[sub_resource type="RectangleShape2D" id=18]
 extents = Vector2( 161.58, 214.243 )
 
 [node name="Node2D" type="Node2D"]
@@ -399,7 +399,7 @@ polygon = PoolVector2Array( -2196.49, -68.4224, -1559.07, -705.837, -1230.85, -7
 
 [node name="fondale" type="CollisionShape2D" parent="background/suolo"]
 position = Vector2( 32704.6, 334.719 )
-shape = SubResource( 18 )
+shape = SubResource( 4 )
 
 [node name="end" type="Node2D" parent="."]
 position = Vector2( 36680.6, 59.3273 )
@@ -411,7 +411,7 @@ position = Vector2( -2010.68, -150.64 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="end/Area2DIncontraBanditi2"]
 position = Vector2( 166.123, 57.3395 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="Area2DAParlaBanditi2" type="Area2D" parent="end" groups=[
 "end",
@@ -420,7 +420,7 @@ position = Vector2( -2037.32, -115.815 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="end/Area2DAParlaBanditi2"]
 position = Vector2( 60.9904, -40.1571 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="ContrattazioneBanditi" type="Node2D" parent="."]
 position = Vector2( 29510.9, 336.827 )
@@ -441,7 +441,7 @@ position = Vector2( -296.8, 26.549 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ContrattazioneBanditi/Node2DBanditi/Area2DIncontraBanditi"]
 position = Vector2( 166.123, 57.3395 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="Area2DAParlaBanditi" type="Area2D" parent="ContrattazioneBanditi/Node2DBanditi" groups=[
 "ParlaBanditi",
@@ -450,7 +450,7 @@ position = Vector2( -323.44, 61.374 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ContrattazioneBanditi/Node2DBanditi/Area2DAParlaBanditi"]
 position = Vector2( -20.1815, -42.0448 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="buferabk" parent="." instance=ExtResource( 14 )]
 position = Vector2( 19303.4, 713.717 )
@@ -461,7 +461,7 @@ position = Vector2( 25591.9, 713.717 )
 [node name="player" parent="." groups=[
 "camera_shaker",
 ] instance=ExtResource( 1 )]
-position = Vector2( 400, 0 )
+position = Vector2( 286.129, 474.963 )
 run_speed = 300
 
 [node name="bufera" parent="." instance=ExtResource( 5 )]
@@ -536,7 +536,7 @@ position = Vector2( 6000, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="oasi/Area2D"]
 position = Vector2( 4191.12, 780.005 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="WaterSineAndTexture2" parent="oasi" instance=ExtResource( 4 )]
 modulate = Color( 1, 1, 1, 0.745098 )
@@ -563,7 +563,7 @@ position = Vector2( 17219.7, -31.7047 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="oasi3/Area2D"]
 position = Vector2( 4191.12, 780.005 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="WaterSineAndTexture2" parent="oasi3" instance=ExtResource( 4 )]
 modulate = Color( 1, 1, 1, 0.745098 )
@@ -592,7 +592,7 @@ position = Vector2( 576, 37 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="oasi2/nuoto"]
 position = Vector2( 4242.08, 867.918 )
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="WaterSineAndTexture2" parent="oasi2" instance=ExtResource( 4 )]
 modulate = Color( 1, 1, 1, 0.745098 )
@@ -635,21 +635,21 @@ position = Vector2( 0, 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="foreground/sabbiamobile/Area2D"]
 position = Vector2( 182.077, 1.38789 )
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="foreground/sabbiamobile"]
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="foreground/sabbiamobile/StaticBody2D"]
 position = Vector2( -855.438, -727.411 )
-shape = SubResource( 9 )
+shape = SubResource( 10 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="foreground/sabbiamobile/StaticBody2D"]
 position = Vector2( -531.774, -771.051 )
-shape = SubResource( 10 )
+shape = SubResource( 11 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="foreground/sabbiamobile/StaticBody2D"]
 position = Vector2( -578.137, -768.6 )
-shape = SubResource( 11 )
+shape = SubResource( 12 )
 
 [node name="sabbiamobile2" type="Node2D" parent="foreground"]
 position = Vector2( 13931.8, 535.461 )
@@ -665,21 +665,21 @@ position = Vector2( 0, 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="foreground/sabbiamobile2/Area2D"]
 position = Vector2( 175.087, 57.8083 )
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="foreground/sabbiamobile2"]
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="foreground/sabbiamobile2/StaticBody2D"]
 position = Vector2( -855.438, -727.411 )
-shape = SubResource( 9 )
+shape = SubResource( 10 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="foreground/sabbiamobile2/StaticBody2D"]
 position = Vector2( -531.774, -771.681 )
-shape = SubResource( 10 )
+shape = SubResource( 11 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="foreground/sabbiamobile2/StaticBody2D"]
 position = Vector2( -578.137, -768.6 )
-shape = SubResource( 11 )
+shape = SubResource( 12 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
@@ -704,7 +704,7 @@ margin_left = 905.297
 margin_top = 35.2152
 margin_right = 968.297
 margin_bottom = 112.215
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "600
 "
@@ -719,7 +719,7 @@ margin_left = 149.986
 margin_top = 31.7478
 margin_right = 212.986
 margin_bottom = 68.7478
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 14 )
 text = "600"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -777,7 +777,7 @@ __meta__ = {
 [node name="Timer" type="Timer" parent="."]
 
 [node name="CondorPath" type="Path2D" parent="."]
-curve = SubResource( 14 )
+curve = SubResource( 15 )
 
 [node name="CondorSpawnLocation" type="PathFollow2D" parent="CondorPath"]
 position = Vector2( 8019.29, -281.541 )
@@ -786,7 +786,7 @@ rotation = 0.00905261
 [node name="Timer2" type="Timer" parent="."]
 
 [node name="CondorPath2" type="Path2D" parent="."]
-curve = SubResource( 15 )
+curve = SubResource( 16 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -804,7 +804,7 @@ max_distance = 1000.0
 position = Vector2( 35009.4, -41.5305 )
 
 [node name="end2" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource( 16 )
+shape = SubResource( 17 )
 
 [node name="cammello_accelera" type="Area2D" parent="." groups=[
 "accelera",
@@ -813,7 +813,7 @@ position = Vector2( 28500, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cammello_accelera"]
 position = Vector2( 28.5078, 192.434 )
-shape = SubResource( 17 )
+shape = SubResource( 18 )
 [connection signal="bubble" from="player" to="player" method="_on_player_bubble"]
 [connection signal="end_game" from="player" to="." method="_on_player_end_game"]
 [connection signal="fumosalto" from="player" to="." method="_on_player_fumosalto"]
