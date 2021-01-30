@@ -8,7 +8,7 @@
 [ext_resource path="res://asset/credits/TCAPITANO.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
-size = 60
+size = 52
 font_data = ExtResource( 1 )
 
 [node name="Node2D" type="Node2D"]
@@ -40,6 +40,7 @@ margin_top = 44.5558
 margin_right = 858.068
 margin_bottom = 464.556
 custom_constants/vseparation = 32
+columns = 2
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -47,8 +48,8 @@ __meta__ = {
 
 [node name="Label5" type="Label" parent="Control/GridContainer"]
 modulate = Color( 0, 0, 0, 1 )
-margin_right = 573.0
-margin_bottom = 73.0
+margin_right = 488.0
+margin_bottom = 64.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Game Designer "
@@ -56,50 +57,97 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label9" type="Label" parent="Control/GridContainer"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 492.0
+margin_right = 686.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "TC aka"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Label6" type="Label" parent="Control/GridContainer"]
 modulate = Color( 0, 0, 0, 1 )
-margin_top = 105.0
-margin_right = 573.0
-margin_bottom = 178.0
+margin_top = 129.0
+margin_right = 488.0
+margin_bottom = 193.0
 custom_fonts/font = SubResource( 1 )
 text = "Pair Programmers"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label10" type="Label" parent="Control/GridContainer"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 492.0
+margin_top = 96.0
+margin_right = 686.0
+margin_bottom = 227.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "FB aka
+TC aka"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Label7" type="Label" parent="Control/GridContainer"]
 modulate = Color( 0, 0, 0, 1 )
-margin_top = 210.0
-margin_right = 573.0
-margin_bottom = 283.0
+margin_top = 259.0
+margin_right = 488.0
+margin_bottom = 323.0
 custom_fonts/font = SubResource( 1 )
 text = "Graphic Designer"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label11" type="Label" parent="Control/GridContainer"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 492.0
+margin_top = 259.0
+margin_right = 686.0
+margin_bottom = 323.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "RS aka"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Label8" type="Label" parent="Control/GridContainer"]
 modulate = Color( 0, 0, 0, 1 )
-margin_top = 315.0
-margin_right = 573.0
-margin_bottom = 388.0
+margin_top = 355.0
+margin_right = 488.0
+margin_bottom = 419.0
 custom_fonts/font = SubResource( 1 )
 text = "Sound Designer"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="Control/GridContainer"]
-margin_top = 420.0
-margin_right = 573.0
-margin_bottom = 420.0
+[node name="Label12" type="Label" parent="Control/GridContainer"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 492.0
+margin_top = 355.0
+margin_right = 686.0
+margin_bottom = 419.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "VP"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label11" type="Label" parent="Control"]
 modulate = Color( 0, 0, 0, 1 )
 margin_left = 189.635
-margin_top = 484.032
+margin_top = 525.032
 margin_right = 439.635
-margin_bottom = 557.032
+margin_bottom = 598.032
 custom_fonts/font = SubResource( 1 )
 text = "PRESS "
 align = 2
@@ -111,9 +159,9 @@ __meta__ = {
 [node name="Label12" type="Label" parent="Control"]
 modulate = Color( 0, 0, 0, 1 )
 margin_left = 458.047
-margin_top = 481.203
+margin_top = 522.203
 margin_right = 849.047
-margin_bottom = 554.203
+margin_bottom = 595.203
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
@@ -125,20 +173,20 @@ __meta__ = {
 }
 
 [node name="FB" type="Sprite" parent="."]
-position = Vector2( 730.843, 185.448 )
+position = Vector2( 817.778, 170.329 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 5 )
 
 [node name="AWARIO" type="Sprite" parent="."]
-position = Vector2( 686.225, 295.167 )
+position = Vector2( 789.538, 338.004 )
 texture = ExtResource( 4 )
 
 [node name="TCAPITANO" type="Sprite" parent="."]
-position = Vector2( 725.666, 85.3194 )
+position = Vector2( 813.86, 76.5 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 6 )
 
 [node name="TCAPITANO2" type="Sprite" parent="."]
-position = Vector2( 909.514, 185.021 )
+position = Vector2( 817.54, 236.678 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 6 )

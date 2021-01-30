@@ -76,7 +76,13 @@ func _on_player_start_chase():
 
 
 func _on_player_end_game():
+	$VacTimer.stop()
 	$afx_elicopter.play()
 	yield($afx_elicopter, 'finished')
 	get_tree().change_scene("res://Outro.tscn")
+	pass # Replace with function body.
+
+
+func _on_VacTimer_timeout():
+	$player.energy = 0
 	pass # Replace with function body.

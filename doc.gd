@@ -123,9 +123,10 @@ func _physics_process(delta):
 func _process(delta):
 	if state == STATES.END:
 		return	
-	if energy < 0 and state != STATES.MORTO:
+	if energy <= 0 and state != STATES.MORTO:
 		state = STATES.MORTO
 		energy = 0
+		self.position.y += 16
 		$AnimatedSprite.play('Die')
 		yield($AnimatedSprite, 'animation_finished')
 		$timerGameOver.start()

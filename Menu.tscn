@@ -1,12 +1,32 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Menu.gd" type="Script" id=1]
 [ext_resource path="res://asset/Background e assets/esempio background.png" type="Texture" id=2]
 [ext_resource path="res://asset/xolonium/Xolonium-Bold.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://asset/audio/bg/titlemenu.ogg" type="AudioStream" id=4]
+[ext_resource path="res://asset/Background e assets/Cactus.png" type="Texture" id=5]
+[ext_resource path="res://asset/Background e assets/Erbaccia.png" type="Texture" id=6]
+[ext_resource path="res://asset/Condor/Volo/Volo_000.png" type="Texture" id=7]
 [ext_resource path="res://asset/xolonium/Xolonium-Regular.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://asset/chars/Rei animazioni/Rei cammina/Walk_000.png" type="Texture" id=9]
 [ext_resource path="res://asset/xolonium/Xolonium-Regular.otf" type="DynamicFontData" id=10]
+[ext_resource path="res://asset/Condor/Volo/Volo_009.png" type="Texture" id=11]
+[ext_resource path="res://asset/Condor/Volo/Volo_017.png" type="Texture" id=12]
+[ext_resource path="res://asset/Condor/Volo/Volo_011.png" type="Texture" id=13]
+[ext_resource path="res://asset/Condor/Volo/Volo_010.png" type="Texture" id=14]
+[ext_resource path="res://asset/Condor/Volo/Volo_014.png" type="Texture" id=15]
+[ext_resource path="res://asset/Condor/Volo/Volo_012.png" type="Texture" id=16]
+[ext_resource path="res://asset/Condor/Volo/Volo_013.png" type="Texture" id=17]
+[ext_resource path="res://asset/Condor/Volo/Volo_006.png" type="Texture" id=18]
+[ext_resource path="res://asset/Condor/Volo/Volo_007.png" type="Texture" id=19]
+[ext_resource path="res://asset/Condor/Volo/Volo_001.png" type="Texture" id=20]
+[ext_resource path="res://asset/Condor/Volo/Volo_003.png" type="Texture" id=21]
+[ext_resource path="res://asset/Condor/Volo/Volo_008.png" type="Texture" id=22]
+[ext_resource path="res://asset/Condor/Volo/Volo_002.png" type="Texture" id=23]
+[ext_resource path="res://asset/Condor/Volo/Volo_004.png" type="Texture" id=24]
+[ext_resource path="res://asset/Condor/Volo/Volo_016.png" type="Texture" id=25]
+[ext_resource path="res://asset/Condor/Volo/Volo_015.png" type="Texture" id=26]
+[ext_resource path="res://asset/Condor/Volo/Volo_005.png" type="Texture" id=27]
 
 [sub_resource type="DynamicFont" id=1]
 size = 72
@@ -20,6 +40,17 @@ font_data = ExtResource( 10 )
 
 [sub_resource type="DynamicFont" id=4]
 font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 8 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 20 ), ExtResource( 23 ), ExtResource( 21 ), ExtResource( 24 ), ExtResource( 27 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 22 ), ExtResource( 11 ), ExtResource( 14 ), ExtResource( 13 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 15 ), ExtResource( 26 ), ExtResource( 25 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -36,11 +67,12 @@ autoplay = true
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = 271.181
-margin_top = 62.5102
-margin_right = 716.181
-margin_bottom = 519.51
+margin_left = 268.284
+margin_top = 44.6922
+margin_right = 713.285
+margin_bottom = 545.692
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
@@ -100,13 +132,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="controlli" type="Label" parent="CenterContainer/Control"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/Control"]
 margin_top = 389.0
 margin_right = 445.0
 margin_bottom = 501.0
+grow_horizontal = 0
+grow_vertical = 0
+custom_constants/separation = 32
+alignment = 1
+
+[node name="controlli" type="Label" parent="CenterContainer/Control/HBoxContainer"]
+margin_left = 1.0
+margin_right = 264.0
+margin_bottom = 112.0
 custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "CONTROLS:
 
 LEFT ARROW      MOVE LEFT
@@ -115,5 +155,44 @@ SPACEBAR          JUMP"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Label4" type="Label" parent="CenterContainer/Control/HBoxContainer"]
+margin_left = 296.0
+margin_top = 46.0
+margin_right = 326.0
+margin_bottom = 66.0
+custom_fonts/font = SubResource( 5 )
+text = "      "
+align = 1
+
+[node name="Sprite2" type="Sprite" parent="CenterContainer/Control/HBoxContainer"]
+position = Vector2( 390.429, 71.312 )
+scale = Vector2( 0.118171, 0.143938 )
+texture = ExtResource( 5 )
+
+[node name="Sprite3" type="AnimatedSprite" parent="CenterContainer/Control/HBoxContainer"]
+position = Vector2( 394.256, 47.9191 )
+scale = Vector2( 0.252683, 0.209373 )
+frames = SubResource( 6 )
+frame = 6
+speed_scale = 8.0
+playing = true
+
+[node name="Sprite" type="Sprite" parent="CenterContainer/Control/HBoxContainer"]
+position = Vector2( 390.67, 99.7936 )
+scale = Vector2( 0.218584, 0.232142 )
+texture = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="CenterContainer/Control/HBoxContainer"]
+margin_left = 358.0
+margin_right = 443.0
+margin_bottom = 112.0
+custom_fonts/font = SubResource( 5 )
+text = "ENEMIES:
+
+
+
+"
+align = 1
 [connection signal="pressed" from="CenterContainer/Control/CenterContainer/GridContainer/Start Game" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="CenterContainer/Control/CenterContainer/GridContainer/Credits" to="." method="_on_Credits_pressed"]
