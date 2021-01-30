@@ -112,5 +112,5 @@ animations = [ {
 position = Vector2( -87.5955, -68.4064 )
 frames = SubResource( 1 )
 frame = 98
-speed_scale = 16.0
+speed_scale = 40.0
 playing = true

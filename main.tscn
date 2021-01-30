@@ -454,7 +454,7 @@ position = Vector2( 25591.9, 713.717 )
 [node name="player" parent="." groups=[
 "camera_shaker",
 ] instance=ExtResource( 1 )]
-position = Vector2( 400, 0 )
+position = Vector2( 13500, 0 )
 run_speed = 300
 
 [node name="bufera" parent="." instance=ExtResource( 5 )]
@@ -465,17 +465,17 @@ position = Vector2( 25597.4, 718.248 )
 
 [node name="sabbiemobili2" parent="." instance=ExtResource( 13 )]
 modulate = Color( 1, 1, 1, 0.972549 )
-position = Vector2( 13565.7, 339.524 )
-scale = Vector2( 13.234, 2.539 )
+position = Vector2( 13445.7, 367.163 )
+scale = Vector2( 17.1586, 2.32307 )
 
 [node name="sabbiemobili3" parent="." instance=ExtResource( 13 )]
 modulate = Color( 1, 1, 1, 0.972549 )
-position = Vector2( 13362.4, 426.426 )
+position = Vector2( 13452.4, 426.426 )
 scale = Vector2( 14.019, 2.539 )
 
 [node name="sabbiemobili4" parent="." instance=ExtResource( 13 )]
 modulate = Color( 1, 1, 1, 0.972549 )
-position = Vector2( 13705.4, 504.705 )
+position = Vector2( 13601.4, 504.705 )
 scale = Vector2( 13.413, 2.539 )
 
 [node name="fgdecor" type="Node2D" parent="."]
