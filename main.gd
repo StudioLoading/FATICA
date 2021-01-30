@@ -3,13 +3,15 @@ extends Node2D
 
 # Declare member variables here. Examples:
 # var a = 2
-
+export (PackedScene) var Condor
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	randomize()
 	$player/Camera2D.enabled = true
 	$VacTimer.start()
+	$Timer.start()
 	for t in get_tree().get_nodes_in_group('tempesta'):
 		t.set_deferred('emitting', false)
 
@@ -21,3 +23,33 @@ func _process(delta):
 		$GUI/VacLabel.text = str($VacTimer.time_left)
 	
 	
+
+
+func _on_CondorTimer_timeout():
+	
+	$CondorPath/CondorSpawnLocation.offset = randi()
+	var condor = Condor.instance()
+	add_child(condor)
+	var direction = $CondorPath/CondorSpawnLocation.rotation + PI / 2
+	condor.position = $CondorPath/CondorSpawnLocation.position
+
+	direction += rand_range(-PI / 4, PI / 4)
+	condor.rotation = direction
+	condor.linear_velocity = Vector2(rand_range(condor.min_speed, condor.max_speed), 0)
+	condor.linear_velocity = condor.linear_velocity.rotated(direction)
+
+
+
+
+func _on_Timer_timeout():
+	$CondorPath/CondorSpawnLocation.offset = randi()
+	var condor = Condor.instance()
+	add_child(condor)
+	var direction = $CondorPath/CondorSpawnLocation.rotation + PI / 2
+	condor.position = $CondorPath/CondorSpawnLocation.position
+
+	direction += rand_range(-PI / 4, PI / 4)
+	#condor.rotation = direction
+	condor.linear_velocity = Vector2(rand_range(condor.min_speed, condor.max_speed), 0)
+	condor.linear_velocity = condor.linear_velocity.rotated(direction)
+
