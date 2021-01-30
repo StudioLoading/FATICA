@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tiles.tscn" type="PackedScene" id=2]
@@ -11,7 +11,6 @@
 [ext_resource path="res://asset/Background e assets/desktop.png" type="Texture" id=9]
 [ext_resource path="res://asset/Background e assets/Sole glow.png" type="Texture" id=10]
 [ext_resource path="res://asset/Tiles/Tilespng.png" type="Texture" id=11]
-[ext_resource path="res://Banditi.tscn" type="PackedScene" id=12]
 [ext_resource path="res://water/sabbiemobili/sabbiemobili.tscn" type="PackedScene" id=13]
 [ext_resource path="res://snowbk.tscn" type="PackedScene" id=14]
 [ext_resource path="res://duna1.tscn" type="PackedScene" id=15]
@@ -27,6 +26,7 @@
 [ext_resource path="res://Condor.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Cactus.tscn" type="PackedScene" id=26]
 [ext_resource path="res://Erbaccia.tscn" type="PackedScene" id=27]
+[ext_resource path="res://cammello.tscn" type="PackedScene" id=28]
 
 [sub_resource type="SegmentShape2D" id=1]
 a = Vector2( -16.0657, 664.446 )
@@ -70,7 +70,12 @@ font_data = ExtResource( 7 )
 
 [sub_resource type="Curve2D" id=12]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 7948.39, 38.7714, 0, 0, 0, 0, 24810.8, 78.2257, 0, 0, 0, 0, 24818.8, 430.226, 0, 0, 0, 0, 16355.2, 506.574, 0, 0, 0, 0, 7957.95, 407.521, 0, 0, 0, 0, 7948.39, 38.7714 )
+"points": PoolVector2Array( 0, 0, 0, 0, 8019.29, -281.541, 0, 0, 0, 0, 13270.8, -233.973, 0, 0, 0, 0, 13275.6, 41.9228, 0, 0, 0, 0, 8005.02, 32.4093, 0, 0, 0, 0, 8019.29, -281.541 )
+}
+
+[sub_resource type="Curve2D" id=13]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 15768.9, -328.405, 0, 0, 0, 0, 24990.5, -353.832, 0, 0, 0, 0, 24990.5, 44.5257, 0, 0, 0, 0, 15764, 5.34435, 0, 0, 0, 0, 15768.9, -328.405 )
 }
 
 [node name="Node2D" type="Node2D"]
@@ -353,7 +358,7 @@ position = Vector2( 27578.1, 713.717 )
 [node name="player" parent="." groups=[
 "camera_shaker",
 ] instance=ExtResource( 1 )]
-position = Vector2( 8190.2, 354.481 )
+position = Vector2( 6694.2, 572.481 )
 run_speed = 300
 
 [node name="bufera" parent="." instance=ExtResource( 5 )]
@@ -547,13 +552,13 @@ position = Vector2( 5886.75, 82.5645 )
 position = Vector2( 1661.29, 379.141 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ContrattazioneBanditi/Area2DIncontraBanditi"]
-position = Vector2( 78.1151, 7.55951 )
+position = Vector2( 47.1957, 6.3703 )
 shape = SubResource( 8 )
 
 [node name="Area2DAParlaBanditi" type="Area2D" parent="ContrattazioneBanditi" groups=[
 "ParlaBanditi",
 ]]
-position = Vector2( 1708.38, 412.777 )
+position = Vector2( 1634.65, 413.966 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ContrattazioneBanditi/Area2DAParlaBanditi"]
 position = Vector2( -20.1815, -42.0448 )
@@ -562,9 +567,8 @@ shape = SubResource( 9 )
 [node name="Node2DBanditi" type="Node2D" parent="ContrattazioneBanditi"]
 position = Vector2( 1958.09, 352.592 )
 
-[node name="Banditi" parent="ContrattazioneBanditi/Node2DBanditi" instance=ExtResource( 12 )]
-position = Vector2( -134.615, 26.5447 )
-scale = Vector2( 0.2, 0.2 )
+[node name="cammello" parent="ContrattazioneBanditi/Node2DBanditi" instance=ExtResource( 28 )]
+position = Vector2( -182.84, -44.1565 )
 
 [node name="light_tone_with_writing" type="Sprite" parent="."]
 position = Vector2( 163.837, 591.272 )
@@ -631,20 +635,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Timer" type="Timer" parent="."]
+
 [node name="CondorPath" type="Path2D" parent="."]
-position = Vector2( -61.0981, -83.7766 )
-scale = Vector2( 1.00246, 0.297848 )
 curve = SubResource( 12 )
 
 [node name="CondorSpawnLocation" type="PathFollow2D" parent="CondorPath"]
-position = Vector2( 7948.39, 38.7714 )
-rotation = 0.00234059
+position = Vector2( 8019.29, -281.541 )
+rotation = 0.00905602
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer2" type="Timer" parent="."]
+
+[node name="CondorPath2" type="Path2D" parent="."]
+curve = SubResource( 13 )
+
+[node name="CondorSpawnLocation" type="PathFollow2D" parent="CondorPath2"]
 [connection signal="bubble" from="player" to="player" method="_on_player_bubble"]
-[connection signal="bubble" from="player" to="ContrattazioneBanditi/Node2DBanditi/Banditi" method="_on_player_bubble"]
 [connection signal="body_entered" from="foreground/sabbiamobile/Area2D" to="player" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="foreground/sabbiamobile/Area2D" to="player" method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="foreground/sabbiamobile2/Area2D" to="player" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="foreground/sabbiamobile2/Area2D" to="player" method="_on_Area2D_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]

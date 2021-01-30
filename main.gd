@@ -12,6 +12,7 @@ func _ready():
 	$player/Camera2D.enabled = true
 	$VacTimer.start()
 	$Timer.start()
+	$Timer2.start()
 	for t in get_tree().get_nodes_in_group('tempesta'):
 		t.set_deferred('emitting', false)
 
@@ -41,3 +42,20 @@ func _on_Timer_timeout():
 	condor.get_node("AnimatedSprite").flip_h = condor.linear_velocity.x > 0
 	
 
+
+
+func _on_Timer2_timeout():
+	$CondorPath2/CondorSpawnLocation.offset = randi()
+	var condor = Condor.instance()
+	add_child(condor)
+	var direction = $CondorPath2/CondorSpawnLocation.rotation + PI / 2
+	condor.position = $CondorPath2/CondorSpawnLocation.position
+	direction += rand_range(-PI / 4, PI / 4)
+	#condor.rotation = direction
+	condor.linear_velocity = Vector2(rand_range(condor.min_speed, condor.max_speed), 150)
+	var corrente = rand_range(-1, 1)
+	if corrente < 0 : 
+		condor.linear_velocity.x *= -1
+	#condor.linear_velocity = condor.linear_velocity.rotated(direction)
+	#if condor.linear_velocity.x > 0:
+	condor.get_node("AnimatedSprite").flip_h = condor.linear_velocity.x > 0

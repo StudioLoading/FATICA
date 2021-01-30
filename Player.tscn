@@ -42,7 +42,7 @@ shape = SubResource( 2 )
 position = Vector2( 0.420441, -0.420448 )
 frames = ExtResource( 2 )
 animation = "Idle"
-frame = 1
+frame = 35
 speed_scale = 8.0
 playing = true
 
@@ -60,8 +60,8 @@ one_shot = true
 
 [node name="Sprite" type="Sprite" parent="."]
 visible = false
-position = Vector2( 11.0124, -95.1073 )
-scale = Vector2( 0.182411, 0.215184 )
+position = Vector2( -0.654831, -108.896 )
+scale = Vector2( 0.26808, 0.318832 )
 texture = ExtResource( 4 )
 flip_h = true
 
