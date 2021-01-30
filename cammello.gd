@@ -12,7 +12,7 @@ export (Vector2) var velocity = Vector2.ZERO
 func _ready():
 	var bubble = get_node("../../../player")
 	bubble.connect("bubble", self, "aa")
-	velocity.x = 100
+	velocity.x = 300
 	pass # Replace with function body.
 
 

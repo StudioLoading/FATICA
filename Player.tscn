@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://doc.gd" type="Script" id=1]
 [ext_resource path="res://animations/doc.tres" type="SpriteFrames" id=2]
@@ -6,14 +6,18 @@
 [ext_resource path="res://asset/yellow-tinge/rect-tag-above.png" type="Texture" id=4]
 [ext_resource path="res://asset/xolonium/Xolonium-Regular.ttf" type="DynamicFontData" id=5]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 22.259
+[sub_resource type="CircleShape2D" id=4]
+radius = 16.9242
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 16.5, 48.124 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 40
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 50
 font_data = ExtResource( 5 )
 
 [node name="player" type="KinematicBody2D" groups=[
@@ -23,8 +27,8 @@ position = Vector2( -2.99663, 1.87289 )
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 4.86869, 40.1819 )
-shape = SubResource( 1 )
+position = Vector2( 6.0579, 44.9387 )
+shape = SubResource( 4 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 3 )]
 position = Vector2( -0.561234, -2.52554 )
@@ -41,8 +45,8 @@ shape = SubResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0.420441, -0.420448 )
 frames = ExtResource( 2 )
-animation = "Speak"
-frame = 49
+animation = "Idle"
+frame = 58
 speed_scale = 8.0
 playing = true
 
@@ -74,6 +78,25 @@ margin_bottom = 57.2032
 custom_fonts/font = SubResource( 3 )
 text = "Il Mondo deve trovare
  nuovamente la liberta"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite2" type="Sprite" parent="."]
+visible = false
+position = Vector2( 7.85272, -103.215 )
+scale = Vector2( 0.238636, 0.322005 )
+texture = ExtResource( 4 )
+flip_h = true
+
+[node name="Label" type="Label" parent="Sprite2"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = -175.956
+margin_top = -53.8865
+margin_right = 225.044
+margin_bottom = 74.1135
+custom_fonts/font = SubResource( 5 )
+text = "Mavaffffffff"
 __meta__ = {
 "_edit_use_anchors_": false
 }

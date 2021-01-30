@@ -16,6 +16,7 @@ func _ready():
 	for t in get_tree().get_nodes_in_group('tempesta'):
 		t.set_deferred('emitting', false)
 	$GUI/TextureProgress_vax.max_value = $VacTimer.wait_time
+	$GUI/TextureProgress.max_value = $player.energy_max
 
 
 

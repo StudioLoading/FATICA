@@ -5,7 +5,7 @@ export (int) var jump_speed = -400
 export (int) var jump_speed_default = -400
 export (int) var gravity = 1200
 export (int) var gravity_default = 1200
-export (int) var energy_max = 100
+export (int) var energy_max = 150
 
 var velocity = Vector2()
 var relative_velocity = Vector2()
@@ -16,7 +16,7 @@ var idle_anim = ["Idle", "Speak"]
 var idle
 signal bubble
 
-enum STATES {WALKING, JUMPING, SABBIEMOBILI, RAFFICA, MORTO, TEMPESTA, BANDITI, LOCKED}
+enum STATES {WALKING, JUMPING, SABBIEMOBILI, RAFFICA, MORTO, TEMPESTA, BANDITI, LOCKED, NUOTO, END}
 onready var state = STATES.JUMPING
 
 onready var fx_step = preload("res://asset/audio/fx/step.ogg")
@@ -38,7 +38,7 @@ func get_input():
 	left = Input.is_action_pressed('ui_left')
 	var jump = Input.is_action_just_pressed('ui_select')
 
-	if jump and is_on_floor() and state != STATES.LOCKED:
+	if jump and is_on_floor() and state != STATES.LOCKED and state != STATES.NUOTO:
 		jumping = true
 		velocity.y = jump_speed
 	elif jumping and !is_on_floor() and state != STATES.TEMPESTA and state != STATES.SABBIEMOBILI:
@@ -81,21 +81,25 @@ func _physics_process(delta):
 		
 			
 	
-	if state != STATES.SABBIEMOBILI and state != STATES.LOCKED:
+	if state != STATES.SABBIEMOBILI and state != STATES.LOCKED and state != STATES.NUOTO:
 		if (right or left) and is_on_floor() and state != STATES.TEMPESTA:
 			$AnimatedSprite.play("Run")
 		
-		elif !left and !right and state != STATES.TEMPESTA and state != STATES.BANDITI and is_on_floor():
+		elif !left and !right and state != STATES.TEMPESTA and state != STATES.BANDITI and state != STATES.END and is_on_floor():
 			$AnimatedSprite.play("Idle")
 			#$AnimatedSprite.animation = idle_anim[randi() % idle_anim.size()]
 		
 		
 		if state == STATES.TEMPESTA and $AnimatedSprite.animation != 'ProtectWalk':
 			$AnimatedSprite.play("Protectwalk")
+	
+	
+		
+			
 		
 			
 
-	if jumping and is_on_floor() and state == STATES.JUMPING :
+	if jumping and is_on_floor() and state == STATES.JUMPING and state != STATES.NUOTO:
 		$AnimatedSprite.play("Jump")
 		jumping = false
 		$afx_step.stream = fx_step
@@ -107,7 +111,7 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	
 	if healing and energy<energy_max:
-		energy += 0.1
+		energy += 0.5
 	
 	
 
@@ -169,6 +173,12 @@ func _on_Area2D_area_entered(area):
 		$afx_grunt.stream = fx_heal
 		$afx_grunt.play()
 		healing = true
+	if area.is_in_group('nuoto'):
+		print('nuoto')
+		state = STATES.NUOTO
+		$AnimatedSprite.play("nuoto")
+		
+		
 	if area.is_in_group('banditcontract'):
 		#$Camera2D.enabled = true
 		state = STATES.LOCKED
@@ -180,6 +190,16 @@ func _on_Area2D_area_entered(area):
 		print('state',state)
 		$AnimatedSprite.play("Wearmask")
 		velocity.x += 0
+	if area.is_in_group('end'):
+		#$Camera2D.enabled = true
+		state = STATES.END
+		print('state',state)
+		$AnimatedSprite.play("Wearmask")
+		velocity.x += 0
+		get_node("Sprite2").visible = true
+		
+		
+		
 		
 		
 	
@@ -201,6 +221,9 @@ func _on_Area2D_area_exited(area):
 		if self.position.x > get_node("../ContrattazioneBanditi/Node2DBanditi/cammello").position.x:
 			#INIZIA INSEGUIMENTO
 			emit_signal('start_chase')
+	if area.is_in_group('nuoto'):
+		state = STATES.WALKING
+		
 		
 	
 	
