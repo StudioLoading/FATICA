@@ -220,7 +220,7 @@ func _on_Area2D_area_exited(area):
 		yield($afx_grunt, "finished")
 		$afx_grunt.play()
 	if area.is_in_group('oasi'):
-		$afx_grunt.stop()
+		$afx_oasi.stop()
 		healing = false
 	if area.is_in_group('banditcontract'):
 		$afx_grunt.stop()

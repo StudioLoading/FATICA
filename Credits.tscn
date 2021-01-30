@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://asset/xolonium/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://asset/Background e assets/esempio background.png" type="Texture" id=2]
 [ext_resource path="res://Credits.gd" type="Script" id=3]
+[ext_resource path="res://asset/credits/awario.png" type="Texture" id=4]
+[ext_resource path="res://asset/credits/studio_loading.png" type="Texture" id=5]
+[ext_resource path="res://asset/credits/TCAPITANO.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
@@ -21,18 +24,31 @@ anchor_mode = 0
 current = true
 
 [node name="Control" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label5" type="Label" parent="Control"]
+[node name="GridContainer" type="GridContainer" parent="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 37.0677
+margin_top = 44.5558
+margin_right = 858.068
+margin_bottom = 464.556
+custom_constants/vseparation = 32
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="Control/GridContainer"]
 modulate = Color( 0, 0, 0, 1 )
-margin_left = 39.0081
-margin_top = 38.5542
-margin_right = 545.008
-margin_bottom = 111.554
+margin_right = 548.0
+margin_bottom = 73.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Game Designer "
@@ -40,123 +56,43 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Control"]
+[node name="Label6" type="Label" parent="Control/GridContainer"]
 modulate = Color( 0, 0, 0, 1 )
-margin_left = 501.567
-margin_top = 154.52
-margin_right = 591.567
-margin_bottom = 227.52
-custom_fonts/font = SubResource( 1 )
-text = "TC"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label13" type="Label" parent="Control"]
-modulate = Color( 0, 0, 0, 1 )
-margin_left = 654.302
-margin_top = 42.7969
-margin_right = 744.302
-margin_bottom = 115.797
-custom_fonts/font = SubResource( 1 )
-text = "TC"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label6" type="Label" parent="Control"]
-modulate = Color( 0, 0, 0, 1 )
-margin_left = 39.008
-margin_top = 153.106
-margin_right = 430.008
-margin_bottom = 226.106
+margin_top = 105.0
+margin_right = 548.0
+margin_bottom = 178.0
 custom_fonts/font = SubResource( 1 )
 text = "Programmer"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label2" type="Label" parent="Control"]
+[node name="Label7" type="Label" parent="Control/GridContainer"]
 modulate = Color( 0, 0, 0, 1 )
-margin_left = 654.302
-margin_top = 154.52
-margin_right = 745.302
-margin_bottom = 227.52
-custom_fonts/font = SubResource( 1 )
-text = "FB"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label7" type="Label" parent="Control"]
-modulate = Color( 0, 0, 0, 1 )
-margin_left = 39.008
-margin_top = 280.385
-margin_right = 587.008
-margin_bottom = 353.385
+margin_top = 210.0
+margin_right = 548.0
+margin_bottom = 283.0
 custom_fonts/font = SubResource( 1 )
 text = "Graphic Designer"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label3" type="Label" parent="Control"]
+[node name="Label8" type="Label" parent="Control/GridContainer"]
 modulate = Color( 0, 0, 0, 1 )
-margin_left = 654.302
-margin_top = 276.828
-margin_right = 745.302
-margin_bottom = 349.828
-custom_fonts/font = SubResource( 1 )
-text = "RE"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label8" type="Label" parent="Control"]
-modulate = Color( 0, 0, 0, 1 )
-margin_left = 39.008
-margin_top = 387.865
-margin_right = 550.008
-margin_bottom = 460.865
+margin_top = 315.0
+margin_right = 548.0
+margin_bottom = 388.0
 custom_fonts/font = SubResource( 1 )
 text = "Sound Designer"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label4" type="Label" parent="Control"]
-modulate = Color( 0, 0, 0, 1 )
-margin_left = 654.302
-margin_top = 389.037
-margin_right = 750.302
-margin_bottom = 462.037
-custom_fonts/font = SubResource( 1 )
-text = "VB"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label9" type="Label" parent="Control"]
-modulate = Color( 0, 0, 0, 1 )
-margin_left = 729.0
-margin_top = 262.0
-margin_right = 729.0
-margin_bottom = 335.0
-custom_fonts/font = SubResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label10" type="Label" parent="Control"]
-modulate = Color( 0, 0, 0, 1 )
-margin_left = 729.0
-margin_top = 262.0
-margin_right = 729.0
-margin_bottom = 335.0
-custom_fonts/font = SubResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="TextureRect" type="TextureRect" parent="Control/GridContainer"]
+margin_top = 420.0
+margin_right = 548.0
+margin_bottom = 420.0
 
 [node name="Label11" type="Label" parent="Control"]
 modulate = Color( 0, 0, 0, 1 )
@@ -187,3 +123,16 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="FB" type="Sprite" parent="."]
+position = Vector2( 767.138, 189.224 )
+scale = Vector2( 0.928652, 0.835186 )
+texture = ExtResource( 5 )
+
+[node name="AWARIO" type="Sprite" parent="."]
+position = Vector2( 686.225, 295.167 )
+texture = ExtResource( 4 )
+
+[node name="TCAPITANO" type="Sprite" parent="."]
+position = Vector2( 771.628, 83.9052 )
+texture = ExtResource( 6 )
