@@ -47,7 +47,7 @@ __meta__ = {
 
 [node name="Label5" type="Label" parent="Control/GridContainer"]
 modulate = Color( 0, 0, 0, 1 )
-margin_right = 548.0
+margin_right = 573.0
 margin_bottom = 73.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -59,10 +59,10 @@ __meta__ = {
 [node name="Label6" type="Label" parent="Control/GridContainer"]
 modulate = Color( 0, 0, 0, 1 )
 margin_top = 105.0
-margin_right = 548.0
+margin_right = 573.0
 margin_bottom = 178.0
 custom_fonts/font = SubResource( 1 )
-text = "Programmer"
+text = "Pair Programmers"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -70,7 +70,7 @@ __meta__ = {
 [node name="Label7" type="Label" parent="Control/GridContainer"]
 modulate = Color( 0, 0, 0, 1 )
 margin_top = 210.0
-margin_right = 548.0
+margin_right = 573.0
 margin_bottom = 283.0
 custom_fonts/font = SubResource( 1 )
 text = "Graphic Designer"
@@ -81,7 +81,7 @@ __meta__ = {
 [node name="Label8" type="Label" parent="Control/GridContainer"]
 modulate = Color( 0, 0, 0, 1 )
 margin_top = 315.0
-margin_right = 548.0
+margin_right = 573.0
 margin_bottom = 388.0
 custom_fonts/font = SubResource( 1 )
 text = "Sound Designer"
@@ -91,7 +91,7 @@ __meta__ = {
 
 [node name="TextureRect" type="TextureRect" parent="Control/GridContainer"]
 margin_top = 420.0
-margin_right = 548.0
+margin_right = 573.0
 margin_bottom = 420.0
 
 [node name="Label11" type="Label" parent="Control"]
@@ -125,8 +125,8 @@ __meta__ = {
 }
 
 [node name="FB" type="Sprite" parent="."]
-position = Vector2( 767.138, 189.224 )
-scale = Vector2( 0.928652, 0.835186 )
+position = Vector2( 730.843, 185.448 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 5 )
 
 [node name="AWARIO" type="Sprite" parent="."]
@@ -134,5 +134,11 @@ position = Vector2( 686.225, 295.167 )
 texture = ExtResource( 4 )
 
 [node name="TCAPITANO" type="Sprite" parent="."]
-position = Vector2( 771.628, 83.9052 )
+position = Vector2( 725.666, 85.3194 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
+[node name="TCAPITANO2" type="Sprite" parent="."]
+position = Vector2( 909.514, 185.021 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 6 )
