@@ -18,7 +18,7 @@ func _ready():
 
 func _on_Button_pressed():
 	$AudioStreamPlayer.stop()
-	get_tree().change_scene("res://main.tscn")
+	get_tree().change_scene("res://Intro.tscn")
 
 
 func _on_Credits_pressed():
