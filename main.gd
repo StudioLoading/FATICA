@@ -27,7 +27,7 @@ func _process(delta):
 		$GUI/VacLabel.text = str($VacTimer.time_left)
 		$GUI/TextureProgress_vax.value = $VacTimer.time_left
 	$GUI/TextureProgress.value = $player.energy
-
+	
 func _on_Timer_timeout():
 	$CondorPath/CondorSpawnLocation.offset = randi()
 	var condor = Condor.instance()
@@ -85,6 +85,7 @@ func _on_player_end_game():
 
 func _on_VacTimer_timeout():
 	$player.energy = 0
+	$background/suolo/fondale.queue_free()
 	pass # Replace with function body.
 
 

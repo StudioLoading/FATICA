@@ -54,6 +54,9 @@ func get_input():
 
 func _physics_process(delta):
 	if state == STATES.MORTO:
+		velocity.x = 0
+		velocity.y += 1200 * delta
+		velocity = move_and_slide(velocity, Vector2(0, -1))
 		return
 	
 	if state == STATES.END:
@@ -120,8 +123,9 @@ func _physics_process(delta):
 
 func _process(delta):
 	if state == STATES.END:
-		return	
+		return
 	if energy <= 0 and state != STATES.MORTO:
+		healing = false
 		state = STATES.MORTO
 		energy = 0
 		self.position.y += 16
