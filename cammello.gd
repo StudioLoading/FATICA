@@ -34,3 +34,11 @@ func move():
 
 func _on_Timer_timeout():
 	get_node("Sprite").visible = false
+
+
+func _on_Area2D_area_entered(area):
+	print('CAMMELLO area entered: ', area.name, ' ', area.is_in_group('accelera'))
+	if area.is_in_group('accelera'):
+		velocity.x += 100
+		$AnimatedSprite.play('run')
+	pass # Replace with function body.

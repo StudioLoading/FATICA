@@ -181,6 +181,7 @@ func _on_Area2D_area_entered(area):
 		healing = true
 	if area.is_in_group('nuoto'):
 		print('nuoto')
+		$bolleblu.show()
 		state = STATES.NUOTO
 		$AnimatedSprite.play("nuoto")
 		
@@ -227,6 +228,7 @@ func _on_Area2D_area_exited(area):
 			emit_signal('start_chase')
 	if area.is_in_group('nuoto'):
 		state = STATES.WALKING
+		$bolleblu.hide()
 		
 
 
