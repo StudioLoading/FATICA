@@ -19,6 +19,8 @@ func _process(delta):
 			yield($fx, "finished")
 			$fx.play()
 		if numero_pagine == i_pag:
+			$bg.stop()
+			$CanvasLayer/Label.text = "WAIT..."
 			get_tree().change_scene("res://main.tscn")
 		else:
 			$Tween.interpolate_property($imgs, "position", $imgs.position, Vector2($imgs.position.x, $imgs.position.y - 600), 0.7, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)

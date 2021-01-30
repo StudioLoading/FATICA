@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tiles.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://asset/Background e assets/desktop.png" type="Texture" id=9]
 [ext_resource path="res://asset/Background e assets/Sole glow.png" type="Texture" id=10]
 [ext_resource path="res://asset/Tiles/Tilespng.png" type="Texture" id=11]
+[ext_resource path="res://asset/HUD/Barra vita sotto.png" type="Texture" id=12]
 [ext_resource path="res://water/sabbiemobili/sabbiemobili.tscn" type="PackedScene" id=13]
 [ext_resource path="res://snowbk.tscn" type="PackedScene" id=14]
 [ext_resource path="res://duna1.tscn" type="PackedScene" id=15]
@@ -22,11 +23,13 @@
 [ext_resource path="res://asset/Background e assets/Cactus.png" type="Texture" id=21]
 [ext_resource path="res://asset/light_tone_with_writing.png" type="Texture" id=22]
 [ext_resource path="res://asset/potion_7_empty.png" type="Texture" id=23]
-[ext_resource path="res://asset/extralife1.png" type="Texture" id=24]
+[ext_resource path="res://asset/HUD/Barra vaccino sotto.png" type="Texture" id=24]
 [ext_resource path="res://Condor.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Cactus.tscn" type="PackedScene" id=26]
 [ext_resource path="res://Erbaccia.tscn" type="PackedScene" id=27]
 [ext_resource path="res://cammello.tscn" type="PackedScene" id=28]
+[ext_resource path="res://asset/HUD/Barra vita.png" type="Texture" id=29]
+[ext_resource path="res://asset/HUD/Barra vaccino.png" type="Texture" id=30]
 
 [sub_resource type="SegmentShape2D" id=1]
 a = Vector2( -16.0657, 664.446 )
@@ -36,47 +39,47 @@ b = Vector2( 1205.1, 666.074 )
 a = Vector2( 1770.52, 666.059 )
 b = Vector2( 25148.9, 666.578 )
 
-[sub_resource type="RectangleShape2D" id=14]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 161.024, 731.609 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 278.215, 187.971 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 538.71, 90.7171 )
 
-[sub_resource type="SegmentShape2D" id=5]
+[sub_resource type="SegmentShape2D" id=6]
 a = Vector2( 719.98, 746.446 )
 b = Vector2( 1349.98, 746.446 )
 
-[sub_resource type="SegmentShape2D" id=6]
+[sub_resource type="SegmentShape2D" id=7]
 a = Vector2( 397.316, 789.716 )
 b = Vector2( 260.348, 645.335 )
 
-[sub_resource type="SegmentShape2D" id=7]
+[sub_resource type="SegmentShape2D" id=8]
 a = Vector2( 1069.12, 797.106 )
 b = Vector2( 1183.68, 643.635 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 304.414, 138.138 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 51.9464, 122.071 )
-
-[sub_resource type="DynamicFont" id=10]
-size = 30
-font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=11]
 size = 30
 font_data = ExtResource( 7 )
 
-[sub_resource type="Curve2D" id=12]
+[sub_resource type="DynamicFont" id=12]
+size = 30
+font_data = ExtResource( 7 )
+
+[sub_resource type="Curve2D" id=13]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 8019.29, -281.541, 0, 0, 0, 0, 13270.8, -233.973, 0, 0, 0, 0, 13275.6, 41.9228, 0, 0, 0, 0, 8005.02, 32.4093, 0, 0, 0, 0, 8019.29, -281.541 )
 }
 
-[sub_resource type="Curve2D" id=13]
+[sub_resource type="Curve2D" id=14]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 15768.9, -328.405, 0, 0, 0, 0, 24990.5, -353.832, 0, 0, 0, 0, 24990.5, 44.5257, 0, 0, 0, 0, 15764, 5.34435, 0, 0, 0, 0, 15768.9, -328.405 )
 }
@@ -351,7 +354,7 @@ polygon = PoolVector2Array( -284.688, -0.233765, 98.3984, -377.975, 226.688, -37
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="background/suolo"]
 position = Vector2( -51.6333, 727.355 )
-shape = SubResource( 14 )
+shape = SubResource( 3 )
 
 [node name="buferabk" parent="." instance=ExtResource( 14 )]
 position = Vector2( 19303.4, 713.717 )
@@ -451,7 +454,7 @@ position = Vector2( 6000, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="oasi/Area2D"]
 position = Vector2( 4191.12, 780.005 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="WaterSineAndTexture2" parent="oasi" instance=ExtResource( 4 )]
 modulate = Color( 1, 1, 1, 0.745098 )
@@ -495,21 +498,21 @@ position = Vector2( 0, 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="foreground/sabbiamobile/Area2D"]
 position = Vector2( 182.077, 1.38789 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="foreground/sabbiamobile"]
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="foreground/sabbiamobile/StaticBody2D"]
 position = Vector2( -855.438, -727.411 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="foreground/sabbiamobile/StaticBody2D"]
 position = Vector2( -531.774, -771.051 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="foreground/sabbiamobile/StaticBody2D"]
 position = Vector2( -578.137, -768.6 )
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="sabbiamobile2" type="Node2D" parent="foreground"]
 position = Vector2( 13931.8, 535.461 )
@@ -525,21 +528,21 @@ position = Vector2( 0, 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="foreground/sabbiamobile2/Area2D"]
 position = Vector2( 175.087, 57.8083 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="foreground/sabbiamobile2"]
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="foreground/sabbiamobile2/StaticBody2D"]
 position = Vector2( -855.438, -727.411 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="foreground/sabbiamobile2/StaticBody2D"]
 position = Vector2( -531.774, -771.681 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="foreground/sabbiamobile2/StaticBody2D"]
 position = Vector2( -578.137, -768.6 )
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
@@ -547,7 +550,7 @@ volume_db = -30.021
 autoplay = true
 
 [node name="VacTimer" type="Timer" parent="."]
-wait_time = 600.0
+wait_time = 180.0
 autostart = true
 
 [node name="ContrattazioneBanditi" type="Node2D" parent="."]
@@ -560,7 +563,7 @@ position = Vector2( 1661.29, 379.141 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ContrattazioneBanditi/Area2DIncontraBanditi"]
 position = Vector2( 47.1957, 6.3703 )
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 
 [node name="Area2DAParlaBanditi" type="Area2D" parent="ContrattazioneBanditi" groups=[
 "ParlaBanditi",
@@ -569,7 +572,7 @@ position = Vector2( 1634.65, 413.966 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ContrattazioneBanditi/Area2DAParlaBanditi"]
 position = Vector2( -20.1815, -42.0448 )
-shape = SubResource( 9 )
+shape = SubResource( 10 )
 
 [node name="Node2DBanditi" type="Node2D" parent="ContrattazioneBanditi"]
 position = Vector2( 1958.09, 352.592 )
@@ -585,11 +588,12 @@ texture = ExtResource( 22 )
 [node name="GUI" type="CanvasLayer" parent="."]
 
 [node name="VacLabel" type="Label" parent="GUI"]
+visible = false
 margin_left = 905.297
 margin_top = 35.2152
 margin_right = 968.297
 margin_bottom = 112.215
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "600
 "
@@ -598,12 +602,13 @@ __meta__ = {
 }
 
 [node name="energyLabel" type="Label" parent="GUI"]
+visible = false
 modulate = Color( 0, 0, 0, 1 )
-margin_left = 26.9859
+margin_left = 149.986
 margin_top = 31.7478
-margin_right = 89.9859
+margin_right = 212.986
 margin_bottom = 68.7478
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
 text = "600"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -621,6 +626,7 @@ __meta__ = {
 }
 
 [node name="TextureRect2" type="TextureRect" parent="GUI"]
+visible = false
 margin_left = 858.878
 margin_top = 20.983
 margin_right = 897.878
@@ -631,13 +637,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect3" type="TextureRect" parent="GUI"]
-margin_left = 122.861
-margin_top = 26.9695
-margin_right = 561.861
-margin_bottom = 462.97
-rect_scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 24 )
+[node name="TextureProgress" type="TextureProgress" parent="GUI"]
+margin_left = 33.2978
+margin_top = 23.7841
+margin_right = 289.298
+margin_bottom = 151.784
+value = 50.0
+texture_over = ExtResource( 29 )
+texture_progress = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureProgress_vax" type="TextureProgress" parent="GUI"]
+margin_left = 762.957
+margin_top = 16.1347
+margin_right = 1018.96
+margin_bottom = 144.135
+value = 50.0
+texture_over = ExtResource( 30 )
+texture_progress = ExtResource( 24 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -645,7 +664,7 @@ __meta__ = {
 [node name="Timer" type="Timer" parent="."]
 
 [node name="CondorPath" type="Path2D" parent="."]
-curve = SubResource( 12 )
+curve = SubResource( 13 )
 
 [node name="CondorSpawnLocation" type="PathFollow2D" parent="CondorPath"]
 position = Vector2( 8019.29, -281.541 )
@@ -654,7 +673,7 @@ rotation = 0.00905261
 [node name="Timer2" type="Timer" parent="."]
 
 [node name="CondorPath2" type="Path2D" parent="."]
-curve = SubResource( 13 )
+curve = SubResource( 14 )
 __meta__ = {
 "_edit_lock_": true
 }

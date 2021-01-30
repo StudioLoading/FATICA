@@ -15,6 +15,7 @@ func _ready():
 	$Timer2.start()
 	for t in get_tree().get_nodes_in_group('tempesta'):
 		t.set_deferred('emitting', false)
+	$GUI/TextureProgress_vax.max_value = $VacTimer.wait_time
 
 
 
@@ -22,8 +23,8 @@ func _ready():
 func _process(delta):
 	if $GUI/VacLabel.text != str($VacTimer.time_left):
 		$GUI/VacLabel.text = str($VacTimer.time_left)
-
-
+		$GUI/TextureProgress_vax.value = $VacTimer.time_left
+	$GUI/TextureProgress.value = $player.energy
 
 func _on_Timer_timeout():
 	$CondorPath/CondorSpawnLocation.offset = randi()

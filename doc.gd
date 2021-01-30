@@ -53,7 +53,7 @@ func _physics_process(delta):
 	if state == STATES.MORTO:
 		return
 	get_input()
-	get_node("../GUI/energyLabel").text = str(energy)
+	
 	
 	
 	if velocity.x != 0 and state != STATES.TEMPESTA:

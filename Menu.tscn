@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Menu.gd" type="Script" id=1]
 [ext_resource path="res://asset/Background e assets/esempio background.png" type="Texture" id=2]
@@ -9,12 +9,16 @@
 [ext_resource path="res://asset/xolonium/Xolonium-Regular.otf" type="DynamicFontData" id=10]
 
 [sub_resource type="DynamicFont" id=1]
-font_data = ExtResource( 8 )
+size = 72
+font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=2]
-font_data = ExtResource( 10 )
+font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=4]
 font_data = ExtResource( 3 )
 
 [node name="Node2D" type="Node2D"]
@@ -29,48 +33,78 @@ stream = ExtResource( 4 )
 autoplay = true
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
-anchor_right = 1.0
+anchor_left = 0.5
+anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = 369.549
-margin_top = 146.041
-margin_right = 632.549
-margin_bottom = 428.041
+margin_left = 271.181
+margin_top = 62.5102
+margin_right = 716.181
+margin_bottom = 519.51
 __meta__ = {
-"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="Control" type="VBoxContainer" parent="CenterContainer"]
-margin_right = 263.0
-margin_bottom = 338.0
-custom_constants/separation = 32
+margin_right = 445.0
+margin_bottom = 501.0
+custom_constants/separation = 64
 alignment = 1
 
-[node name="Start Game" type="Button" parent="CenterContainer/Control"]
-margin_right = 263.0
-margin_bottom = 136.0
+[node name="Label" type="Label" parent="CenterContainer/Control"]
+margin_right = 445.0
+margin_bottom = 177.0
 custom_fonts/font = SubResource( 1 )
+text = "REI FOUND
+"
+align = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/Control"]
+margin_top = 241.0
+margin_right = 445.0
+margin_bottom = 325.0
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer/Control/CenterContainer"]
+margin_left = 156.0
+margin_right = 289.0
+margin_bottom = 84.0
+custom_constants/vseparation = 32
+columns = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/Control/CenterContainer/GridContainer"]
+visible = false
+margin_right = 72.0
+margin_bottom = 130.0
+texture = ExtResource( 9 )
+
+[node name="Start Game" type="Button" parent="CenterContainer/Control/CenterContainer/GridContainer"]
+margin_right = 129.0
+margin_bottom = 26.0
+custom_fonts/font = SubResource( 2 )
 text = "START GAME"
-icon = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Credits" type="Button" parent="CenterContainer/Control"]
-margin_top = 168.0
-margin_right = 263.0
-margin_bottom = 194.0
-custom_fonts/font = SubResource( 2 )
+[node name="TextureRect2" type="TextureRect" parent="CenterContainer/Control/CenterContainer/GridContainer"]
+margin_left = 133.0
+margin_right = 133.0
+margin_bottom = 26.0
+
+[node name="Credits" type="Button" parent="CenterContainer/Control/CenterContainer/GridContainer"]
+margin_top = 58.0
+margin_right = 129.0
+margin_bottom = 84.0
+custom_fonts/font = SubResource( 3 )
 text = "CREDITS"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="controlli" type="Label" parent="CenterContainer/Control"]
-margin_top = 226.0
-margin_right = 263.0
-margin_bottom = 338.0
-custom_fonts/font = SubResource( 3 )
+margin_top = 389.0
+margin_right = 445.0
+margin_bottom = 501.0
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
 text = "CONTROLS:
@@ -81,5 +115,5 @@ SPACEBAR          JUMP"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="CenterContainer/Control/Start Game" to="." method="_on_Button_pressed"]
-[connection signal="pressed" from="CenterContainer/Control/Credits" to="." method="_on_Credits_pressed"]
+[connection signal="pressed" from="CenterContainer/Control/CenterContainer/GridContainer/Start Game" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="CenterContainer/Control/CenterContainer/GridContainer/Credits" to="." method="_on_Credits_pressed"]
