@@ -60,3 +60,11 @@ func _on_Timer2_timeout():
 	#condor.linear_velocity = condor.linear_velocity.rotated(direction)
 	#if condor.linear_velocity.x > 0:
 	condor.get_node("AnimatedSprite").flip_h = condor.linear_velocity.x > 0
+
+
+func _on_player_start_chase():
+	$ContrattazioneBanditi/Node2DBanditi/cammello/CollisionShape2D.set_deferred('disabled', false)
+	$ContrattazioneBanditi/Node2DBanditi/cammello/AnimatedSprite.flip_h = true
+	$ContrattazioneBanditi/Node2DBanditi/cammello.move()
+	$ContrattazioneBanditi/Node2DBanditi/cammello/AnimatedSprite.play('walk')
+	pass # Replace with function body.

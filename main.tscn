@@ -61,7 +61,7 @@ a = Vector2( 1069.12, 797.106 )
 b = Vector2( 1183.68, 643.635 )
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 304.414, 138.138 )
+extents = Vector2( 399.972, 149.394 )
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 51.9464, 122.071 )
@@ -368,7 +368,7 @@ position = Vector2( 27578.1, 713.717 )
 [node name="player" parent="." groups=[
 "camera_shaker",
 ] instance=ExtResource( 1 )]
-position = Vector2( 305.898, 302.941 )
+position = Vector2( 4847.04, 136.323 )
 run_speed = 300
 
 [node name="bufera" parent="." instance=ExtResource( 5 )]
@@ -556,29 +556,32 @@ autostart = true
 [node name="ContrattazioneBanditi" type="Node2D" parent="."]
 position = Vector2( 5886.75, 82.5645 )
 
-[node name="Area2DIncontraBanditi" type="Area2D" parent="ContrattazioneBanditi" groups=[
-"banditcontract",
-]]
-position = Vector2( 1661.29, 379.141 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ContrattazioneBanditi/Area2DIncontraBanditi"]
-position = Vector2( 47.1957, 6.3703 )
-shape = SubResource( 9 )
-
-[node name="Area2DAParlaBanditi" type="Area2D" parent="ContrattazioneBanditi" groups=[
-"ParlaBanditi",
-]]
-position = Vector2( 1634.65, 413.966 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ContrattazioneBanditi/Area2DAParlaBanditi"]
-position = Vector2( -20.1815, -42.0448 )
-shape = SubResource( 10 )
-
 [node name="Node2DBanditi" type="Node2D" parent="ContrattazioneBanditi"]
-position = Vector2( 1958.09, 352.592 )
+position = Vector2( -261.877, 197.867 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="cammello" parent="ContrattazioneBanditi/Node2DBanditi" instance=ExtResource( 28 )]
-position = Vector2( -182.84, -44.1565 )
+position = Vector2( -152.568, -27.3386 )
+
+[node name="Area2DIncontraBanditi" type="Area2D" parent="ContrattazioneBanditi/Node2DBanditi" groups=[
+"banditcontract",
+]]
+position = Vector2( -296.8, 26.549 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ContrattazioneBanditi/Node2DBanditi/Area2DIncontraBanditi"]
+position = Vector2( 166.123, 57.3395 )
+shape = SubResource( 9 )
+
+[node name="Area2DAParlaBanditi" type="Area2D" parent="ContrattazioneBanditi/Node2DBanditi" groups=[
+"ParlaBanditi",
+]]
+position = Vector2( -323.44, 61.374 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ContrattazioneBanditi/Node2DBanditi/Area2DAParlaBanditi"]
+position = Vector2( -20.1815, -42.0448 )
+shape = SubResource( 10 )
 
 [node name="light_tone_with_writing" type="Sprite" parent="."]
 position = Vector2( 143.013, 593.197 )
@@ -682,6 +685,7 @@ __meta__ = {
 position = Vector2( 15768.9, -328.405 )
 rotation = -0.00273744
 [connection signal="bubble" from="player" to="player" method="_on_player_bubble"]
+[connection signal="start_chase" from="player" to="." method="_on_player_start_chase"]
 [connection signal="body_entered" from="foreground/sabbiamobile/Area2D" to="player" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="foreground/sabbiamobile/Area2D" to="player" method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="foreground/sabbiamobile2/Area2D" to="player" method="_on_Area2D_body_entered"]

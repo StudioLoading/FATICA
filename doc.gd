@@ -26,6 +26,7 @@ onready var fx_insults= preload("res://asset/audio/voci/insults.ogg")
 
 signal camera_shake_requested
 signal camera_shake_stop
+signal start_chase
 
 var left
 var right
@@ -197,6 +198,10 @@ func _on_Area2D_area_exited(area):
 		$afx_grunt.stop()
 		state = STATES.WALKING
 		relative_velocity = Vector2.ZERO
+		if self.position.x > get_node("../ContrattazioneBanditi/Node2DBanditi/cammello").position.x:
+			#INIZIA INSEGUIMENTO
+			emit_signal('start_chase')
+		
 	
 	
 func _on_Timer_timeout():

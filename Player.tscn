@@ -41,8 +41,8 @@ shape = SubResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0.420441, -0.420448 )
 frames = ExtResource( 2 )
-animation = "Idle"
-frame = 34
+animation = "Speak"
+frame = 49
 speed_scale = 8.0
 playing = true
 
