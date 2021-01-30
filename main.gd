@@ -99,5 +99,5 @@ func _on_player_fumosalto():
 	#instance.play('default')
 	yield(instance, "animation_finished")
 	instance.queue_free()
-	print('elimino fumosalto instance!')
+	#print('elimino fumosalto instance!')
 	pass # Replace with function body.

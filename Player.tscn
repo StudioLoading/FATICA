@@ -162,7 +162,7 @@ shape = SubResource( 2 )
 position = Vector2( 0.420441, -0.420448 )
 frames = ExtResource( 2 )
 animation = "Idle"
-frame = 43
+frame = 25
 speed_scale = 8.0
 playing = true
 
@@ -229,7 +229,7 @@ one_shot = true
 visible = false
 position = Vector2( 45, -26 )
 frames = SubResource( 5 )
-frame = 45
+frame = 27
 speed_scale = 24.0
 playing = true
 [connection signal="camera_shake_requested" from="." to="Camera2D" method="_on_player_camera_shake_requested"]

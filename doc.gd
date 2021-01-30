@@ -69,14 +69,14 @@ func _physics_process(delta):
 	velocity.y += gravity * delta
 	
 	if state == STATES.LOCKED :
-			print('state',state)
+			#print('state',state)
 			$AnimatedSprite.play("Walk")
 			velocity.x += 50
 			
 
 		
 	if state == STATES.BANDITI:	
-		print('state','STATES.BANDITI')	
+		#print('state','STATES.BANDITI')	
 		if ($AnimatedSprite.get_frame() == 28):
 			$afx_grunt.stream = fx_insults
 			$afx_grunt.play()
@@ -136,7 +136,7 @@ func _on_Area2D_body_entered(body):
 		#$Camera2D.enabled = true
 		state = STATES.SABBIEMOBILI
 		$AnimatedSprite.play('sabbiemobili')
-		print('Dentro la sabbia mobile')
+		#print('Dentro la sabbia mobile')
 		emit_signal("camera_shake_requested")
 		jump_speed = -300
 	
@@ -146,7 +146,7 @@ func _on_Area2D_body_exited(body):
 	if body.is_in_group('player'):
 		state = STATES.WALKING
 		emit_signal("camera_shake_stop")
-		print('Fuori la sabbia mobile')
+		#print('Fuori la sabbia mobile')
 		gravity = gravity_default
 		jump_speed = jump_speed_default
 		$afx_grunt.stream = fx_grunt
@@ -156,7 +156,7 @@ func _on_Area2D_body_exited(body):
 
 func _on_Area2D_area_shape_entered(area_id, area, area_shape, self_shape):
 	if area.is_in_group('enemy'):
-		print('ENEMY collidin')
+		#print('ENEMY collidin')
 		$afx_grunt.stream = fx_grunt
 		$afx_grunt.play()
 		energy -= 10
@@ -180,7 +180,7 @@ func _on_Area2D_area_entered(area):
 		$afx_oasi.play()
 		healing = true
 	if area.is_in_group('nuoto'):
-		print('nuoto')
+		#print('nuoto')
 		$bolleblu.show()
 		state = STATES.NUOTO
 		$AnimatedSprite.play("nuoto")
@@ -190,17 +190,17 @@ func _on_Area2D_area_entered(area):
 		#$Camera2D.enabled = true
 		state = STATES.LOCKED
 		$AnimatedSprite.play("Walk")
-		print('banditcontract')
+		#print('banditcontract')
 	if area.is_in_group('ParlaBanditi'):
 		#$Camera2D.enabled = true
 		state = STATES.BANDITI
-		print('state',state)
+		#print('state',state)
 		$AnimatedSprite.play("Wearmask")
 		velocity.x += 0
 	if area.is_in_group('end'):
 		#$Camera2D.enabled = true
 		state = STATES.END
-		print('state',state)
+		#print('state',state)
 		$AnimatedSprite.play("Wearmask")
 		velocity.x += 0
 		get_node("Sprite2").visible = true
