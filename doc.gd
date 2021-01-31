@@ -11,6 +11,7 @@ var velocity = Vector2()
 var relative_velocity = Vector2()
 var jumping = true
 var energy = energy_max
+var swimming = false
 
 var idle_anim = ["Idle", "Speak"]
 var idle
@@ -54,9 +55,11 @@ func get_input():
 
 func _physics_process(delta):
 	if state == STATES.MORTO:
-		velocity.x = 0
-		velocity.y += 1200 * delta
-		velocity = move_and_slide(velocity, Vector2(0, -1))
+	
+		if swimming:
+			velocity.x = 0
+			velocity.y += 600 * delta
+			velocity = move_and_slide(velocity, Vector2(0, -1))
 		return
 	
 	if state == STATES.END:
@@ -126,13 +129,16 @@ func _process(delta):
 		return
 	if energy <= 0 and state != STATES.MORTO:
 		healing = false
+		self.position.y += 16
 		state = STATES.MORTO
 		energy = 0
-		self.position.y += 16
+		
 		$AnimatedSprite.play('Die')
 		yield($AnimatedSprite, 'animation_finished')
 		$timerGameOver.start()
-		
+	
+	
+	print('state',state)
 	
 
 func _on_Area2D_body_entered(body):
@@ -185,6 +191,7 @@ func _on_Area2D_area_entered(area):
 		healing = true
 	if area.is_in_group('nuoto'):
 		#print('nuoto')
+		swimming = true
 		$bolleblu.show()
 		state = STATES.NUOTO
 		$AnimatedSprite.play("nuoto")
@@ -231,6 +238,7 @@ func _on_Area2D_area_exited(area):
 			#INIZIA INSEGUIMENTO
 			emit_signal('start_chase')
 	if area.is_in_group('nuoto'):
+		swimming = false
 		state = STATES.WALKING
 		$bolleblu.hide()
 		

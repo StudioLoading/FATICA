@@ -21,7 +21,6 @@
 [ext_resource path="res://asset/Background e assets/Erbaccia.png" type="Texture" id=19]
 [ext_resource path="res://asset/Background e assets/Palm.png" type="Texture" id=20]
 [ext_resource path="res://asset/audio/fx/helicopter_nhu0506808.ogg" type="AudioStream" id=21]
-[ext_resource path="res://asset/light_tone_with_writing.png" type="Texture" id=22]
 [ext_resource path="res://asset/potion_7_empty.png" type="Texture" id=23]
 [ext_resource path="res://asset/HUD/Barra vaccino sotto.png" type="Texture" id=24]
 [ext_resource path="res://Condor.tscn" type="PackedScene" id=25]
@@ -30,6 +29,7 @@
 [ext_resource path="res://cammello.tscn" type="PackedScene" id=28]
 [ext_resource path="res://asset/HUD/Barra vita.png" type="Texture" id=29]
 [ext_resource path="res://asset/HUD/Barra vaccino.png" type="Texture" id=30]
+[ext_resource path="res://asset/env/Botola.png" type="Texture" id=31]
 
 [sub_resource type="SegmentShape2D" id=1]
 a = Vector2( -16.0657, 664.446 )
@@ -226,7 +226,12 @@ texture = ExtResource( 20 )
 position = Vector2( 26703.6, 119.351 )
 
 [node name="Cactus8" parent="bgdecor" instance=ExtResource( 26 )]
-position = Vector2( 25532.2, 465.778 )
+position = Vector2( 25548.8, 503.833 )
+
+[node name="Cactus9" parent="bgdecor" instance=ExtResource( 26 )]
+position = Vector2( 25412.7, 446.751 )
+scale = Vector2( 1, 1.663 )
+flip_h = false
 
 [node name="Cactus12" parent="bgdecor" instance=ExtResource( 26 )]
 position = Vector2( 20938.2, 462.096 )
@@ -258,28 +263,31 @@ position = Vector2( 6073.41, 468.552 )
 [node name="Erbaccia3" parent="bgdecor" instance=ExtResource( 27 )]
 
 [node name="Erbaccia15" parent="bgdecor" instance=ExtResource( 27 )]
-position = Vector2( 8294, 577.113 )
+position = Vector2( 8294, 580.113 )
 
 [node name="Erbaccia16" parent="bgdecor" instance=ExtResource( 27 )]
-position = Vector2( 3248, 577.113 )
+position = Vector2( 3248, 579.113 )
 
 [node name="Erbaccia17" parent="bgdecor" instance=ExtResource( 27 )]
-position = Vector2( 1187, 577.113 )
+position = Vector2( 1187, 579.113 )
 
 [node name="Erbaccia18" parent="bgdecor" instance=ExtResource( 27 )]
-position = Vector2( 6871, 577.113 )
+position = Vector2( 6871, 580.113 )
 
 [node name="Erbaccia20" parent="bgdecor" instance=ExtResource( 27 )]
-position = Vector2( 23677, 577.113 )
+position = Vector2( 23677, 580.113 )
 
 [node name="Erbaccia21" parent="bgdecor" instance=ExtResource( 27 )]
-position = Vector2( 24633, 577.113 )
+position = Vector2( 24633, 581.113 )
+
+[node name="Erbaccia27" parent="bgdecor" instance=ExtResource( 27 )]
+position = Vector2( 25475, 584.248 )
 
 [node name="Erbaccia22" parent="bgdecor" instance=ExtResource( 27 )]
 position = Vector2( 17554, 579.113 )
 
 [node name="Erbaccia23" parent="bgdecor" instance=ExtResource( 27 )]
-position = Vector2( 20890.1, 577.45 )
+position = Vector2( 20890.1, 580.45 )
 
 [node name="Erbaccia24" parent="bgdecor" instance=ExtResource( 27 )]
 position = Vector2( 18271, 591.113 )
@@ -390,7 +398,7 @@ scale = Vector2( 0.20007, 0.214331 )
 texture = ExtResource( 15 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="background/suolo"]
-position = Vector2( -51.6333, 727.355 )
+position = Vector2( -53.6333, 727.355 )
 shape = SubResource( 3 )
 
 [node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="background/suolo"]
@@ -461,11 +469,11 @@ position = Vector2( 25591.9, 713.717 )
 [node name="player" parent="." groups=[
 "camera_shaker",
 ] instance=ExtResource( 1 )]
-position = Vector2( 286.129, 474.963 )
+position = Vector2( 332.649, 563.663 )
 run_speed = 300
 
 [node name="bufera" parent="." instance=ExtResource( 5 )]
-position = Vector2( 19308.9, 723.905 )
+position = Vector2( 19308.9, 721.905 )
 
 [node name="bufera2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 25597.4, 718.248 )
@@ -519,7 +527,7 @@ scale = Vector2( 0.56691, 0.625423 )
 texture = ExtResource( 19 )
 
 [node name="Erbaccia12" type="Sprite" parent="fgdecor"]
-position = Vector2( 1194.38, 89.419 )
+position = Vector2( 1194.38, 93.419 )
 scale = Vector2( 0.56691, 0.625423 )
 texture = ExtResource( 19 )
 
@@ -613,8 +621,8 @@ position = Vector2( 3922.24, 541.753 )
 texture = ExtResource( 11 )
 
 [node name="sabbiemobili" parent="." instance=ExtResource( 13 )]
-position = Vector2( 1260.69, 623.72 )
-scale = Vector2( 6.34575, 2.539 )
+position = Vector2( 1256.75, 625.839 )
+scale = Vector2( 6.42024, 2.539 )
 
 [node name="Tiles" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1, 0 )
@@ -690,11 +698,6 @@ autoplay = true
 wait_time = 180.0
 one_shot = true
 autostart = true
-
-[node name="light_tone_with_writing" type="Sprite" parent="."]
-position = Vector2( 143.013, 593.197 )
-scale = Vector2( 0.177986, 0.189392 )
-texture = ExtResource( 22 )
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
@@ -775,6 +778,7 @@ __meta__ = {
 }
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
 
 [node name="CondorPath" type="Path2D" parent="."]
 curve = SubResource( 15 )
@@ -784,6 +788,7 @@ position = Vector2( 8019.29, -281.541 )
 rotation = 0.00905261
 
 [node name="Timer2" type="Timer" parent="."]
+wait_time = 0.5
 
 [node name="CondorPath2" type="Path2D" parent="."]
 curve = SubResource( 16 )
@@ -814,6 +819,10 @@ position = Vector2( 28500, 0 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cammello_accelera"]
 position = Vector2( 28.5078, 192.434 )
 shape = SubResource( 18 )
+
+[node name="Botola" type="Sprite" parent="."]
+position = Vector2( 166.302, 612.905 )
+texture = ExtResource( 31 )
 [connection signal="bubble" from="player" to="player" method="_on_player_bubble"]
 [connection signal="end_game" from="player" to="." method="_on_player_end_game"]
 [connection signal="fumosalto" from="player" to="." method="_on_player_fumosalto"]
