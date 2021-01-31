@@ -162,7 +162,7 @@ shape = SubResource( 2 )
 position = Vector2( -366.148, 376.407 )
 frames = ExtResource( 2 )
 animation = "Idle"
-frame = 34
+frame = 2
 speed_scale = 8.0
 playing = true
 offset = Vector2( 366.568, -376.827 )
@@ -183,20 +183,20 @@ one_shot = true
 
 [node name="Sprite" type="Sprite" parent="."]
 visible = false
-position = Vector2( 13.5033, -103.233 )
+position = Vector2( 11.9159, -110.376 )
 scale = Vector2( 0.322534, 0.355726 )
 texture = ExtResource( 4 )
 flip_h = true
 
 [node name="Label" type="Label" parent="Sprite"]
 modulate = Color( 0, 0, 0, 1 )
-margin_left = -236.0
-margin_top = -153.027
-margin_right = 274.0
-margin_bottom = 113.973
+margin_left = -241.561
+margin_top = -159.721
+margin_right = 268.439
+margin_bottom = 107.279
 custom_fonts/font = SubResource( 3 )
-text = "We must 
-find
+text = "We 
+must find
 our freedom!"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -230,7 +230,7 @@ one_shot = true
 visible = false
 position = Vector2( 45, -26 )
 frames = SubResource( 5 )
-frame = 9
+frame = 93
 speed_scale = 24.0
 playing = true
 [connection signal="camera_shake_requested" from="." to="Camera2D" method="_on_player_camera_shake_requested"]

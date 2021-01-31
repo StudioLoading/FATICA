@@ -40,12 +40,12 @@ func get_input():
 	var jump = Input.is_action_just_pressed('ui_select')
 	var slide= Input.is_action_just_pressed('ui_down')
 
-	if jump and is_on_floor() and state != STATES.LOCKED and state != STATES.NUOTO:
+	if jump and is_on_floor() and state != STATES.LOCKED and state != STATES.NUOTO and state != STATES.BANDITI:
 		jumping = true
 		velocity.y = jump_speed
 	elif jumping and !is_on_floor() and state != STATES.TEMPESTA and state != STATES.SABBIEMOBILI:
 		state = STATES.JUMPING
-	if jump and state == STATES.SABBIEMOBILI :
+	if jump and state == STATES.SABBIEMOBILI and state != STATES.LOCKED and state != STATES.BANDITI:
 		velocity.y = jump_speed
 	if right and state != STATES.LOCKED:
 		velocity.x += run_speed
@@ -219,8 +219,14 @@ func _on_Area2D_area_entered(area):
 		velocity.x += 0
 		get_node("Sprite2").visible = true
 		$timer_end.start()
+	
+	if area.is_in_group('follow'):
+		#INIZIA INSEGUIMENTO
+		if self.position.x > get_node("../ContrattazioneBanditi/Node2DBanditi/cammello").position.x:
+			emit_signal('start_chase')
 		
 
+	
 	
 func _on_Area2D_area_exited(area):
 	if area.is_in_group('a_tempesta'):
@@ -237,9 +243,9 @@ func _on_Area2D_area_exited(area):
 		$afx_grunt.stop()
 		state = STATES.WALKING
 		relative_velocity = Vector2.ZERO
-		if self.position.x > get_node("../ContrattazioneBanditi/Node2DBanditi/cammello").position.x:
+		#Iif self.position.x > get_node("../ContrattazioneBanditi/Node2DBanditi/cammello").position.x:
 			#INIZIA INSEGUIMENTO
-			emit_signal('start_chase')
+			#Iemit_signal('start_chase')
 	if area.is_in_group('nuoto'):
 		swimming = false
 		state = STATES.WALKING
