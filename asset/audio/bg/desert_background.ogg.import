@@ -12,4 +12,4 @@ dest_files=[ "res://.import/desert_background.ogg-a6c45351c4221a9c17aa3fc6fa6f11
 [params]
 
 loop=true
-loop_offset=0
+loop_offset=4.0

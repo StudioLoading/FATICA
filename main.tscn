@@ -5,7 +5,7 @@
 [ext_resource path="res://main.gd" type="Script" id=3]
 [ext_resource path="res://water/04.sine_and_texture/WaterSineAndTexture.tscn" type="PackedScene" id=4]
 [ext_resource path="res://snow.tscn" type="PackedScene" id=5]
-[ext_resource path="res://asset/audio/bg/desert.ogg" type="AudioStream" id=6]
+[ext_resource path="res://asset/audio/bg/desert_background.ogg" type="AudioStream" id=6]
 [ext_resource path="res://asset/xolonium/Xolonium-Regular.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://asset/Background e assets/Cielo sfumatura.png" type="Texture" id=8]
 [ext_resource path="res://asset/Background e assets/desktop.png" type="Texture" id=9]
@@ -714,7 +714,7 @@ shape = SubResource( 13 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
-volume_db = -30.021
+volume_db = -10.0
 autoplay = true
 
 [node name="VacTimer" type="Timer" parent="."]
