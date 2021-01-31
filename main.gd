@@ -18,12 +18,13 @@ func _ready():
 		t.set_deferred('emitting', false)
 	$GUI/TextureProgress_vax.max_value = $VacTimer.wait_time
 	$GUI/TextureProgress.max_value = $player.energy_max
+	$GUI/TextureProgress.value = $player.energy_max
 
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if $GUI/VacLabel.text != str($VacTimer.time_left):
+	if $GUI/VacLabel.text != str($VacTimer.time_left) and $VacTimer.time_left > 0:
 		$GUI/VacLabel.text = str($VacTimer.time_left)
 		$GUI/TextureProgress_vax.value = $VacTimer.time_left
 	$GUI/TextureProgress.value = $player.energy

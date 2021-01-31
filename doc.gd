@@ -5,7 +5,7 @@ export (int) var jump_speed = -400
 export (int) var jump_speed_default = -400
 export (int) var gravity = 1200
 export (int) var gravity_default = 1200
-export (int) var energy_max = 150
+export (int) var energy_max = 200
 
 var velocity = Vector2()
 var relative_velocity = Vector2()

@@ -7,12 +7,14 @@ extends Node2D
 
 var numero_pagine = 4
 var i_pag = 0
+var changing = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
 func _process(delta):
-	if Input.is_action_just_pressed("ui_down"):
+	if Input.is_action_just_pressed("ui_down") and changing == false:
+		changing = true
 		i_pag+=1
 		if i_pag == 1:
 			$fx.play()
@@ -26,6 +28,7 @@ func _process(delta):
 			$Tween.interpolate_property($imgs, "position", $imgs.position, Vector2($imgs.position.x, $imgs.position.y - 600), 0.7, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 			$Tween.start()
 			yield($Tween, "tween_all_completed")
+			changing = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
