@@ -159,12 +159,13 @@ position = Vector2( -0.5, -5 )
 shape = SubResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0.420441, -0.420448 )
+position = Vector2( -366.148, 376.407 )
 frames = ExtResource( 2 )
 animation = "Idle"
-frame = 19
+frame = 34
 speed_scale = 8.0
 playing = true
+offset = Vector2( 366.568, -376.827 )
 
 [node name="timerGameOver" type="Timer" parent="."]
 wait_time = 3.0
@@ -229,7 +230,7 @@ one_shot = true
 visible = false
 position = Vector2( 45, -26 )
 frames = SubResource( 5 )
-frame = 46
+frame = 9
 speed_scale = 24.0
 playing = true
 [connection signal="camera_shake_requested" from="." to="Camera2D" method="_on_player_camera_shake_requested"]

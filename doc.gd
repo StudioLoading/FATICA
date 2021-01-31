@@ -13,11 +13,9 @@ var jumping = true
 var energy = energy_max
 var swimming = false
 
-var idle_anim = ["Idle", "Speak"]
-var idle
 signal bubble
 
-enum STATES {WALKING, JUMPING, SABBIEMOBILI, RAFFICA, MORTO, TEMPESTA, BANDITI, LOCKED, NUOTO, END}
+enum STATES {WALKING, JUMPING,SABBIEMOBILI, RAFFICA, MORTO, TEMPESTA, BANDITI, LOCKED, NUOTO, END}
 onready var state = STATES.JUMPING
 
 onready var fx_step = preload("res://asset/audio/fx/step.ogg")
@@ -40,6 +38,7 @@ func get_input():
 	right = Input.is_action_pressed('ui_right')
 	left = Input.is_action_pressed('ui_left')
 	var jump = Input.is_action_just_pressed('ui_select')
+	var slide= Input.is_action_just_pressed('ui_down')
 
 	if jump and is_on_floor() and state != STATES.LOCKED and state != STATES.NUOTO:
 		jumping = true
@@ -52,6 +51,9 @@ func get_input():
 		velocity.x += run_speed
 	if left and state != STATES.LOCKED:
 		velocity.x -= run_speed
+		
+	
+	
 
 func _physics_process(delta):
 	if state == STATES.MORTO:
@@ -116,13 +118,14 @@ func _physics_process(delta):
 
 	if state == STATES.SABBIEMOBILI:
 		energy -= 0.15
-
-	velocity = move_and_slide(velocity, Vector2(0, -1))
-	
+		
+		
 	if healing and energy<energy_max:
 		energy += 0.5
+		
+	velocity = move_and_slide(velocity, Vector2(0, -1))
 	
-	
+
 
 func _process(delta):
 	if state == STATES.END:
@@ -138,7 +141,7 @@ func _process(delta):
 		$timerGameOver.start()
 	
 	
-	print('state',state)
+	
 	
 
 func _on_Area2D_body_entered(body):
