@@ -481,7 +481,7 @@ position = Vector2( 25591.9, 713.717 )
 [node name="player" parent="." groups=[
 "camera_shaker",
 ] instance=ExtResource( 1 )]
-position = Vector2( 243.605, 568.542 )
+position = Vector2( 253.357, 570.056 )
 run_speed = 300
 
 [node name="bufera" parent="." instance=ExtResource( 5 )]
